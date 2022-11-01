@@ -12,15 +12,15 @@ const ContactDescription = () => {
       </p>
       <div className="dz__contactData">
         <div className="dz__contactDataBlock">
-          <img src={call}></img>
+          <img src={call} alt="call"></img>
           <p>+48 730 527 186</p>
         </div>
         <div className="dz__contactDataBlock">
-          <img src={mail}></img>
+          <img src={mail} alt="mail"></img>
           <p>zzosdunk@gmail.com</p>
         </div>
         <div className="dz__contactDataBlock">
-          <img src={map}></img>
+          <img src={map} alt="location"></img>
           <p>Cracow, Poland</p>
         </div>
       </div>

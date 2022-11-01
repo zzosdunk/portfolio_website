@@ -27,7 +27,7 @@ const Navbar = () => {
     <div className="dz__navbar">
       <div className="dz__navbar-links">
         <div className="dz__navbar-links_logo">
-          <img src={logo} />
+          <img src={logo} alt="logo"/>
         </div>
         <div className="dz__navbar-links_container">
           <p>

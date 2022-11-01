@@ -1,7 +1,6 @@
 import React from 'react';
 import './ProjectItem.css';
 import star from '../../assets/star-leader.png'
-import Slider from '../../components/Slider/Slider';
 
 const ProjectItem = (props) => (
   <div className="dz__blog-container_article">

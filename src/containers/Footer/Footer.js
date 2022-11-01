@@ -1,7 +1,5 @@
 import logo from "../../assets/logo.png";
 import "./Footer.css";
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import Slider from "../../components/Slider/Slider";
 
 const Footer = () => {
   return (

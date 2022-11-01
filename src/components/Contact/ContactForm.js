@@ -41,7 +41,7 @@ const ContactForm = () => {
 
   let formIsValid = false;
 
-  if (enteredEmailIsValid || isAuth && enteredSubjectIsValid && enteredMessageIsValid) {
+  if ((enteredEmailIsValid || isAuth) && enteredSubjectIsValid && enteredMessageIsValid) {
     formIsValid = true;
   }
 

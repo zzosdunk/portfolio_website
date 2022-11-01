@@ -8,7 +8,7 @@ import SkillItem from "./SkillItem";
 const SkillsList = () => {
   const [skills, setSkills] = useState([]);
 
-  const { isLoading, error, sendRequest: fetchSkills } = useHttp();
+  const { sendRequest: fetchSkills } = useHttp();
 
   useEffect(() => {
     const transformSkills = (skillObj) => {

@@ -7,7 +7,7 @@ import BlockTitle from "../../components/BlockTitle/BlockTitle";
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
-  const { isLoading, error, sendRequest: fetchProjects } = useHttp();
+  const { sendRequest: fetchProjects } = useHttp();
 
   useEffect(() => {
     const transformProjects = (projectObj) => {
