@@ -52,37 +52,6 @@ const Projects = () => {
               leaderStatus={project.leader}
             />
           ))}
-
-          {/* <Project
-            imgUrl={blog01}
-            date="Sep 26, 2021"
-            text="GPT-3 and Open  AI is the future. Let us exlore how it is?"
-          />
-          <Project
-            imgUrl={blog01}
-            date="Sep 26, 2021"
-            text="GPT-3 and Open  AI is the future. Let us exlore how it is?"
-          />
-          <Project
-            imgUrl={blog02}
-            date="Sep 26, 2021"
-            text="GPT-3 and Open  AI is the future. Let us exlore how it is?"
-          />
-          <Project
-            imgUrl={blog03}
-            date="Sep 26, 2021"
-            text="GPT-3 and Open  AI is the future. Let us exlore how it is?"
-          />
-          <Project
-            imgUrl={blog04}
-            date="Sep 26, 2021"
-            text="GPT-3 and Open  AI is the future. Let us exlore how it is?"
-          />
-          <Project
-            imgUrl={blog05}
-            date="Sep 26, 2021"
-            text="GPT-3 and Open  AI is the future. Let us exlore how it is?"
-          /> */}
         </div>
       </div>
     </div>

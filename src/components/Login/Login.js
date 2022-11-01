@@ -22,8 +22,6 @@ const Login = () => {
 
     dispatch(authActions.login(enteredEmail));
 
-    console.log("working");
-
     resetEmailInput();
   };
 

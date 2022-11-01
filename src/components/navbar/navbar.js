@@ -19,7 +19,6 @@ const Navbar = () => {
   const loginHandler = (event) => {
     event.preventDefault();
 
-    console.log("button reacts");
     dispatch(authActions.login());
   };
 

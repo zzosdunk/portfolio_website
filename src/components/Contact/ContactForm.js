@@ -50,26 +50,16 @@ const ContactForm = () => {
 
     emailjs
       .sendForm(
-        "service_s5fkmsb",
-        "template_dta7bw4",
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         form.current,
-        "2algFDK7uP97qEKRZ"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
+        process.env.REACT_APP_USER_ID
       );
 
       resetEmailInput();
       resetSubjectInput();
       resetMessageInput();
   };
-
-  console.log(formIsValid);
 
   return (
     <div className={styles.dz__contactform}>

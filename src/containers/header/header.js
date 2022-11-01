@@ -7,24 +7,18 @@ const Header = () => {
       <div className="dz__header-content">
         <h1 className="gradient__text">Welcome!</h1>
         <p>
-          I am a young guy, who has a huge passion for developing a video-games.
-          I'm providing my personal blog about game development, which you can
-          rate following the Instagram link above. I am easy in communication
-          and always open to new acquaintances. Love traveling, researching new
-          technologies not only about game development branch, but also in the
-          whole world also. Playing on musical instruments and love active
-          holidays.
+          For more than three years I have been creating various game and
+          business projects on Unity, but the beginning of my journey in IT lies
+          in web design. Even at school, I loved to take part in various
+          olympiads, created websites with the help of different website
+          constructors, and now I would like to return to the roots, turning my
+          old hobby into my main activity and start writing a new chapter in my
+          professional career dedicated to web development!
         </p>
-
-        {/* <div className="dz__header-content__input">
-          <input type="email" placeholder="Your Email Address" />
-          <button type="button">Get Started</button>
-        </div> */}
-
       </div>
 
       <div className="dz__header-image">
-        <img src={ai} alt="frontImage"/>
+        <img src={ai} alt="frontImage" />
       </div>
     </div>
   );
