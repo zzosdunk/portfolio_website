@@ -6,6 +6,7 @@ import star from "../../assets/star-leader.png";
 const ProjectItem = ({imgUrl, leaderStatus, date, text, description}) => (
   <div className="dz__blog-container_article">
     <div className="dz__blog-container_article-image">
+    <span className="dz__tooltipText">Project Leader</span>
       <img
         className="dz__project-container_article-image-cover"
         src={imgUrl}

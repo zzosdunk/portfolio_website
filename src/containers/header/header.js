@@ -1,5 +1,5 @@
 import "./header.css";
-import ai from "../../assets/ai.png";
+import cvimg from "../../assets/CV_img.png";
 
 const Header = () => {
   return (
@@ -18,7 +18,7 @@ const Header = () => {
       </div>
 
       <div className="dz__header-image">
-        <img src={ai} alt="frontImage" />
+        <img src={cvimg} alt="frontImage" />
       </div>
     </div>
   );
