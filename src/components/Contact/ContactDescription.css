@@ -1,0 +1,66 @@
+.dz__contactDescription {
+    padding: 3rem;
+    width: 50%;
+    height: 100%;
+    background: var(--color-footer);
+    border-radius: 8px;
+}
+
+.dz__contactDescription h1 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 75px;
+    letter-spacing: -0.04em;
+}
+
+.dz__contactDescription p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--color-text);
+
+    margin: 0.5rem 0;
+}
+
+.dz__contactData {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.dz__contactDataBlock {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.dz__contactDataBlock img {
+    margin: 0 1rem;
+    width: 40x;
+    height: 40px;
+}
+
+.dz__contactDataBlock p {
+    
+}
+
+@media screen and (max-width: 990px) {
+    .dz__contactDescription {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .dz__contactDescription h1 {
+        font-weight: 400;
+        font-size: 24px;
+
+    }
+
+    .dz__contactDataBlock {
+        margin: 0.4rem 0;
+    }
+}
