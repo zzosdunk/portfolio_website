@@ -3,7 +3,7 @@ import cvimg from "../../assets/CV_img.png";
 
 const Header = () => {
   return (
-    <div className="dz__header section__padding" id="home">
+    <div className="dz__header section__padding" id="about">
       <div className="dz__header-content">
         <h1 className="gradient__text">Welcome!</h1>
         <p>

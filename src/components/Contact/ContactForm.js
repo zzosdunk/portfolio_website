@@ -21,6 +21,7 @@ const ContactForm = () => {
 
   let formIsValid = true;
 
+
   const sendEmail = (event) => {
 
     emailjs.sendForm(
@@ -43,8 +44,8 @@ const ContactForm = () => {
           <input
             type="text"
             placeholder="Email"
-            {...register("from_name", { required: "This is required" })}
-            name="from_name"
+            {...register("sender", { required: "This is required" })}
+            name="sender"
           ></input>
           <input
             type="text"

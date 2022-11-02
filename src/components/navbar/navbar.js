@@ -23,23 +23,23 @@ const Navbar = () => {
   };
 
   return (
-    <div className="dz__navbar">
+    <div className="dz__navbar" id="home">
       <div className="dz__navbar-links">
         <div className="dz__navbar-links_logo">
           <img src={logo} alt="logo"/>
         </div>
         <div className="dz__navbar-links_container">
           <p>
-            <a href="#home">Home</a>
+            <a href="#about">About</a>
           </p>
           <p>
-            <a href="#wdz">Experience</a>
+            <a href="#experience">Experience</a>
           </p>
           <p>
             <a href="#skills">Skills</a>
           </p>
           <p>
-            <a href="#possibility">Projects</a>
+            <a href="#projects">Projects</a>
           </p>
           <p>
             <a href="#contact">Contact</a>
