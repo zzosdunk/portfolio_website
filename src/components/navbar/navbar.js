@@ -9,12 +9,20 @@ import Login from "../Login/Login";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const userEmail = useSelector(state => state.auth.userEmail);
+  const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
 
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  const userName = userEmail.substr(0, userEmail.indexOf('@'));
+  const userName = userEmail.substr(0, userEmail.indexOf("@"));
+
+  const LINKS = [
+    { text: "About", link: "#about" },
+    { text: "Experience", link: "#experience" },
+    { text: "Skills", link: "#skills" },
+    { text: "Projects", link: "#projects" },
+    { text: "Contact", link: "#contact" },
+  ];
 
   const loginHandler = (event) => {
     event.preventDefault();
@@ -26,30 +34,17 @@ const Navbar = () => {
     <div className="dz__navbar" id="home">
       <div className="dz__navbar-links">
         <div className="dz__navbar-links_logo">
-          <img src={logo} alt="logo"/>
+          <img src={logo} alt="logo" />
         </div>
         <div className="dz__navbar-links_container">
-          <p>
-            <a href="#about">About</a>
-          </p>
-          <p>
-            <a href="#experience">Experience</a>
-          </p>
-          <p>
-            <a href="#skills">Skills</a>
-          </p>
-          <p>
-            <a href="#projects">Projects</a>
-          </p>
-          <p>
-            <a href="#contact">Contact</a>
-          </p>
+          {LINKS.map((link) => (
+            <p key={link.text}>
+              <a href={link.link}>{link.text}</a>
+            </p>
+          ))}
         </div>
       </div>
       <div className="dz__navbar-sign">
-        {/* <form onSubmit={loginHandler}>
-          <button type="submit">Sign in</button>
-        </form> */}
         {!isAuth ? <Login /> : <p>Hello, {userName}</p>}
       </div>
       <div className="dz__navbar-menu">
@@ -69,21 +64,11 @@ const Navbar = () => {
         {toggleMenu && (
           <div className="dz__navbar-menu_container scale-up-center">
             <div className="dz__navbar-menu_container-links">
-              <p>
-                <a href="#home">Home</a>
-              </p>
-              <p>
-                <a href="#wdz">Experience</a>
-              </p>
-              <p>
-                <a href="#skills">Skills</a>
-              </p>
-              <p>
-                <a href="#possibility">Projects</a>
-              </p>
-              <p>
-                <a href="#contact">Contact</a>
-              </p>
+              {LINKS.map((link) => (
+                <p key={link.text}>
+                  <a href={link.link}>{link.text}</a>
+                </p>
+              ))}
             </div>
             <div className="dz__navbar-menu_container-links-sign">
               <button type="button" onClick={loginHandler}>

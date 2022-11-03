@@ -1,72 +1,98 @@
 import { useSelector } from "react-redux";
 import { useRef } from "react";
-import { useForm } from "react-hook-form";
+import useInput from "../../hooks/use-input";
 
 import emailjs from "emailjs-com";
 
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
+  const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { erorrs },
-    watch
-  } = useForm();
 
   const form = useRef();
 
+  const {
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: emailInputHasError,
+    valueChangeHandler: emailChangedHandler,
+    inputBlurHandler: emailBlurHandler,
+    reset: resetEmailInput,
+  } = useInput((value) => value.includes("@"));
 
-  let formIsValid = true;
+  const {
+    value: enteredSubject,
+    isValid: enteredSubjectIsValid,
+    hasError: subjectInputHasError,
+    valueChangeHandler: subjectChangedHandler,
+    inputBlurHandler: subjectBlurHandler,
+    reset: resetSubjectInput,
+  } = useInput((value) => value.trim() !== "");
 
+  const {
+    value: enteredMessage,
+    isValid: enteredMessageIsValid,
+    hasError: messageInputHasError,
+    valueChangeHandler: messageChangedHandler,
+    inputBlurHandler: messageBlurHandler,
+    reset: resetMessageInput,
+  } = useInput((value) => value.trim() !== "");
+
+  let formIsValid = false;
+
+  if ((enteredEmailIsValid || isAuth) && enteredSubjectIsValid && enteredMessageIsValid) {
+    formIsValid = true;
+  }
 
   const sendEmail = (event) => {
+    event.preventDefault();
 
-    emailjs.sendForm(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID,
-      form.current,
-      process.env.REACT_APP_USER_ID
-    );
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_USER_ID
+      );
 
+      resetEmailInput();
+      resetSubjectInput();
+      resetMessageInput();
   };
 
   return (
     <div className={styles.dz__contactform}>
       <div className={styles.dz__form}>
-        <form
-          className={styles.dz__contact_login}
-          onSubmit={handleSubmit(sendEmail)}
-          ref={form}
-        >
-          <input
+        <form className={styles.dz__contact_login} onSubmit={sendEmail} ref={form}>
+        <input
             type="text"
             placeholder="Email"
-            {...register("sender", { required: "This is required" })}
-            name="sender"
+            name="from_name"
+            value={!isAuth ? enteredEmail : userEmail}
+            onChange={emailChangedHandler}
+            onBlur={emailBlurHandler}
           ></input>
+          {emailInputHasError && <p>Please enter a valid email</p>}
           <input
             type="text"
             placeholder="Subject"
-            {...register("subject", {
-              required: "This is required",
-              minLength: { value: 4, message: "Min length is 4" },
-            })}
             name="subject"
+            value={enteredSubject}
+            onChange={subjectChangedHandler}
+            onBlur={subjectBlurHandler}
           ></input>
+          {subjectInputHasError && <p>Please enter a subject</p>}
           <textarea
             id="message"
             placeholder="Type a message..."
-            {...register("message", {required: 'This is required'})}
             name="message"
+            value={enteredMessage}
+            onChange={messageChangedHandler}
+            onBlur={messageBlurHandler}
           ></textarea>
-          <button
-            className={styles.dz__sendButton}
-            type="submit"
-            disabled={!formIsValid}
-          >
+          {messageInputHasError && <p>Please enter a message</p>}
+          <button className={styles.dz__sendButton} type="submit" disabled={!formIsValid}>
             Send
           </button>
         </form>

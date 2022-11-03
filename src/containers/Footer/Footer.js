@@ -3,6 +3,9 @@ import arrow from "../../assets/upArrow.png";
 import "./Footer.css";
 
 const Footer = () => {
+  const d = new Date();
+  let year = d.getFullYear();
+
   return (
     <div className="dz__footer section__padding" id="footer">
       <div className="dz__footer-links_homeLink">
@@ -17,7 +20,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="dz__footer-copyright"><p>© 2022 - Denys Zosym</p></div>
+      <div className="dz__footer-copyright"><p>© {year} - Denys Zosym</p></div>
     </div>
   );
 };
