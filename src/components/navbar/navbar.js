@@ -24,12 +24,6 @@ const Navbar = () => {
     { text: "Contact", link: "#contact" },
   ];
 
-  const loginHandler = (event) => {
-    event.preventDefault();
-
-    dispatch(authActions.login());
-  };
-
   return (
     <div className="dz__navbar" id="home">
       <div className="dz__navbar-links">
