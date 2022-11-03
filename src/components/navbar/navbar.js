@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 
 import logo from "../../assets/logo.png";
 import "./navbar.css";
-import { authActions } from "../../store/auth";
 import Login from "../Login/Login";
 
 const Navbar = () => {
-  const dispatch = useDispatch();
   const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
 
@@ -23,12 +21,6 @@ const Navbar = () => {
     { text: "Projects", link: "#projects" },
     { text: "Contact", link: "#contact" },
   ];
-
-  const loginHandler = (event) => {
-    event.preventDefault();
-
-    dispatch(authActions.login());
-  };
 
   return (
     <div className="dz__navbar" id="home">
@@ -70,12 +62,8 @@ const Navbar = () => {
                 </p>
               ))}
             </div>
-            <div className="dz__navbar-menu_container-links-sign">
-              <button type="button" onClick={loginHandler}>
-                Sign in
-              </button>
-            </div>
           </div>
+          
         )}
       </div>
     </div>
