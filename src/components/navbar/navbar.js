@@ -70,12 +70,8 @@ const Navbar = () => {
                 </p>
               ))}
             </div>
-            <div className="dz__navbar-menu_container-links-sign">
-              <button type="button" onClick={loginHandler}>
-                Sign in
-              </button>
-            </div>
           </div>
+          
         )}
       </div>
     </div>
