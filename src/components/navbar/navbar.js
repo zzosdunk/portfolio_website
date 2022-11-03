@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 
 import logo from "../../assets/logo.png";
 import "./navbar.css";
-import { authActions } from "../../store/auth";
 import Login from "../Login/Login";
 
 const Navbar = () => {
-  const dispatch = useDispatch();
   const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
 
