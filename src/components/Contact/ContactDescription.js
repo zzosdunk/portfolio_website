@@ -17,7 +17,7 @@ const ContactDescription = () => {
         </div>
         <div className="dz__contactDataBlock">
           <img src={mail} alt="mail"></img>
-          <p>zzosdunk@gmail.com</p>
+          <a href="mailto:zzosdunk@gmail.com"><p>zzosdunk@gmail.com</p></a>
         </div>
         <div className="dz__contactDataBlock">
           <img src={map} alt="location"></img>

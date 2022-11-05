@@ -11,7 +11,6 @@ const Login = () => {
   const {
     value: enteredEmail,
     isValid: enteredEmailIsValid,
-    hasError: emailInputHasError,
     valueChangeHandler: emailChangedHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmailInput,
@@ -29,9 +28,6 @@ const Login = () => {
     <div className={styles.dz__login_form}>
       <form onSubmit={loginHandler}>
         <input type="email" placeholder="Your Email Address" value={enteredEmail} onChange={emailChangedHandler} onBlur={emailBlurHandler}/>
-        {emailInputHasError && (
-          <p className='error-text'>Name must not be empty.</p>
-        )}
         <button type="submit" disabled={!enteredEmailIsValid}>Log In</button>
       </form>
     </div>
