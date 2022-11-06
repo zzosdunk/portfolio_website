@@ -8,7 +8,7 @@ import './ContactMe.css'
 const ContactMe = () => {
   return (
     <div className="dz__contact section__padding" id="contact">
-      <BlockTitle title="CONTACT ME" />
+      <BlockTitle translationID="contactBlockTitle" title="CONTACT ME" />
       <div className=".dz__blog-container">
       <div className="dz__contactInfo">
         <ContactDescription />

@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from 'prop-types';
 import "./ProjectItem.css";
 import star from "../../assets/star-leader.png";
+import { FormattedMessage } from "react-intl";
 
-const ProjectItem = ({imgUrl, leaderStatus, date, text, description}) => (
+const ProjectItem = ({imgUrl, leaderStatus, date, text, description, translationID}) => (
   <div className="dz__blog-container_article">
     <div className="dz__blog-container_article-image">
     <span className="dz__tooltipText">Project Leader</span>
@@ -20,7 +21,14 @@ const ProjectItem = ({imgUrl, leaderStatus, date, text, description}) => (
       <div>
         <p className="dz__project-timeperiod">{date}</p>
         <h3>{text}</h3>
-        <p className="dz__project-description">{description}</p>
+        <p className="dz__project-description"><FormattedMessage
+                          id={`${translationID}.text`}
+                          defaultMessage="{projectDescription}"
+                          description="Project Description"
+                          values={{
+                            projectDescription: description,
+                          }}
+                        /></p>
       </div>
     </div>
   </div>
@@ -31,7 +39,8 @@ ProjectItem.propTypes = {
   leaderStatus: PropTypes.bool,
   date: PropTypes.string,
   text: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  translationID: PropTypes.string
 }
 
 export default ProjectItem;

@@ -1,14 +1,23 @@
 import "./ContactDescription.css";
 import { call, map, mail } from './imports';
+import { FormattedMessage } from "react-intl";
 
 const ContactDescription = () => {
   return (
     <div className="dz__contactDescription">
-      <h1 className="gradient__text">Drop Me A Message</h1>
+      <h1 className="gradient__text"><FormattedMessage
+            id="contactMeHeader.text"
+            defaultMessage="Drop Me A Message"
+            description="Send me a message"
+          /></h1>
       <p>
-        If, after getting acquainted with my activities, you still have any
-        questions or would like to cooperate with me, then you can fill out the
-        form on the right side and send me a message!
+      <FormattedMessage
+            id="contactMeDescription.text"
+            defaultMessage="If, after getting acquainted with my activities, you still have any
+            questions or would like to cooperate with me, then you can fill out the
+            form on the right side and send me a message!"
+            description="Send me a message description"
+          />
       </p>
       <div className="dz__contactData">
         <div className="dz__contactDataBlock">
@@ -21,7 +30,11 @@ const ContactDescription = () => {
         </div>
         <div className="dz__contactDataBlock">
           <img src={map} alt="location"></img>
-          <p>Cracow, Poland</p>
+          <p><FormattedMessage
+            id="contactMeLocation.text"
+            defaultMessage="Cracow, Poland"
+            description="Location"
+          /></p>
         </div>
       </div>
     </div>

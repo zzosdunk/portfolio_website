@@ -35,7 +35,7 @@ const SkillsList = () => {
 
   return (
     <div className="dz__skills section__padding" id="skills">
-      <BlockTitle title="SKILLS" />
+      <BlockTitle translationID="skillsBlockTitle" title="SKILLS" />
       <div className="dz__skillsList">
         {skills.map((skill) => (
           <div key={skill.id}>
