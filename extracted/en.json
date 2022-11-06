@@ -1,0 +1,192 @@
+{
+  "contactMeDescription.text": {
+    "defaultMessage": "If, after getting acquainted with my activities, you still have any questions or would like to cooperate with me, then you can fill out the form on the right side and send me a message!",
+    "description": "Send me a message description"
+  },
+  "contactMeHeader.text": {
+    "defaultMessage": "Drop Me A Message",
+    "description": "Send me a message"
+  },
+  "contactMeLocation.text": {
+    "defaultMessage": "Cracow, Poland",
+    "description": "Location"
+  },
+  "header.text": {
+    "defaultMessage": "For more than three years I have been creating various game and business projects on Unity, but the beginning of my journey in IT lies in web design. Even at school, I loved to take part in various olympiads, created websites with the help of different website constructors, and now I would like to return to the roots, turning my old hobby into my main activity and start writing a new chapter in my professional career dedicated to web development!",
+    "description": "Welcome header on app main page"
+  },
+  "headerGreetings.text": {
+    "defaultMessage": "Welcome!",
+    "description": "Greetings"
+  },
+  "loginButton.text": {
+    "defaultMessage": "Log In",
+    "description": "Log In"
+  },
+  "loginInputPlaceholder.text": {
+    "defaultMessage": "Your Email Address",
+    "description": "email"
+  },
+  "AboutNavbarElement.text": {
+    "defaultMessage": "About",
+    "description": "Navbar Element"
+  },
+  "ExperienceNavbarElement.text": {
+    "defaultMessage": "Experience",
+    "description": "Navbar Element"
+  }
+  ,
+  "SkillsNavbarElement.text": {
+    "defaultMessage": "Skills",
+    "description": "Navbar Element"
+  }
+  ,
+  "ProjectsNavbarElement.text": {
+    "defaultMessage": "Projects",
+    "description": "Navbar Element"
+  },
+  "ContactNavbarElement.text": {
+    "defaultMessage": "Contact",
+    "description": "Navbar Element"
+  },
+  "dg1Responsibility.text": {
+    "defaultMessage": "Developing gameplay mechanics",
+    "description": "DG Responsibility"
+  },
+  "dg2Responsibility.text": {
+    "defaultMessage": "Level blockout",
+    "description": "DG Responsibility"
+  },
+  "dg3Responsibility.text": {
+    "defaultMessage": "Level design testing",
+    "description": "DG Responsibility"
+  },
+  "dg4Responsibility.text": {
+    "defaultMessage": "Designing and developing game economy",
+    "description": "DG Responsibility"
+  },
+  "dg5Responsibility.text": {
+    "defaultMessage": "Designing gameplay mechanics",
+    "description": "DG Responsibility"
+  },
+  "dg6Responsibility.text": {
+    "defaultMessage": "Gameplay mechanics balance",
+    "description": "DG Responsibility"
+  },
+  "jg1Responsibility.text": {
+    "defaultMessage": "Development and maintenance of the project architecture",
+    "description": "JG Responsibility"
+  },
+  "jg2Responsibility.text": {
+    "defaultMessage": "Providing team meetings",
+    "description": "JG Responsibility"
+  },
+  "jg3Responsibility.text": {
+    "defaultMessage": "Creating end goals for team",
+    "description": "JG Responsibility"
+  },
+  "jg4Responsibility.text": {
+    "defaultMessage": "Cooperation with partners in the implementation of external software in the project",
+    "description": "JG Responsibility"
+  },
+  "jg5Responsibility.text": {
+    "defaultMessage": "Project testing at the exhibition venue",
+    "description": "JG Responsibility"
+  },
+  "jg6Responsibility.text": {
+    "defaultMessage": "Checking the quality of development, holding retrospective meetings",
+    "description": "JG Responsibility"
+  },
+  "jg7Responsibility.text": {
+    "defaultMessage": "Developing business application for exhibition by National Bank order",
+    "description": "JG Responsibility"
+  },
+  "jg8Responsibility.text": {
+    "defaultMessage": "Designing and creating game's prototype",
+    "description": "JG Responsibility"
+  },
+  "jg9Responsibility.text": {
+    "defaultMessage": "Developing interactive project for museum exhibition",
+    "description": "JG Responsibility"
+  },
+  "pg1Responsibility.text": {
+    "defaultMessage": "Designing and programming the architecture of games",
+    "description": "PG Responsibility"
+  },
+  "pg2Responsibility.text": {
+    "defaultMessage": "Designing and programming core mechanics",
+    "description": "PG Responsibility"
+  },
+  "pg3Responsibility.text": {
+    "defaultMessage": "Programming UI behaviours and animations",
+    "description": "PG Responsibility"
+  },
+  "pg4Responsibility.text": {
+    "defaultMessage": "Designing and creating visual style of game (logo, wallpapers, graphics for the Steam)",
+    "description": "PG Responsibility"
+  },
+  "pg5Responsibility.text": {
+    "defaultMessage": "Coordinating level blockouts",
+    "description": "PG Responsibility"
+  },
+  "pg6Responsibility.text": {
+    "defaultMessage": "Designing and creating of game worlds",
+    "description": "PG Responsibility"
+  },
+  "pg7Responsibility.text": {
+    "defaultMessage": "Designing and creating trailer",
+    "description": "PG Responsibility"
+  },
+  "pg8Responsibility.text": {
+    "defaultMessage": "Game optimization",
+    "description": "PG Responsibility"
+  },
+  "pg9Responsibility.text": {
+    "defaultMessage": "Scene's lighting design",
+    "description": "PG Responsibility"
+  },
+  "pg10Responsibility.text": {
+    "defaultMessage": "Designing and creating cinematic gameplay",
+    "description": "PG Responsibility"
+  },
+  "contactBlockTitle.text": {
+    "defaultMessage": "CONTACT ME",
+    "description": "Block title"
+  },
+  "skillsBlockTitle.text": {
+    "defaultMessage": "SKILLS",
+    "description": "Block title"
+  },
+  "projectsBlockTitle.text": {
+    "defaultMessage": "CONTACT ME",
+    "description": "Block title"
+  },
+  "experienceBlockTitle.text": {
+    "defaultMessage": "CONTACT ME",
+    "description": "Block title"
+  },
+  "ts.text": {
+    "defaultMessage": "I currently work for DeGenerals S.A. over the Tank Squad project. My main responsibilities include designing levels and inventing various game mechanics. In addition to my duties as a level designer, my responsibilities also include some programming tasks. In general, the game consists in the passage of a tank campaign during the Second World War.",
+    "description": "Project Description"
+  },
+  "rb.text": {
+    "defaultMessage": "I worked on a big interactive project which consists almost of 90 small applications dedicated to the human organism and medicine.",
+    "description": "Project Description"
+  },
+  "cf.text": {
+    "defaultMessage": "Castle Flipper is a unique chance to become a medieval royal craftsman. Build your own Kingdom and re-arrange the castle, at your own discretion. I was developing the project architecture, programmed game mechanics. Also I have worked on level, game designs and trailer.",
+    "description": "Project Description"
+  },
+  "al.text": {
+    "defaultMessage": "Providing pre-production stage of the project as a lead level designer. During this stage, my responsibilities were: game design, levels block-out, scenes lighting, animations, trailer production.",
+    "description": "Project Description"
+  },
+  "gm.text": {
+    "defaultMessage": "A game prototype where a player can see the mafia's wife's daily routine at home, meanwhile her husband is doing something strange, scary, and unknown things for her. It was a 2D game with the part of card gameplay elements.Designed and developed a game prototype on the order by the Ministry of Culture and National Heritage.",
+    "description": "Project Description"
+  },
+  "nbp.text": {
+    "defaultMessage": "Developed an application for the Polish National Bank dedicated to Jan Paweł II's anniversary, which was presented in the National polish museum of money.",
+    "description": "Project Description"
+  }
+}

@@ -22,6 +22,7 @@ const Projects = () => {
           logo: projectObj[projectKey].logo,
           timeperiod: projectObj[projectKey].timeperiod,
           leader: projectObj[projectKey].leader,
+          translationID: projectObj[projectKey].translationID
         });
       }
 
@@ -38,7 +39,7 @@ const Projects = () => {
 
   return (
     <div className="dz__blog section__padding" id="projects">
-      <BlockTitle title="PROJECTS" />
+      <BlockTitle translationID="projectsBlockTitle" title="PROJECTS" />
 
       <div className="dz__blog-container">
         <div className="dz__blog-container_groupB">
@@ -50,6 +51,7 @@ const Projects = () => {
               text={project.name}
               description={project.description}
               leaderStatus={project.leader}
+              translationID={project.translationID}
             />
           ))}
         </div>

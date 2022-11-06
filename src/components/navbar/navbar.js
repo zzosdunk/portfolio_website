@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { FormattedMessage } from "react-intl";
 
 import logo from "../../assets/logo.png";
 import "./navbar.css";
@@ -31,7 +32,15 @@ const Navbar = () => {
         <div className="dz__navbar-links_container">
           {LINKS.map((link) => (
             <p key={link.text}>
-              <a href={link.link}>{link.text}</a>
+              <a href={link.link}>
+              <FormattedMessage
+            id={`${link.text}NavbarElement.text`}
+            defaultMessage="{sectionID}"
+            description="Navbar Element"
+            values={{
+              sectionID: link.text,
+          }}
+          /></a>
             </p>
           ))}
         </div>

@@ -1,98 +1,107 @@
 import { useSelector } from "react-redux";
-import { useRef } from "react";
-import useInput from "../../hooks/use-input";
+import { useRef, useEffect } from "react";
+import { useForm } from "react-hook-form";
 
 import emailjs from "emailjs-com";
 
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    setValue,
+    resetField,
+    formState: { errors, isValid },
+  } = useForm({
+    mode: "onBlur",
+  });
+  console.log(errors);
+
   const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
 
   const form = useRef();
 
-  const {
-    value: enteredEmail,
-    isValid: enteredEmailIsValid,
-    hasError: emailInputHasError,
-    valueChangeHandler: emailChangedHandler,
-    inputBlurHandler: emailBlurHandler,
-    reset: resetEmailInput,
-  } = useInput((value) => value.includes("@"));
+  const emailValue = getValues("email");
 
-  const {
-    value: enteredSubject,
-    isValid: enteredSubjectIsValid,
-    hasError: subjectInputHasError,
-    valueChangeHandler: subjectChangedHandler,
-    inputBlurHandler: subjectBlurHandler,
-    reset: resetSubjectInput,
-  } = useInput((value) => value.trim() !== "");
+  useEffect(() => {
+    if (isAuth) {
+      setValue("email", userEmail)
+    } 
+  }, [isAuth, emailValue, userEmail, setValue]);
 
-  const {
-    value: enteredMessage,
-    isValid: enteredMessageIsValid,
-    hasError: messageInputHasError,
-    valueChangeHandler: messageChangedHandler,
-    inputBlurHandler: messageBlurHandler,
-    reset: resetMessageInput,
-  } = useInput((value) => value.trim() !== "");
+  const sendEmail = (data) => {
+    emailjs.sendForm(
+      process.env.REACT_APP_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE_ID,
+      form.current,
+      process.env.REACT_APP_USER_ID
+    );
 
-  let formIsValid = false;
-
-  if ((enteredEmailIsValid || isAuth) && enteredSubjectIsValid && enteredMessageIsValid) {
-    formIsValid = true;
+    resetField('email');
+    resetField('subject');
+    resetField('message');
   }
-
-  const sendEmail = (event) => {
-    event.preventDefault();
-
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_USER_ID
-      );
-
-      resetEmailInput();
-      resetSubjectInput();
-      resetMessageInput();
-  };
 
   return (
     <div className={styles.dz__contactform}>
       <div className={styles.dz__form}>
-        <form className={styles.dz__contact_login} onSubmit={sendEmail} ref={form}>
-        <input
-            type="text"
-            placeholder="Email"
-            name="from_name"
-            value={!isAuth ? enteredEmail : userEmail}
-            onChange={emailChangedHandler}
-            onBlur={emailBlurHandler}
-          ></input>
-          {emailInputHasError && <p>Please enter a valid email</p>}
+        <form
+          className={styles.dz__contact_login}
+          onSubmit={handleSubmit(sendEmail)}
+          ref={form}
+        >
+            <input
+              name="email"
+              type="text"
+              placeholder="Email"
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Please, enter your email",
+                },
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: "Please, enter valid email",
+                },
+              })}
+            ></input>
+          {errors.email && <p>{errors.email?.message}</p>}
           <input
+            name="subject"
             type="text"
             placeholder="Subject"
-            name="subject"
-            value={enteredSubject}
-            onChange={subjectChangedHandler}
-            onBlur={subjectBlurHandler}
+            {...register("subject", {
+              required: {
+                value: true,
+                message:
+                  "You must specify your first name before moving forward",
+              },
+              pattern: {
+                value: /^[a-zA-Z]+$/,
+                message: "That's not a valid name where I come from...",
+              },
+            })}
           ></input>
-          {subjectInputHasError && <p>Please enter a subject</p>}
+          {errors.subject && <p>{errors.subject?.message}</p>}
           <textarea
-            id="message"
-            placeholder="Type a message..."
             name="message"
-            value={enteredMessage}
-            onChange={messageChangedHandler}
-            onBlur={messageBlurHandler}
+            {...register("message", {
+              required: {
+                value: true,
+                message: "The message should not be empty",
+              },
+              maxLength: 280,
+            })}
           ></textarea>
-          {messageInputHasError && <p>Please enter a message</p>}
-          <button className={styles.dz__sendButton} type="submit" disabled={!formIsValid}>
+          {errors.message && <p>{errors.message?.message}</p>}
+          <button
+            className={styles.dz__sendButton}
+            type="submit"
+            disabled={!isValid}
+          >
             Send
           </button>
         </form>
