@@ -10,9 +10,9 @@ import ContactMe from "./components/Contact/ContactMe";
 import Experience from "./containers/Experience/Experience";
 import Projects from "./containers/Projects/Projects";
 
-
 function App() {
   return (
+    
     <div className="App">
       <div className="gradient__bg">
         <Navbar />
@@ -24,6 +24,7 @@ function App() {
         <Footer />
       </div>
     </div>
+
   );
 }
 
