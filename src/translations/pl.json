@@ -1,5 +1,5 @@
 {
-  "header.text": "Od ponad trzech lat tworzę różne gry i projekty biznesowe na Unity, ale początek mojej przygody z IT leży w projektowaniu stron internetowych. Już w szkole uwielbiałem brać udział w różnych olimpiadach, tworzyć strony internetowe przy pomocy różnych konstruktorów, a teraz chciałbym wrócić do korzeni, zamieniając moje dawne hobby w moją główną działalność i zacząć pisać nowy rozdział w mojej karierze zawodowej, poświęconej tworzeniu stron internetowych!",
+  "header.text": "Od ponad trzech lat tworzę różne gry i projekty biznesowe na Unity, ale początek mojej przygody z IT leży w projektowaniu stron internetowych. Już w szkole uwielbiałem brać udział w różnych olimpiadach, tworzyć strony internetowe przy pomocy różnych konstruktorów.  Teraz chciałbym wrócić do korzeni, zamieniając moje dawne hobby w moją główną działalność i zacząć pisać nowy rozdział w mojej karierze zawodowej, poświęconej tworzeniu stron internetowych!",
   "contactMeHeader.text": "Zostaw Mi Wiadomość",
   "contactMeLocation.text": "Kraków, Polska",
   "contactMeDescription.text": "Jeżeli po zapoznaniu się z moją działalnością nadal masz pytania lub chciałbyś nawiązać ze mną współpracę, to możesz wypełnić formularz po prawej stronie i wysłać do mnie wiadomość!",
@@ -45,5 +45,10 @@
   "cf.text": "Castle Flipper to niepowtarzalna szansa na zostanie średniowiecznym królewskim rzemieślnikiem. Zbuduj własne królestwo i zorganizuj zamek według własnego uznania. Opracowywałem architekturę projektu, programowałem różne mechaniki gry. Pracowałem również nad projektowaniem poziomów, game designem i zwiastunem.",
   "al.text": "Prowadzenie etapu przedprodukcyjnego projektu jako lead level designer. Na tym etapie do moich obowiązków należało: game design, projektowanie poziomów, oświetlenie scen, animacje, produkcja traileru.",
   "gm.text": "Prototyp gry, w której gracz może zobaczyć codzienną rutynę żony mafii w domu, podczas gdy jej mąż robi dla niej coś dziwnego, przerażającego i nieznanego. Była to gra 2D z elementami rozgrywki karcianej. Zaprojektowany i wykonany prototyp gry na zlecenie Ministerstwa Kultury i Dziedzictwa Narodowego.",
-  "nbp.text": "Wykonałem aplikację dla Narodowego Banku Polskiego poświęconą jubileuszowi Jana Pawła II, która była prezentowana w Narodowym Muzeum Pieniądza."
+  "nbp.text": "Wykonałem aplikację dla Narodowego Banku Polskiego poświęconą jubileuszowi Jana Pawła II, która była prezentowana w Narodowym Muzeum Pieniądza.",
+  "CurrentLanguage.text": "Polski",
+  "EnglishLanguage.text": "Angielski",
+  "PolishLanguage.text": "Polski",
+  "UkrainianLanguage.text": "Ukraiński",
+  "GreetingsNavbar.text": "Cześć, "
 }

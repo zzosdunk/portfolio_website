@@ -140,4 +140,10 @@
     height: 5px;
     width: 5px;
   }
+  .experience-list-element {
+    width: 100%;
+  }
+  .timeline {
+    width: 100%;
+  }
 }

@@ -6,8 +6,10 @@ import { FormattedMessage } from "react-intl";
 import logo from "../../assets/logo.png";
 import "./navbar.css";
 import Login from "../Login/Login";
+import LanguageDropdown from "./LanguageDropdown";
 
 const Navbar = () => {
+  const currentLanguage = useSelector((state) => state.lang.language);
   const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
 
@@ -45,9 +47,15 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+      
       <div className="dz__navbar-sign">
-        {!isAuth ? <Login /> : <p>Hello, {userName}</p>}
+        {!isAuth ? <Login /> : <p><FormattedMessage
+            id={"GreetingsNavbar.text"}
+            defaultMessage="Hello, "
+            description="Navbar Greetings"
+            /> {userName}</p>}
       </div>
+      <LanguageDropdown chosenLanguage={currentLanguage}/>
       <div className="dz__navbar-menu">
         {toggleMenu ? (
           <RiCloseLine

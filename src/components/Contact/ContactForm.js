@@ -17,7 +17,6 @@ const ContactForm = () => {
   } = useForm({
     mode: "onBlur",
   });
-  console.log(errors);
 
   const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
