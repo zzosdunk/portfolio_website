@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProjectItem from "./ProjectItem";
 import "./Projects.css";
 import useHttp from "../../hooks/use-http";
 import BlockTitle from "../../components/BlockTitle/BlockTitle";
 
-const Projects = () => {
+function Projects() {
   const [projects, setProjects] = useState([]);
 
   const { sendRequest: fetchProjects } = useHttp();
 
   useEffect(() => {
     const transformProjects = (projectObj) => {
-      const loadedObjects = [];
-
-      for (const projectKey in projectObj) {
-        loadedObjects.push({
-          id: projectKey,
-          name: projectObj[projectKey].name,
-          description: projectObj[projectKey].description,
-          link: projectObj[projectKey].link,
-          logo: projectObj[projectKey].logo,
-          timeperiod: projectObj[projectKey].timeperiod,
-          leader: projectObj[projectKey].leader,
-          translationID: projectObj[projectKey].translationID
-        });
-      }
+      const loadedObjects = Object.entries(projectObj).map(([key, value]) => ({
+        id: key,
+        name: value.name,
+        description: value.description,
+        link: value.link,
+        logo: value.logo,
+        timeperiod: value.timeperiod,
+        leader: value.leader,
+        translationID: value.translationID,
+      }));
 
       setProjects(loadedObjects);
     };
@@ -33,7 +29,7 @@ const Projects = () => {
       {
         url: "https://react-http-bcb91-default-rtdb.europe-west1.firebasedatabase.app/projects.json",
       },
-      transformProjects
+      transformProjects,
     );
   }, [fetchProjects]);
 
@@ -58,6 +54,6 @@ const Projects = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Projects;

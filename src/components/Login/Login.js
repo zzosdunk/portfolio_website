@@ -1,12 +1,11 @@
-import useInput from "../../hooks/use-input";
 import { useDispatch } from "react-redux";
 import { FormattedMessage } from "react-intl";
+import useInput from "../../hooks/use-input";
 
 import { authActions } from "../../store/auth";
 import styles from "./Login.module.css";
 
-const Login = () => {
-
+function Login() {
   const dispatch = useDispatch();
 
   const {
@@ -15,7 +14,7 @@ const Login = () => {
     valueChangeHandler: emailChangedHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmailInput,
-  } = useInput((value) => value.includes('@'));
+  } = useInput((value) => value.includes("@"));
 
   const loginHandler = (event) => {
     event.preventDefault();
@@ -28,15 +27,17 @@ const Login = () => {
   return (
     <div className={styles.dz__login_form}>
       <form onSubmit={loginHandler}>
-        <input type="email" placeholder="Email..." value={enteredEmail} onChange={emailChangedHandler} onBlur={emailBlurHandler}/>
-        <button type="submit" disabled={!enteredEmailIsValid}><FormattedMessage
+        <input type="email" placeholder="Email..." value={enteredEmail} onChange={emailChangedHandler} onBlur={emailBlurHandler} />
+        <button type="submit" disabled={!enteredEmailIsValid}>
+          <FormattedMessage
             id="loginButton.text"
             defaultMessage="Log In"
             description="Log In"
-          /></button>
+          />
+        </button>
       </form>
     </div>
   );
-};
+}
 
 export default Login;

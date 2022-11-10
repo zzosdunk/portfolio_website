@@ -1,16 +1,18 @@
 import "./header.css";
-import cvimg from "../../assets/CV_img.png";
 import { FormattedMessage } from "react-intl";
+import cvimg from "../../assets/CV_img.png";
 
-const Header = () => {
+function Header() {
   return (
     <div className="dz__header section__padding" id="about">
       <div className="dz__header-content">
-        <h1 className="gradient__text"><FormattedMessage
+        <h1 className="gradient__text">
+          <FormattedMessage
             id="headerGreetings.text"
             defaultMessage="Welcome!"
             description="Greetings"
-          /></h1>
+          />
+        </h1>
         <p>
           <FormattedMessage
             id="header.text"
@@ -31,6 +33,6 @@ const Header = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Header;

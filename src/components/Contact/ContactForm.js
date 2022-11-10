@@ -6,7 +6,7 @@ import emailjs from "emailjs-com";
 
 import styles from "./ContactForm.module.css";
 
-const ContactForm = () => {
+function ContactForm() {
   const {
     register,
     handleSubmit,
@@ -27,22 +27,22 @@ const ContactForm = () => {
 
   useEffect(() => {
     if (isAuth) {
-      setValue("email", userEmail)
-    } 
+      setValue("email", userEmail);
+    }
   }, [isAuth, emailValue, userEmail, setValue]);
 
-  const sendEmail = (data) => {
+  const sendEmail = () => {
     emailjs.sendForm(
       process.env.REACT_APP_SERVICE_ID,
       process.env.REACT_APP_TEMPLATE_ID,
       form.current,
-      process.env.REACT_APP_USER_ID
+      process.env.REACT_APP_USER_ID,
     );
 
-    resetField('email');
-    resetField('subject');
-    resetField('message');
-  }
+    resetField("email");
+    resetField("subject");
+    resetField("message");
+  };
 
   return (
     <div className={styles.dz__contactform}>
@@ -52,26 +52,28 @@ const ContactForm = () => {
           onSubmit={handleSubmit(sendEmail)}
           ref={form}
         >
-            <input
-              name="email"
-              type="text"
-              placeholder="Email"
-              {...register("email", {
-                required: {
-                  value: true,
-                  message: "Please, enter your email",
-                },
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Please, enter valid email",
-                },
-              })}
-            ></input>
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...register("email", {
+              required: {
+                value: true,
+                message: "Please, enter your email",
+              },
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Please, enter valid email",
+              },
+            })}
+          />
           {errors.email && <p>{errors.email?.message}</p>}
           <input
             name="subject"
             type="text"
             placeholder="Subject"
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...register("subject", {
               required: {
                 value: true,
@@ -83,10 +85,11 @@ const ContactForm = () => {
                 message: "That's not a valid name where I come from...",
               },
             })}
-          ></input>
+          />
           {errors.subject && <p>{errors.subject?.message}</p>}
           <textarea
             name="message"
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...register("message", {
               required: {
                 value: true,
@@ -94,7 +97,7 @@ const ContactForm = () => {
               },
               maxLength: 280,
             })}
-          ></textarea>
+          />
           {errors.message && <p>{errors.message?.message}</p>}
           <button
             className={styles.dz__sendButton}
@@ -107,6 +110,6 @@ const ContactForm = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ContactForm;

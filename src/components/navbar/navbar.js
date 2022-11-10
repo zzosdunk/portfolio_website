@@ -8,7 +8,7 @@ import "./navbar.css";
 import Login from "../Login/Login";
 import LanguageDropdown from "./LanguageDropdown";
 
-const Navbar = () => {
+function Navbar() {
   const currentLanguage = useSelector((state) => state.lang.language);
   const userEmail = useSelector((state) => state.auth.userEmail);
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
@@ -35,27 +35,34 @@ const Navbar = () => {
           {LINKS.map((link) => (
             <p key={link.text}>
               <a href={link.link}>
-              <FormattedMessage
-            id={`${link.text}NavbarElement.text`}
-            defaultMessage="{sectionID}"
-            description="Navbar Element"
-            values={{
-              sectionID: link.text,
-          }}
-          /></a>
+                <FormattedMessage
+                  id={`${link.text}NavbarElement.text`}
+                  defaultMessage="{sectionID}"
+                  description="Navbar Element"
+                  values={{
+                    sectionID: link.text,
+                  }}
+                />
+              </a>
             </p>
           ))}
         </div>
       </div>
-      
+
       <div className="dz__navbar-sign">
-        {!isAuth ? <Login /> : <p><FormattedMessage
-            id={"GreetingsNavbar.text"}
-            defaultMessage="Hello, "
-            description="Navbar Greetings"
-            /> {userName}</p>}
+        {!isAuth ? <Login /> : (
+          <p>
+            <FormattedMessage
+              id="GreetingsNavbar.text"
+              defaultMessage="Hello, "
+              description="Navbar Greetings"
+            />
+            {" "}
+            {userName}
+          </p>
+        )}
       </div>
-      <LanguageDropdown chosenLanguage={currentLanguage}/>
+      <LanguageDropdown chosenLanguage={currentLanguage} />
       <div className="dz__navbar-menu">
         {toggleMenu ? (
           <RiCloseLine
@@ -80,11 +87,11 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          
+
         )}
       </div>
     </div>
   );
-};
+}
 
 export default Navbar;

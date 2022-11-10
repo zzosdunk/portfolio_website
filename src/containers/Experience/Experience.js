@@ -1,8 +1,9 @@
-import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import "./Experience.css";
 import { FormattedMessage } from "react-intl";
 
-const Experience = () => {
+import BlockTitle from "../../components/BlockTitle/BlockTitle";
+import "./Experience.css";
+
+function Experience() {
   const DEGENERALS = [
     { id: "dg1", text: "Developing gameplay mechanics" },
     { id: "dg2", text: "Level blockout" },
@@ -139,6 +140,6 @@ const Experience = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Experience;
