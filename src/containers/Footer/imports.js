@@ -3,9 +3,4 @@ import github from "../../assets/github.png";
 import facebook from "../../assets/facebook.png";
 import instagram from "../../assets/instagram.png";
 
-export {
-  linkedin,
-  github,
-  facebook,
-  instagram,
-};
+export { linkedin, github, facebook, instagram };

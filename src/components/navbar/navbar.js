@@ -50,14 +50,15 @@ function Navbar() {
       </div>
 
       <div className="dz__navbar-sign">
-        {!isAuth ? <Login /> : (
+        {!isAuth ? (
+          <Login />
+        ) : (
           <p>
             <FormattedMessage
               id="GreetingsNavbar.text"
               defaultMessage="Hello, "
               description="Navbar Greetings"
-            />
-            {" "}
+            />{" "}
             {userName}
           </p>
         )}
@@ -87,7 +88,6 @@ function Navbar() {
               ))}
             </div>
           </div>
-
         )}
       </div>
     </div>

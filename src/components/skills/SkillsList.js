@@ -25,7 +25,7 @@ function SkillsList() {
       {
         url: "https://react-http-bcb91-default-rtdb.europe-west1.firebasedatabase.app/skills.json",
       },
-      transformSkills
+      transformSkills,
     );
   }, [fetchSkills]);
 

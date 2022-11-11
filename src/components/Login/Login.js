@@ -27,7 +27,13 @@ function Login() {
   return (
     <div className={styles.dz__login_form}>
       <form onSubmit={loginHandler}>
-        <input type="email" placeholder="Email..." value={enteredEmail} onChange={emailChangedHandler} onBlur={emailBlurHandler} />
+        <input
+          type="email"
+          placeholder="Email..."
+          value={enteredEmail}
+          onChange={emailChangedHandler}
+          onBlur={emailBlurHandler}
+        />
         <button type="submit" disabled={!enteredEmailIsValid}>
           <FormattedMessage
             id="loginButton.text"
