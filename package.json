@@ -27,7 +27,8 @@
     "eject": "react-scripts eject",
     "extract": "formatjs extract src/**/*.{ts,tsx,jsx,js} --ignore='**/*.d.ts' --out-file ./src/translations/en.json --format simple",
     "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "eslint ./src --fix",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +58,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.2",
     "prettier": "^2.7.1"
   }
 }

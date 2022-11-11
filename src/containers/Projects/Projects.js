@@ -29,6 +29,7 @@ function Projects() {
       {
         url: "https://react-http-bcb91-default-rtdb.europe-west1.firebasedatabase.app/projects.json",
       },
+      // eslint-disable-next-line prettier/prettier
       transformProjects,
     );
   }, [fetchProjects]);

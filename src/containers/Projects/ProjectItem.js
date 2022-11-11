@@ -4,7 +4,12 @@ import { FormattedMessage } from "react-intl";
 import star from "../../assets/star-leader.png";
 
 function ProjectItem({
-  imgUrl, leaderStatus, date, text, description, translationID,
+  imgUrl,
+  leaderStatus,
+  date,
+  text,
+  description,
+  translationID,
 }) {
   return (
     <div className="dz__blog-container_article">
@@ -16,7 +21,7 @@ function ProjectItem({
           alt="project_image"
         />
         {leaderStatus && (
-        <img className="dz__project-status" src={star} alt="project-leader" />
+          <img className="dz__project-status" src={star} alt="project-leader" />
         )}
       </div>
       <div className="dz__blog-container_article-content">

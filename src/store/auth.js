@@ -13,7 +13,7 @@ const authSlice = createSlice({
       state.userEmail = action.payload;
     },
     logout(state) {
-    // eslint-disable-next-line no-param-reassign
+      // eslint-disable-next-line no-param-reassign
       state.isAuthenticated = false;
     },
   },

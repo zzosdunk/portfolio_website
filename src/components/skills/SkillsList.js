@@ -25,7 +25,7 @@ function SkillsList() {
       {
         url: "https://react-http-bcb91-default-rtdb.europe-west1.firebasedatabase.app/skills.json",
       },
-      transformSkills,
+      transformSkills
     );
   }, [fetchSkills]);
 
@@ -35,10 +35,7 @@ function SkillsList() {
       <div className="dz__skillsList">
         {skills.map((skill) => (
           <div key={skill.id}>
-            <SkillItem
-              skillName={skill.name}
-              skillIconPath={skill.icon}
-            />
+            <SkillItem skillName={skill.name} skillIconPath={skill.icon} />
           </div>
         ))}
       </div>

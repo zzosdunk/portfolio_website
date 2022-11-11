@@ -26,7 +26,10 @@ function App() {
   const currentLanguage = useSelector((state) => state.lang.language);
 
   return (
-    <IntlProvider locale={navigator.language} messages={messages[currentLanguage]}>
+    <IntlProvider
+      locale={navigator.language}
+      messages={messages[currentLanguage]}
+    >
       <div className="App">
         <div className="gradient__bg">
           <Navbar />

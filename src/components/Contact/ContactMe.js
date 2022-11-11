@@ -14,7 +14,6 @@ function ContactMe() {
           <ContactForm />
         </div>
       </div>
-
     </div>
   );
 }
