@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BallTriangle } from "react-loader-spinner";
 import ProjectItem from "./ProjectItem";
 import "./Projects.css";
 import useHttp from "../../hooks/use-http";
@@ -7,7 +8,7 @@ import BlockTitle from "../../components/BlockTitle/BlockTitle";
 function Projects() {
     const [projects, setProjects] = useState([]);
 
-    const { sendRequest: fetchProjects } = useHttp();
+    const { sendRequest: fetchProjects, isLoading } = useHttp();
 
     useEffect(() => {
         const transformProjects = (projectObj) => {
@@ -32,7 +33,7 @@ function Projects() {
                 url: "https://react-http-bcb91-default-rtdb.europe-west1.firebasedatabase.app/projects.json",
             },
             // eslint-disable-next-line prettier/prettier
-      transformProjects,
+            transformProjects
         );
     }, [fetchProjects]);
 
@@ -42,17 +43,31 @@ function Projects() {
 
             <div className="dz__blog-container">
                 <div className="dz__blog-container_groupB">
-                    {projects.map((project) => (
-                        <ProjectItem
-                            key={project.id}
-                            imgUrl={project.logo}
-                            date={project.timeperiod}
-                            text={project.name}
-                            description={project.description}
-                            leaderStatus={project.leader}
-                            translationID={project.translationID}
+                    {!isLoading &&
+                        projects.map((project) => (
+                            <ProjectItem
+                                key={project.id}
+                                imgUrl={project.logo}
+                                date={project.timeperiod}
+                                text={project.name}
+                                description={project.description}
+                                leaderStatus={project.leader}
+                                translationID={project.translationID}
+                            />
+                        ))}
+                    {isLoading && (
+                        <BallTriangle
+                            height={100}
+                            width={100}
+                            radius={5}
+                            color="#ff4d71"
+                            ariaLabel="ball-triangle-loading"
+                            wrapperClass={{}}
+                            wrapperStyle=""
+                            // eslint-disable-next-line react/jsx-boolean-value
+                            visible={true}
                         />
-                    ))}
+                    )}
                 </div>
             </div>
         </div>

@@ -48,11 +48,6 @@ function Navbar() {
                     ))}
                 </div>
             </div>
-
-            <div className="dz__navbar-links_container">
-                <p>Test</p>
-            </div>
-
             <div className="dz__navbar-sign">
                 {!isAuth ? (
                     <Login />

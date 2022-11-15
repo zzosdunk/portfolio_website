@@ -9,8 +9,10 @@ export const handlers = [
             return res(
                 ctx.status(200),
                 ctx.json({
-                    name: "JavaScript",
-                    icon: "https://i.postimg.cc/BPxd7b3V/js-icon.png",
+                    s1: {
+                        name: "JavaScript",
+                        iconUrl: "https://i.postimg.cc/BPxd7b3V/js-icon.png",
+                    },
                 })
             );
         }
