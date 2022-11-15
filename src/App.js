@@ -17,32 +17,32 @@ import Experience from "./containers/Experience/Experience";
 import Projects from "./containers/Projects/Projects";
 
 const messages = {
-  Polish: MessagesPL,
-  Ukrainian: MessagesUA,
-  English: MessagesEN,
+    Polish: MessagesPL,
+    Ukrainian: MessagesUA,
+    English: MessagesEN,
 };
 
 function App() {
-  const currentLanguage = useSelector((state) => state.lang.language);
+    const currentLanguage = useSelector((state) => state.lang.language);
 
-  return (
-    <IntlProvider
-      locale={navigator.language}
-      messages={messages[currentLanguage]}
-    >
-      <div className="App">
-        <div className="gradient__bg">
-          <Navbar />
-          <Header />
-          <Experience />
-          <SkillsList />
-          <Projects />
-          <ContactMe />
-          <Footer />
-        </div>
-      </div>
-    </IntlProvider>
-  );
+    return (
+        <IntlProvider
+            locale={navigator.language}
+            messages={messages[currentLanguage]}
+        >
+            <div className="App">
+                <div className="gradient__bg">
+                    <Navbar />
+                    <Header />
+                    <Experience />
+                    <SkillsList />
+                    <Projects />
+                    <ContactMe />
+                    <Footer />
+                </div>
+            </div>
+        </IntlProvider>
+    );
 }
 
 export default App;
