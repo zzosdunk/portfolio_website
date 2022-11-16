@@ -2,12 +2,12 @@ import { Provider } from "react-redux";
 import { IntlProvider } from "react-intl";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import Navbar from "../navbar";
-import store from "../../../store/index";
+import Navbar from "./navbar";
+import store from "../../store/index";
 
-import MessagesPL from "../../../translations/pl.json";
-import MessagesUA from "../../../translations/ua.json";
-import MessagesEN from "../../../translations/en.json";
+import MessagesPL from "../../translations/pl.json";
+import MessagesUA from "../../translations/ua.json";
+import MessagesEN from "../../translations/en.json";
 
 function MockNavbar() {
     const messages = {

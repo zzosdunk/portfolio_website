@@ -6,13 +6,13 @@ import {
     waitForElementToBeRemoved,
 } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import SkillsList from "./SkillsList";
+import Projects from "./Projects";
 
 import MessagesPL from "../../translations/pl.json";
 import MessagesUA from "../../translations/ua.json";
 import MessagesEN from "../../translations/en.json";
 
-function MockSkillsList() {
+function MockProjects() {
     const messages = {
         Polish: MessagesPL,
         Ukrainian: MessagesUA,
@@ -21,22 +21,22 @@ function MockSkillsList() {
 
     return (
         <IntlProvider locale={navigator.language} messages={messages.English}>
-            <SkillsList />
+            <Projects />
         </IntlProvider>
     );
 }
 
-describe("SkillsList component", () => {
+describe("Projects component", () => {
     beforeEach(() => {
         jest.spyOn(console, "error").mockImplementation(() => {});
     });
-    test("renders SkillList", async () => {
-        render(<MockSkillsList />);
+    test("renders Projects", async () => {
+        render(<MockProjects />);
 
         await waitForElementToBeRemoved(
             screen.queryByText("Loading", { exact: false })
         ).then(() => {
-            const skillsListElement = screen.getByText("JavaScript");
+            const skillsListElement = screen.getByText("Tank Squad");
             expect(skillsListElement).toBeInTheDocument();
         });
     });

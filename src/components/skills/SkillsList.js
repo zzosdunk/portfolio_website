@@ -10,7 +10,6 @@ function SkillsList() {
     const [skills, setSkills] = useState([]);
 
     const { sendRequest: fetchSkills, isLoading } = useHttp();
-    // console.log(isLoading);
     useEffect(() => {
         const transformSkills = (skillObj) => {
             const loadedSkills = Object.entries(skillObj).map(
@@ -26,7 +25,7 @@ function SkillsList() {
 
         fetchSkills(
             {
-                url: "https://react-http-bcb91-default-rtdb.europe-west1.firebasedatabase.app/skills.json",
+                url: `${process.env.REACT_APP_DB_LINK}/skills.json`,
             },
             transformSkills
         );
@@ -48,17 +47,20 @@ function SkillsList() {
                 </div>
             )}
             {isLoading && (
-                <BallTriangle
-                    height={100}
-                    width={100}
-                    radius={5}
-                    color="#ff4d71"
-                    ariaLabel="ball-triangle-loading"
-                    wrapperClass={{}}
-                    wrapperStyle=""
-                    // eslint-disable-next-line react/jsx-boolean-value
-                    visible={true}
-                />
+                <div className="dz__skillsList">
+                    <p>Loading...</p>
+                    <BallTriangle
+                        height={100}
+                        width={100}
+                        radius={5}
+                        color="#ff4d71"
+                        ariaLabel="ball-triangle-loading"
+                        wrapperClass={{}}
+                        wrapperStyle=""
+                        // eslint-disable-next-line react/jsx-boolean-value
+                        visible={true}
+                    />
+                </div>
             )}
         </div>
     );

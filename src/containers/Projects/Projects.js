@@ -30,7 +30,7 @@ function Projects() {
 
         fetchProjects(
             {
-                url: "https://react-http-bcb91-default-rtdb.europe-west1.firebasedatabase.app/projects.json",
+                url: `${process.env.REACT_APP_DB_LINK}/projects.json`,
             },
             // eslint-disable-next-line prettier/prettier
             transformProjects
@@ -56,17 +56,20 @@ function Projects() {
                             />
                         ))}
                     {isLoading && (
-                        <BallTriangle
-                            height={100}
-                            width={100}
-                            radius={5}
-                            color="#ff4d71"
-                            ariaLabel="ball-triangle-loading"
-                            wrapperClass={{}}
-                            wrapperStyle=""
-                            // eslint-disable-next-line react/jsx-boolean-value
-                            visible={true}
-                        />
+                        <div className="dz__blog-container_groupB">
+                            <p>Loading...</p>
+                            <BallTriangle
+                                height={100}
+                                width={100}
+                                radius={5}
+                                color="#ff4d71"
+                                ariaLabel="ball-triangle-loading"
+                                wrapperClass={{}}
+                                wrapperStyle=""
+                                // eslint-disable-next-line react/jsx-boolean-value
+                                visible={true}
+                            />
+                        </div>
                     )}
                 </div>
             </div>
