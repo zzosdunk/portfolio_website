@@ -1,7 +1,4 @@
-<div align="center">
-<img src="https://rishavanand.github.io/static/images/greetings.gif" align="center" style="width: 100%" />
-</div>  
-  
+## Welcome!
 
 ### This is the source code of my personal landing page through which you can get to know me better, and with the help of this repository you have the opportunity to get acquainted with my abilities and technologies that I applied during development!  
   
