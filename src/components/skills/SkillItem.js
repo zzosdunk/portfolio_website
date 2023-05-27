@@ -1,12 +1,22 @@
+/* eslint-disable */
+
 import PropTypes from "prop-types";
 import "./SkillItem.css";
 
+import Fade from "@mui/material/Fade";
+// import { SkillTooltip } from "./SkillItem.styles";
+import Tooltip from "@mui/material/Tooltip";
+
 function SkillItem({ skillName, skillIconPath }) {
     return (
-        <div className="dz__tooltip">
-            <span className="dz__tooltipText">{skillName}</span>
+        <Tooltip
+            TransitionComponent={Fade}
+            TransitionProps={{ timeout: 400 }}
+            title={skillName}
+            placement="top"
+        >
             <img src={skillIconPath} alt={skillName} />
-        </div>
+        </Tooltip>
     );
 }
 

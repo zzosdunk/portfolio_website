@@ -1,20 +1,27 @@
+/* eslint-disable */
+
+import { styled, Box } from "@mui/material";
 import BlockTitle from "../BlockTitle/BlockTitle";
 import ContactDescription from "./ContactDescription";
 import ContactForm from "./ContactForm";
 
-import "./ContactMe.css";
+import { Contact, ContactContainer, ContactInfo } from "./ContactMe.styles";
 
 function ContactMe() {
     return (
-        <div className="dz__contact section__padding" id="contact">
+        <Contact id="contact">
             <BlockTitle translationID="contactBlockTitle" title="CONTACT ME" />
-            <div className=".dz__blog-container">
-                <div className="dz__contactInfo">
-                    <ContactDescription />
-                    <ContactForm />
-                </div>
-            </div>
-        </div>
+            <ContactContainer>
+                <ContactInfo>
+                    <Box>
+                        <ContactDescription />
+                    </Box>
+                    <Box>
+                        <ContactForm />
+                    </Box>
+                </ContactInfo>
+            </ContactContainer>
+        </Contact>
     );
 }
 

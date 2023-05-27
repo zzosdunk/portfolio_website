@@ -1,7 +1,19 @@
+/* eslint-disable */
+
 import { FormattedMessage } from "react-intl";
+import { styled } from "@mui/material";
 
 import BlockTitle from "../../components/BlockTitle/BlockTitle";
-import "./Experience.css";
+
+import {
+    ExperienceStyled,
+    ExpListElement,
+    TimelineContent,
+    Timeline,
+    Container,
+    ResponsibilityList,
+    ResponsibilityListElement,
+} from "./Experience.styles";
 
 function Experience() {
     const DEGENERALS = [
@@ -58,7 +70,7 @@ function Experience() {
     ];
 
     return (
-        <div className="dz__experience section__margin" id="experience">
+        <ExperienceStyled id="experience">
             <div className="dz__whatdz-feature">
                 <BlockTitle
                     translationID="experienceBlockTitle"
@@ -66,18 +78,17 @@ function Experience() {
                 />
             </div>
 
-            <div className="container">
-                <div className="timeline">
-                    <ul className="experience-list">
-                        <li className="experience-list-element">
-                            <div className="timeline-content">
+            <Container>
+                <Timeline>
+                    <ul>
+                        <ExpListElement>
+                            <TimelineContent>
                                 <h3 className="date">04.2022-Present</h3>
                                 <h1>DeGenerals</h1>
-                                <ul className="responsibility-list">
+                                <ResponsibilityList>
                                     {DEGENERALS.map((responsibility) => (
-                                        <li
+                                        <ResponsibilityListElement
                                             key={responsibility.id}
-                                            className="responsibility-list-element"
                                         >
                                             <p>
                                                 <FormattedMessage
@@ -90,20 +101,19 @@ function Experience() {
                                                     }}
                                                 />
                                             </p>
-                                        </li>
+                                        </ResponsibilityListElement>
                                     ))}
-                                </ul>
-                            </div>
-                        </li>
-                        <li className="experience-list-element">
-                            <div className="timeline-content">
+                                </ResponsibilityList>
+                            </TimelineContent>
+                        </ExpListElement>
+                        <ExpListElement>
+                            <TimelineContent>
                                 <h3 className="date">06.2020-04.2022</h3>
                                 <h1>Juggler Games</h1>
-                                <ul className="responsibility-list">
+                                <ResponsibilityList>
                                     {JUGGLER.map((responsibility) => (
-                                        <li
+                                        <ResponsibilityListElement
                                             key={responsibility.id}
-                                            className="responsibility-list-element"
                                         >
                                             <p>
                                                 <FormattedMessage
@@ -116,20 +126,19 @@ function Experience() {
                                                     }}
                                                 />
                                             </p>
-                                        </li>
+                                        </ResponsibilityListElement>
                                     ))}
-                                </ul>
-                            </div>
-                        </li>
-                        <li className="experience-list-element">
-                            <div className="timeline-content">
+                                </ResponsibilityList>
+                            </TimelineContent>
+                        </ExpListElement>
+                        <ExpListElement>
+                            <TimelineContent>
                                 <h3 className="date">06.2019-12.2020</h3>
                                 <h1>Pyramid Games</h1>
-                                <ul className="responsibility-list">
+                                <ResponsibilityList>
                                     {PYRAMID.map((responsibility) => (
-                                        <li
+                                        <ResponsibilityListElement
                                             key={responsibility.id}
-                                            className="responsibility-list-element"
                                         >
                                             <p>
                                                 <FormattedMessage
@@ -142,15 +151,15 @@ function Experience() {
                                                     }}
                                                 />
                                             </p>
-                                        </li>
+                                        </ResponsibilityListElement>
                                     ))}
-                                </ul>
-                            </div>
-                        </li>
+                                </ResponsibilityList>
+                            </TimelineContent>
+                        </ExpListElement>
                     </ul>
-                </div>
-            </div>
-        </div>
+                </Timeline>
+            </Container>
+        </ExperienceStyled>
     );
 }
 

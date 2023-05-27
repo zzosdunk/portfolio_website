@@ -1,7 +1,17 @@
 import PropTypes from "prop-types";
-import "./ProjectItem.css";
 import { FormattedMessage } from "react-intl";
 import star from "../../assets/star-leader.png";
+
+import {
+    ContainerProject,
+    ProjectImage,
+    ProjectImageCover,
+    ProjectStatus,
+    ProjectContent,
+    ProjectTitle,
+    ProjectDescription,
+    ProjectTimeperiod,
+} from "./ProjectItem.styles";
 
 function ProjectItem({
     imgUrl,
@@ -12,27 +22,19 @@ function ProjectItem({
     translationID,
 }) {
     return (
-        <div className="dz__blog-container_article">
-            <div className="dz__blog-container_article-image">
+        <ContainerProject>
+            <ProjectImage>
                 <span className="dz__tooltipText">Project Leader</span>
-                <img
-                    className="dz__project-container_article-image-cover"
-                    src={imgUrl}
-                    alt="project_image"
-                />
+                <ProjectImageCover src={imgUrl} alt="project_image" />
                 {leaderStatus && (
-                    <img
-                        className="dz__project-status"
-                        src={star}
-                        alt="project-leader"
-                    />
+                    <ProjectStatus src={star} alt="project-leader" />
                 )}
-            </div>
-            <div className="dz__blog-container_article-content">
+            </ProjectImage>
+            <ProjectContent>
                 <div>
-                    <p className="dz__project-timeperiod">{date}</p>
-                    <h3>{text}</h3>
-                    <p className="dz__project-description">
+                    <ProjectTimeperiod component="p">{date}</ProjectTimeperiod>
+                    <ProjectTitle component="h2">{text}</ProjectTitle>
+                    <ProjectDescription component="p">
                         <FormattedMessage
                             id={`${translationID}.text`}
                             defaultMessage="{projectDescription}"
@@ -41,10 +43,10 @@ function ProjectItem({
                                 projectDescription: description,
                             }}
                         />
-                    </p>
+                    </ProjectDescription>
                 </div>
-            </div>
-        </div>
+            </ProjectContent>
+        </ContainerProject>
     );
 }
 

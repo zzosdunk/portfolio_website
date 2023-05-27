@@ -1,9 +1,13 @@
+/* eslint-disable */
+
 import { useDispatch } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import useInput from "../../hooks/use-input";
+import { Button } from "@mui/material";
+
+import { LoginForm, Input } from "./Login.styles";
 
 import { authActions } from "../../store/auth";
-import styles from "./Login.module.css";
 
 function Login() {
     const dispatch = useDispatch();
@@ -12,7 +16,6 @@ function Login() {
         value: enteredEmail,
         isValid: enteredEmailIsValid,
         valueChangeHandler: emailChangedHandler,
-        inputBlurHandler: emailBlurHandler,
         reset: resetEmailInput,
     } = useInput((value) => value.includes("@"));
 
@@ -25,24 +28,27 @@ function Login() {
     };
 
     return (
-        <div className={styles.dz__login_form}>
+        <LoginForm>
             <form onSubmit={loginHandler}>
-                <input
-                    type="email"
+                <Input
+                    hiddenLabel
                     placeholder="Email..."
+                    variant="filled"
+                    size="small"
+                    id="email-input"
+                    type="email"
                     value={enteredEmail}
                     onChange={emailChangedHandler}
-                    onBlur={emailBlurHandler}
                 />
-                <button type="submit" disabled={!enteredEmailIsValid}>
+                <Button type="submit" disabled={!enteredEmailIsValid}>
                     <FormattedMessage
                         id="loginButton.text"
                         defaultMessage="Log In"
                         description="Log In"
                     />
-                </button>
+                </Button>
             </form>
-        </div>
+        </LoginForm>
     );
 }
 

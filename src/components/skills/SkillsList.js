@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 
 import BlockTitle from "../BlockTitle/BlockTitle";
 import useHttp from "../../hooks/use-http";
-import "./SkillsList.css";
 import SkillItem from "./SkillItem";
+
+import { SkillsStyled, SkillsListStyled } from "./SkillsList.styles";
 
 function SkillsList() {
     const [skills, setSkills] = useState([]);
@@ -32,10 +33,10 @@ function SkillsList() {
     }, [fetchSkills]);
 
     return (
-        <div className="dz__skills section__padding" id="skills">
+        <SkillsStyled id="skills">
             <BlockTitle translationID="skillsBlockTitle" title="SKILLS" />
             {!isLoading && (
-                <div className="dz__skillsList">
+                <SkillsListStyled>
                     {skills.map((skill) => (
                         <div key={skill.id}>
                             <SkillItem
@@ -44,7 +45,7 @@ function SkillsList() {
                             />
                         </div>
                     ))}
-                </div>
+                </SkillsListStyled>
             )}
             {isLoading && (
                 <div className="dz__skillsList">
@@ -62,7 +63,7 @@ function SkillsList() {
                     />
                 </div>
             )}
-        </div>
+        </SkillsStyled>
     );
 }
 

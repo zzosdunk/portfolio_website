@@ -5,9 +5,6 @@
 
 .dz__tooltipText {
     position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
     background-color: var(--color-blog);
     color: #22edfb;
     white-space: nowrap;
@@ -29,13 +26,7 @@
 }
 
 .dz__tooltip:hover .dz__tooltipText {
-    top: -120%;
+    top: -75%;
     visibility: visible;
     opacity: 1;
-}
-
-@media screen and (max-width: 1290px) {
-    .dz__tooltip:hover .dz__tooltipText {
-        visibility: hidden;
-    }
 }

@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
-import "./BlockTitle.css";
 import { FormattedMessage } from "react-intl";
+
+import { Feature, Title } from "./BlockTitle.styles";
 
 function BlockTitle({ translationID, title }) {
     return (
-        <div className="dz__features-container__feature">
-            <div className="dz__features-container__feature-title">
+        <Feature>
+            <Title>
                 <div />
                 <h1>
                     <FormattedMessage
@@ -17,8 +18,8 @@ function BlockTitle({ translationID, title }) {
                         }}
                     />
                 </h1>
-            </div>
-        </div>
+            </Title>
+        </Feature>
     );
 }
 
