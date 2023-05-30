@@ -1,9 +1,10 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import LanguageIcon from "@mui/icons-material/Language";
+
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
+import { LanguageIconStyled } from "./LanguageMenu.styles";
 
 function LanguageMenu({ languageHandler }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -17,9 +18,12 @@ function LanguageMenu({ languageHandler }) {
 
     return (
         <>
-            <LanguageIcon onClick={handleClick} sx={{ width: 30, height: 30 }}>
+            <LanguageIconStyled
+                onClick={handleClick}
+                sx={{ width: 30, height: 30 }}
+            >
                 Dashboard
-            </LanguageIcon>
+            </LanguageIconStyled>
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}

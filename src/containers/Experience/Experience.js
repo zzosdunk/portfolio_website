@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import { FormattedMessage } from "react-intl";
-import { styled } from "@mui/material";
+import { Typography } from "@mui/material";
 
 import BlockTitle from "../../components/BlockTitle/BlockTitle";
 
@@ -84,7 +84,9 @@ function Experience() {
                         <ExpListElement>
                             <TimelineContent>
                                 <h3 className="date">04.2022-Present</h3>
-                                <h1>DeGenerals</h1>
+                                <Typography variant="h1" component="h2">
+                                    DeGenerals
+                                </Typography>
                                 <ResponsibilityList>
                                     {DEGENERALS.map((responsibility) => (
                                         <ResponsibilityListElement
@@ -109,7 +111,9 @@ function Experience() {
                         <ExpListElement>
                             <TimelineContent>
                                 <h3 className="date">06.2020-04.2022</h3>
-                                <h1>Juggler Games</h1>
+                                <Typography variant="h1" component="h2">
+                                    Juggler Games
+                                </Typography>
                                 <ResponsibilityList>
                                     {JUGGLER.map((responsibility) => (
                                         <ResponsibilityListElement
@@ -134,7 +138,9 @@ function Experience() {
                         <ExpListElement>
                             <TimelineContent>
                                 <h3 className="date">06.2019-12.2020</h3>
-                                <h1>Pyramid Games</h1>
+                                <Typography variant="h1" component="h2">
+                                    Pyramid Games
+                                </Typography>
                                 <ResponsibilityList>
                                     {PYRAMID.map((responsibility) => (
                                         <ResponsibilityListElement

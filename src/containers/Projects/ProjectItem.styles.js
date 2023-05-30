@@ -8,10 +8,7 @@ export const ContainerProject = styled("div")(({ theme }) => ({
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    background:
-        theme.palette.mode === "dark"
-            ? "var(--color-footer)"
-            : "var(--test-color)",
+    background: theme.palette.mode === "dark" ? "#031b34" : "#22b6fbaf",
 }));
 
 export const ProjectImage = styled("div")({
@@ -54,11 +51,12 @@ export const ProjectTitle = styled(Typography)(({ theme }) => ({
     },
 }));
 
-export const ProjectDescription = styled(Typography)({
+export const ProjectDescription = styled(Typography)(({ theme }) => ({
     fontSize: "14px",
     fontWeight: "700",
     lineHeight: "24px",
-});
+    color: theme.palette.mode === "dark" ? "#fff" : "#042c54",
+}));
 
 export const ProjectTimeperiod = styled(Typography)({
     fontSize: "12px",

@@ -4,23 +4,3 @@
     margin: 0;
     scroll-behavior: smooth;
 }
-
-:root {
-    --font-family: "Montserrat", sans-serif;
-
-    --gradient-text: linear-gradient(89.97deg, #22edfb 1.84%, #ff4d71 102.67%);
-    --gradient-bar: linear-gradient(103.22deg, #ff4d71 15.86%, #22edfb 99.55%);
-    --gradient-exp: linear-gradient(
-        180deg,
-        #042c54 15.86%,
-        rgba(27, 120, 222, 1) 99.55%
-    );
-
-    --color-bg: #040c18;
-    --color-footer: #031b34;
-    --color-blog: #042c54;
-    --color-text: #81afdd;
-    --color-subtext: #ff8a71;
-    --color-button: #ff4d71;
-    --test-color: #ace0ff;
-}

@@ -8,10 +8,7 @@ export const FooterStyled = styled("div")(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    background:
-        theme.palette.mode === "dark"
-            ? "var(--color-footer)"
-            : "var(--test-color)",
+    background: theme.palette.mode === "dark" ? "#031b34" : "#22b6fbaf",
     [theme.breakpoints.down("md")]: {
         padding: "0 2rem",
     },

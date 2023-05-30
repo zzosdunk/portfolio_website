@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
+import { Typography } from "@mui/material";
 
 import { Feature, Title } from "./BlockTitle.styles";
 
@@ -8,7 +9,7 @@ function BlockTitle({ translationID, title }) {
         <Feature>
             <Title>
                 <div />
-                <h1>
+                <Typography variant="h1">
                     <FormattedMessage
                         id={`${translationID}.text`}
                         defaultMessage="{blockTitle}"
@@ -17,7 +18,7 @@ function BlockTitle({ translationID, title }) {
                             blockTitle: title,
                         }}
                     />
-                </h1>
+                </Typography>
             </Title>
         </Feature>
     );

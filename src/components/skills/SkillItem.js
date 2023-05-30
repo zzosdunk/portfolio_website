@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 import PropTypes from "prop-types";
-import "./SkillItem.css";
 
 import Fade from "@mui/material/Fade";
 // import { SkillTooltip } from "./SkillItem.styles";

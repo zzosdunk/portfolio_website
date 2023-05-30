@@ -15,7 +15,9 @@ export const ExperienceStyled = styled("div")(({ theme }) => ({
 export const ExpListElement = styled("div")(({ theme }) => ({
     padding: "20px",
     background:
-        "linear-gradient(180deg, #042c54 15.86%, rgba(27, 120, 222, 1) 99.55%)",
+        theme.palette.mode === "dark"
+            ? "linear-gradient(180deg, #042c54 15.86%, rgba(27, 120, 222, 1) 99.55%)"
+            : "linear-gradient(180deg, #0b75a7 15.86%, #22edfb 99.55%)",
     color: "white",
     borderRadius: "10px",
     marginBottom: "20px",
@@ -69,13 +71,13 @@ export const TimelineContent = styled("div")(({ theme }) => ({
         fontSize: "16px",
         lineHeight: "30px",
         fontWeight: 300,
+        color: theme.palette.mode === "dark" ? "#fff" : "#042c54",
     },
-    "& h1": {
+    "& h2": {
         fontWeight: 500,
         fontSize: "25px",
         lineHeight: "30px",
         marginBottom: "10px",
-        color: "#22edfb",
     },
     "& .date": {
         fontSize: "12px",

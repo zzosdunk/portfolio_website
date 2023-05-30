@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
-import star from "../../assets/star-leader.png";
+
+import Fade from "@mui/material/Fade";
+import Tooltip from "@mui/material/Tooltip";
 
 import {
     ContainerProject,
@@ -13,6 +15,8 @@ import {
     ProjectTimeperiod,
 } from "./ProjectItem.styles";
 
+import star from "../../assets/star-leader.png";
+
 function ProjectItem({
     imgUrl,
     leaderStatus,
@@ -24,10 +28,16 @@ function ProjectItem({
     return (
         <ContainerProject>
             <ProjectImage>
-                <span className="dz__tooltipText">Project Leader</span>
                 <ProjectImageCover src={imgUrl} alt="project_image" />
                 {leaderStatus && (
-                    <ProjectStatus src={star} alt="project-leader" />
+                    <Tooltip
+                        TransitionComponent={Fade}
+                        TransitionProps={{ timeout: 400 }}
+                        title="Project Leader"
+                        placement="top"
+                    >
+                        <ProjectStatus src={star} alt="project-leader" />
+                    </Tooltip>
                 )}
             </ProjectImage>
             <ProjectContent>

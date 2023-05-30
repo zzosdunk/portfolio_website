@@ -26,11 +26,16 @@ export const Title = styled("div")(({ theme }) => ({
         lineHeight: "24px",
         letterSpacing: "-0.04em",
         color: "#fff",
+        textShadow:
+            theme.palette.mode === "dark"
+                ? "2px 2px 4px #ff4d71"
+                : "2px 2px 4px #22edfb",
     },
     "& div": {
         width: "100px",
         height: "3px",
-        background: "var(--gradient-bar)",
+        background:
+            "linear-gradient(103.22deg, #ff4d71 15.86%, #22edfb 99.55%)",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         marginBottom: "0.5rem",
     },
