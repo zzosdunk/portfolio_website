@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { IntlProvider } from "react-intl";
 import { useSelector } from "react-redux";
 
@@ -63,6 +62,14 @@ function App() {
                 padding: "20px",
                 color: currentTheme ? "#fff" : "#000",
                 marginBottom: "20px",
+            },
+        },
+        overrides: {
+            MuiTooltip: {
+                tooltip: {
+                    backgroundColor: "#22edfb",
+                    color: "#22edfb",
+                },
             },
         },
     });

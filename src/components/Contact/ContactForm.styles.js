@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { styled } from "@mui/material";
 
 export const ContactFormStyled = styled("div")(({ theme }) => ({
@@ -27,7 +25,7 @@ export const Form = styled("div")(({ theme }) => ({
     background:
         theme.palette.mode === "dark"
             ? "radial-gradient(circle at 30% -100%, #042c54 25%, rgba(4, 44, 84, 1) 85%, rgba(27, 120, 222, 1) 100%)"
-            : "radial-gradient(circle at 30% -100%, #22edfb 25%, #22edfb 85%, #0b75a7 100%)",
+            : "radial-gradient(circle at 30% -100%, #22b6fb 25%, #22b6fb 85%, #22edfb 100%)",
 
     "& h2": {
         color: "#45f3ff",

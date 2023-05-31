@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import Switch from "@mui/material/Switch";
 
 import { Toolbar, styled } from "@mui/material";

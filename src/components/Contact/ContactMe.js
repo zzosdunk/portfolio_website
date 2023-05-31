@@ -1,6 +1,4 @@
-/* eslint-disable */
-
-import { styled, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import BlockTitle from "../BlockTitle/BlockTitle";
 import ContactDescription from "./ContactDescription";
 import ContactForm from "./ContactForm";

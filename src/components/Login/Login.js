@@ -1,12 +1,9 @@
-/* eslint-disable */
-
 import { useDispatch } from "react-redux";
 import { FormattedMessage } from "react-intl";
-import useInput from "../../hooks/use-input";
 import { Button } from "@mui/material";
 
+import useInput from "../../hooks/use-input";
 import { LoginForm, Input } from "./Login.styles";
-
 import { authActions } from "../../store/auth";
 
 function Login() {

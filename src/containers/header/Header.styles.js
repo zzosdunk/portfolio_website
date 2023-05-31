@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { styled } from "@mui/material";
 
 export const HeaderStyled = styled("div")(({ theme }) => ({

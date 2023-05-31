@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { styled, Typography } from "@mui/material";
 
 export const ContainerProject = styled("div")(({ theme }) => ({

@@ -99,6 +99,7 @@ function ContactForm() {
                             },
                             maxLength: 280,
                         })}
+                        placeholder="Drop me a message..."
                     />
                     {errors.message && <p>{errors.message?.message}</p>}
                     <SendButton type="submit" disabled={!isValid}>

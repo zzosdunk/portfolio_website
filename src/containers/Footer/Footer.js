@@ -1,7 +1,5 @@
-/* eslint-disable */
-
-import { linkedin, github, facebook, instagram } from "./imports";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { linkedin, github, facebook, instagram } from "./imports";
 
 import {
     FooterStyled,
@@ -28,18 +26,28 @@ function Footer() {
                     <a
                         href="https://www.linkedin.com/in/denys-zosym-498b39141/"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <img src={linkedin} alt="linkedin" />
                     </a>
-                    <a href="https://github.com/zzosdunk" target="_blank">
+                    <a
+                        href="https://github.com/zzosdunk"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={github} alt="github" />
                     </a>
-                    <a href="https://www.facebook.com/zzosdunk" target="_blank">
+                    <a
+                        href="https://www.facebook.com/zzosdunk"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={facebook} alt="facebook" />
                     </a>
                     <a
                         href="https://www.instagram.com/zonikmus/"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <img src={instagram} alt="instagram" />
                     </a>

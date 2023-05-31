@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 
 import Fade from "@mui/material/Fade";
-import Tooltip from "@mui/material/Tooltip";
+import { TooltipStyled } from "../../components/skills/SkillItem.styles";
 
 import {
     ContainerProject,
@@ -30,14 +30,14 @@ function ProjectItem({
             <ProjectImage>
                 <ProjectImageCover src={imgUrl} alt="project_image" />
                 {leaderStatus && (
-                    <Tooltip
+                    <TooltipStyled
                         TransitionComponent={Fade}
                         TransitionProps={{ timeout: 400 }}
                         title="Project Leader"
                         placement="top"
                     >
                         <ProjectStatus src={star} alt="project-leader" />
-                    </Tooltip>
+                    </TooltipStyled>
                 )}
             </ProjectImage>
             <ProjectContent>

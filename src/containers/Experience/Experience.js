@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { FormattedMessage } from "react-intl";
 import { Typography } from "@mui/material";
 
