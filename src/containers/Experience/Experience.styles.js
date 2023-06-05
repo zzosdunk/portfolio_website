@@ -24,13 +24,13 @@ export const ExpListElement = styled("div")(({ theme }) => ({
 
     [theme.breakpoints.up("md")]: {
         width: "50%",
-        "&:nth-child(odd)": {
+        "&:nth-of-type(odd)": {
             float: "left",
             clear: "right",
             transform: "translateX(-30px)",
             borderRadius: "20px 0px 20px 20px",
         },
-        "&:nth-child(even)": {
+        "&:nth-of-type(even)": {
             float: "right",
             clear: "left",
             transform: "translateX(30px)",
@@ -48,11 +48,11 @@ export const ExpListElement = styled("div")(({ theme }) => ({
             backgroundColor: "#22edfb",
             top: "0px",
         },
-        "&:nth-child(odd)::before": {
+        "&:nth-of-type(odd)::before": {
             transform: "translate(50%, -50%)",
             right: "-30px",
         },
-        "&:nth-child(even)::before": {
+        "&:nth-of-type(even)::before": {
             transform: "translate(-50%, -50%)",
             left: "-30px",
         },

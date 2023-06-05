@@ -48,9 +48,8 @@ function Projects() {
                 <Grid container spacing={2}>
                     {!isLoading &&
                         projects.map((project) => (
-                            <Grid item xs={12} md={4}>
+                            <Grid key={project.id} item xs={12} md={4}>
                                 <ProjectItem
-                                    key={project.id}
                                     imgUrl={project.logo}
                                     date={project.timeperiod}
                                     text={project.name}

@@ -43,8 +43,6 @@ function Nav() {
 
     const userName = userEmail.substr(0, userEmail.indexOf("@"));
 
-    // eslint-disable-next-line no-unused-vars
-    const currentLanguage = useSelector((state) => state.lang.language);
     const languageChooseHandler = (chosenLanguage) => {
         dispatch(langActions.changeLanguage(chosenLanguage));
     };
@@ -61,7 +59,7 @@ function Nav() {
 
     return (
         <>
-            <StyledToolbar>
+            <StyledToolbar id="home">
                 <LeftSide>
                     <Logo>
                         <Typography

@@ -30,8 +30,8 @@ function MobileNavbar({ links }) {
                 onClose={handleClose}
             >
                 {links.map((link) => (
-                    <NavbarItem>
-                        <Typography key={link.text} variant="a">
+                    <NavbarItem key={link.text}>
+                        <Typography variant="a">
                             <a href={link.link}>
                                 <FormattedMessage
                                     id={`${link.text}NavbarElement.text`}
@@ -51,7 +51,7 @@ function MobileNavbar({ links }) {
 }
 
 MobileNavbar.propTypes = {
-    languageHandler: PropTypes.array.isRequired,
+    links: PropTypes.array.isRequired,
 };
 
 export default MobileNavbar;

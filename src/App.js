@@ -26,7 +26,6 @@ const messages = {
 function App() {
     const currentLanguage = useSelector((state) => state.lang.language);
     const currentTheme = useSelector((state) => state.theme.isDarkTheme);
-    console.log(currentTheme);
 
     const theme = createTheme({
         palette: {
