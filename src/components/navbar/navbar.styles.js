@@ -87,10 +87,14 @@ export const Icons = styled("div")({
     gap: "1em",
 });
 
-export const NavbarSign = styled("div")({
+export const NavbarSign = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
-});
+    marginRight: "1em",
+    [theme.breakpoints.down(1200)]: {
+        marginRight: 0,
+    },
+}));
 export const MobileNavbarStyled = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "space-between",
