@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { BallTriangle } from "react-loader-spinner";
+import Grid from "@mui/material/Grid";
+
 import ProjectItem from "./ProjectItem";
-import "./Projects.css";
 import useHttp from "../../hooks/use-http";
 import BlockTitle from "../../components/BlockTitle/BlockTitle";
+
+import { ProjectsStyled, BlogContainer } from "./Projects.styles";
 
 function Projects() {
     const [projects, setProjects] = useState([]);
@@ -38,25 +41,26 @@ function Projects() {
     }, [fetchProjects]);
 
     return (
-        <div className="dz__blog section__padding" id="projects">
+        <ProjectsStyled id="projects">
             <BlockTitle translationID="projectsBlockTitle" title="PROJECTS" />
 
-            <div className="dz__blog-container">
-                <div className="dz__blog-container_groupB">
+            <BlogContainer>
+                <Grid container spacing={2}>
                     {!isLoading &&
                         projects.map((project) => (
-                            <ProjectItem
-                                key={project.id}
-                                imgUrl={project.logo}
-                                date={project.timeperiod}
-                                text={project.name}
-                                description={project.description}
-                                leaderStatus={project.leader}
-                                translationID={project.translationID}
-                            />
+                            <Grid key={project.id} item xs={12} md={4}>
+                                <ProjectItem
+                                    imgUrl={project.logo}
+                                    date={project.timeperiod}
+                                    text={project.name}
+                                    description={project.description}
+                                    leaderStatus={project.leader}
+                                    translationID={project.translationID}
+                                />
+                            </Grid>
                         ))}
                     {isLoading && (
-                        <div className="dz__blog-container_groupB">
+                        <Grid item xs={12}>
                             <p>Loading...</p>
                             <BallTriangle
                                 height={100}
@@ -69,11 +73,11 @@ function Projects() {
                                 // eslint-disable-next-line react/jsx-boolean-value
                                 visible={true}
                             />
-                        </div>
+                        </Grid>
                     )}
-                </div>
-            </div>
-        </div>
+                </Grid>
+            </BlogContainer>
+        </ProjectsStyled>
     );
 }
 

@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
-import "./BlockTitle.css";
 import { FormattedMessage } from "react-intl";
+import { Typography } from "@mui/material";
+
+import { Feature, Title } from "./BlockTitle.styles";
 
 function BlockTitle({ translationID, title }) {
     return (
-        <div className="dz__features-container__feature">
-            <div className="dz__features-container__feature-title">
+        <Feature>
+            <Title>
                 <div />
-                <h1>
+                <Typography variant="h1">
                     <FormattedMessage
                         id={`${translationID}.text`}
                         defaultMessage="{blockTitle}"
@@ -16,9 +18,9 @@ function BlockTitle({ translationID, title }) {
                             blockTitle: title,
                         }}
                     />
-                </h1>
-            </div>
-        </div>
+                </Typography>
+            </Title>
+        </Feature>
     );
 }
 

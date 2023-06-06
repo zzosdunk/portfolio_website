@@ -1,19 +1,21 @@
-import "./header.css";
+import { Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import cvimg from "../../assets/CV_img.png";
 
+import { HeaderStyled, HeaderImage, Content } from "./Header.styles";
+
 function Header() {
     return (
-        <div className="dz__header section__padding" id="about">
-            <div className="dz__header-content">
-                <h1 className="gradient__text">
+        <HeaderStyled id="about">
+            <Content>
+                <Typography variant="h1">
                     <FormattedMessage
                         id="headerGreetings.text"
                         defaultMessage="Welcome!"
                         description="Greetings"
                     />
-                </h1>
-                <p>
+                </Typography>
+                <Typography variant="header">
                     <FormattedMessage
                         id="header.text"
                         defaultMessage="For more than three years I have been creating various game and
@@ -25,13 +27,13 @@ function Header() {
           professional career dedicated to web development!"
                         description="Welcome header on app main page"
                     />
-                </p>
-            </div>
+                </Typography>
+            </Content>
 
-            <div className="dz__header-image">
+            <HeaderImage>
                 <img src={cvimg} alt="frontImage" />
-            </div>
-        </div>
+            </HeaderImage>
+        </HeaderStyled>
     );
 }
 
