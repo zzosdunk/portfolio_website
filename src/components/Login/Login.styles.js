@@ -1,12 +1,16 @@
 import { Box, styled, TextField } from "@mui/material";
 
-export const LoginForm = styled(Box)({
+export const LoginForm = styled(Box)(({ theme }) => ({
     width: "400px",
     display: "flex",
     flexDirection: "row",
-    flexWrap: "nowrap",
     justifyContent: "center",
-});
+    [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+        width: "200px",
+        alignContent: "space-between",
+    },
+}));
 
 export const Input = styled(TextField)(({ theme }) => ({
     color:

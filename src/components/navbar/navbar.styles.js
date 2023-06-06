@@ -53,6 +53,7 @@ export const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: "flex",
     justifyContent: "space-around",
+    alignContent: "center",
     [theme.breakpoints.down(1200)]: {
         display: "none",
     },
@@ -86,17 +87,14 @@ export const Icons = styled("div")({
     gap: "1em",
 });
 
-export const NavbarSign = styled("div")(({ theme }) => ({
+export const NavbarSign = styled("div")({
     display: "flex",
-    justifyCntent: "flex-end",
     alignItems: "center",
-    [theme.breakpoints.down("md")]: {
-        justifyContent: "center",
-    },
-}));
+});
 export const MobileNavbarStyled = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
     padding: "1rem 2rem",
     [theme.breakpoints.up(1200)]: {
         display: "none",
