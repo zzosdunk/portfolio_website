@@ -90,14 +90,14 @@ function Nav() {
                         {!isAuth ? (
                             <Login />
                         ) : (
-                            <Typography variant="p">
+                            <p>
                                 <FormattedMessage
                                     id="GreetingsNavbar.text"
                                     defaultMessage="Hello, "
                                     description="Navbar Greetings"
                                 />{" "}
                                 {userName}
-                            </Typography>
+                            </p>
                         )}
                     </NavbarSign>
 
@@ -112,22 +112,21 @@ function Nav() {
             </StyledToolbar>
             <MobileNavbarStyled>
                 <MobileNavbar links={LINKS} />
+                <NavbarSign>
+                    {!isAuth ? (
+                        <Login />
+                    ) : (
+                        <p>
+                            <FormattedMessage
+                                id="GreetingsNavbar.text"
+                                defaultMessage="Hello, "
+                                description="Navbar Greetings"
+                            />{" "}
+                            {userName}
+                        </p>
+                    )}
+                </NavbarSign>
                 <Functionality>
-                    <NavbarSign>
-                        {!isAuth ? (
-                            <Login />
-                        ) : (
-                            <Typography variant="p">
-                                <FormattedMessage
-                                    id="GreetingsNavbar.text"
-                                    defaultMessage="Hello, "
-                                    description="Navbar Greetings"
-                                />{" "}
-                                {userName}
-                            </Typography>
-                        )}
-                    </NavbarSign>
-
                     <Icons>
                         <MaterialUISwitch
                             onChange={changeThemeHandler}
