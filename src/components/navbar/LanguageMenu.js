@@ -1,10 +1,9 @@
 import * as React from "react";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 
 import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import { LanguageIconStyled } from "./LanguageMenu.styles";
+import { NavbarStyled, NavbarItem } from "./MobileNavbar.styles";
 
 function LanguageMenu({ languageHandler }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,34 +23,34 @@ function LanguageMenu({ languageHandler }) {
             >
                 Dashboard
             </LanguageIconStyled>
-            <Menu
+            <NavbarStyled
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={() => languageHandler("English")}>
+                <NavbarItem onClick={() => languageHandler("English")}>
                     <FormattedMessage
                         id="EnglishLanguage.text"
                         defaultMessage="English"
                         description="CurrentLanguage Element"
                     />
-                </MenuItem>
-                <MenuItem onClick={() => languageHandler("Polish")}>
+                </NavbarItem>
+                <NavbarItem onClick={() => languageHandler("Polish")}>
                     <FormattedMessage
                         id="PolishLanguage.text"
                         defaultMessage="Polish"
                         description="CurrentLanguage Element"
                     />
-                </MenuItem>
-                <MenuItem onClick={() => languageHandler("Ukrainian")}>
+                </NavbarItem>
+                <NavbarItem onClick={() => languageHandler("Ukrainian")}>
                     <FormattedMessage
                         id="UkrainianLanguage.text"
                         defaultMessage="Ukrainian"
                         description="CurrentLanguage Element"
                     />
-                </MenuItem>
-            </Menu>
+                </NavbarItem>
+            </NavbarStyled>
         </>
     );
 }

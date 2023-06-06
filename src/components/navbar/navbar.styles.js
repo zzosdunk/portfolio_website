@@ -53,19 +53,18 @@ export const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     display: "flex",
     justifyContent: "space-around",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down(1200)]: {
         display: "none",
     },
 }));
 
 export const LeftSide = styled("div")({
     display: "flex",
-    gap: "50px",
     alignItems: "center",
+    gap: "3rem",
 });
 
 export const Links = styled("div")(({ theme }) => ({
-    gap: "20px",
     "& a": {
         color: theme.palette.mode === "dark" ? "#fff" : "#000",
         textDecoration: "none",
@@ -79,25 +78,27 @@ export const Logo = styled("div")({
 
 export const Functionality = styled("div")({
     display: "flex",
-    gap: "60px",
 });
 
 export const Icons = styled("div")({
     display: "flex",
-    gap: "20px",
     alignItems: "center",
+    gap: "1em",
 });
 
-export const NavbarSign = styled("div")({
+export const NavbarSign = styled("div")(({ theme }) => ({
     display: "flex",
     justifyCntent: "flex-end",
     alignItems: "center",
-});
+    [theme.breakpoints.down("md")]: {
+        justifyContent: "center",
+    },
+}));
 export const MobileNavbarStyled = styled("div")(({ theme }) => ({
     display: "flex",
     justifyContent: "space-between",
     padding: "1rem 2rem",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up(1200)]: {
         display: "none",
     },
 }));

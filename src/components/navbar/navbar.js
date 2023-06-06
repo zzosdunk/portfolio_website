@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FormattedMessage } from "react-intl";
 
-// import logo from "../../assets/logo.png";
-
 import { Typography } from "@mui/material";
 import { Pets } from "@mui/icons-material";
 
