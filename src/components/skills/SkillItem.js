@@ -1,12 +1,19 @@
 import PropTypes from "prop-types";
-import "./SkillItem.css";
+
+import Fade from "@mui/material/Fade";
+
+import { TooltipStyled } from "./SkillItem.styles";
 
 function SkillItem({ skillName, skillIconPath }) {
     return (
-        <div className="dz__tooltip">
-            <span className="dz__tooltipText">{skillName}</span>
+        <TooltipStyled
+            TransitionComponent={Fade}
+            TransitionProps={{ timeout: 400 }}
+            title={skillName}
+            placement="top"
+        >
             <img src={skillIconPath} alt={skillName} />
-        </div>
+        </TooltipStyled>
     );
 }
 

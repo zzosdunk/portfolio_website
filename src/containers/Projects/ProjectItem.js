@@ -1,6 +1,20 @@
 import PropTypes from "prop-types";
-import "./ProjectItem.css";
 import { FormattedMessage } from "react-intl";
+
+import Fade from "@mui/material/Fade";
+import { TooltipStyled } from "../../components/skills/SkillItem.styles";
+
+import {
+    ContainerProject,
+    ProjectImage,
+    ProjectImageCover,
+    ProjectStatus,
+    ProjectContent,
+    ProjectTitle,
+    ProjectDescription,
+    ProjectTimeperiod,
+} from "./ProjectItem.styles";
+
 import star from "../../assets/star-leader.png";
 
 function ProjectItem({
@@ -12,27 +26,25 @@ function ProjectItem({
     translationID,
 }) {
     return (
-        <div className="dz__blog-container_article">
-            <div className="dz__blog-container_article-image">
-                <span className="dz__tooltipText">Project Leader</span>
-                <img
-                    className="dz__project-container_article-image-cover"
-                    src={imgUrl}
-                    alt="project_image"
-                />
+        <ContainerProject>
+            <ProjectImage>
+                <ProjectImageCover src={imgUrl} alt="project_image" />
                 {leaderStatus && (
-                    <img
-                        className="dz__project-status"
-                        src={star}
-                        alt="project-leader"
-                    />
+                    <TooltipStyled
+                        TransitionComponent={Fade}
+                        TransitionProps={{ timeout: 400 }}
+                        title="Project Leader"
+                        placement="top"
+                    >
+                        <ProjectStatus src={star} alt="project-leader" />
+                    </TooltipStyled>
                 )}
-            </div>
-            <div className="dz__blog-container_article-content">
+            </ProjectImage>
+            <ProjectContent>
                 <div>
-                    <p className="dz__project-timeperiod">{date}</p>
-                    <h3>{text}</h3>
-                    <p className="dz__project-description">
+                    <ProjectTimeperiod component="p">{date}</ProjectTimeperiod>
+                    <ProjectTitle component="h2">{text}</ProjectTitle>
+                    <ProjectDescription component="p">
                         <FormattedMessage
                             id={`${translationID}.text`}
                             defaultMessage="{projectDescription}"
@@ -41,10 +53,10 @@ function ProjectItem({
                                 projectDescription: description,
                             }}
                         />
-                    </p>
+                    </ProjectDescription>
                 </div>
-            </div>
-        </div>
+            </ProjectContent>
+        </ContainerProject>
     );
 }
 

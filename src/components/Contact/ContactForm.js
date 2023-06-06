@@ -4,7 +4,12 @@ import { useForm } from "react-hook-form";
 
 import emailjs from "emailjs-com";
 
-import styles from "./ContactForm.module.css";
+import {
+    ContactFormStyled,
+    Form,
+    Login,
+    SendButton,
+} from "./ContactForm.styles";
 
 function ContactForm() {
     const {
@@ -45,13 +50,9 @@ function ContactForm() {
     };
 
     return (
-        <div className={styles.dz__contactform}>
-            <div className={styles.dz__form}>
-                <form
-                    className={styles.dz__contact_login}
-                    onSubmit={handleSubmit(sendEmail)}
-                    ref={form}
-                >
+        <ContactFormStyled>
+            <Form>
+                <Login onSubmit={handleSubmit(sendEmail)} ref={form}>
                     <input
                         name="email"
                         type="text"
@@ -98,18 +99,15 @@ function ContactForm() {
                             },
                             maxLength: 280,
                         })}
+                        placeholder="Drop me a message..."
                     />
                     {errors.message && <p>{errors.message?.message}</p>}
-                    <button
-                        className={styles.dz__sendButton}
-                        type="submit"
-                        disabled={!isValid}
-                    >
+                    <SendButton type="submit" disabled={!isValid}>
                         Send
-                    </button>
-                </form>
-            </div>
-        </div>
+                    </SendButton>
+                </Login>
+            </Form>
+        </ContactFormStyled>
     );
 }
 

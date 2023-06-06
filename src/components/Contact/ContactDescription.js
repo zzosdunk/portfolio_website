@@ -1,18 +1,25 @@
-import "./ContactDescription.css";
 import { FormattedMessage } from "react-intl";
 import { call, map, mail } from "./imports";
 
+import {
+    ContactDescriptionStyled,
+    HeadTitle,
+    Description,
+    ContactData,
+    ContactDataBlock,
+} from "./ContactDescription.styles";
+
 function ContactDescription() {
     return (
-        <div className="dz__contactDescription">
-            <h1 className="gradient__text">
+        <ContactDescriptionStyled>
+            <HeadTitle component="h1">
                 <FormattedMessage
                     id="contactMeHeader.text"
                     defaultMessage="Drop Me A Message"
                     description="Send me a message"
                 />
-            </h1>
-            <p>
+            </HeadTitle>
+            <Description component="p">
                 <FormattedMessage
                     id="contactMeDescription.text"
                     defaultMessage="If, after getting acquainted with my activities, you still have any
@@ -20,19 +27,19 @@ function ContactDescription() {
             form on the right side and send me a message!"
                     description="Send me a message description"
                 />
-            </p>
-            <div className="dz__contactData">
-                <div className="dz__contactDataBlock">
+            </Description>
+            <ContactData>
+                <ContactDataBlock>
                     <img src={call} alt="call" />
                     <p>+48 730 527 186</p>
-                </div>
-                <div className="dz__contactDataBlock">
+                </ContactDataBlock>
+                <ContactDataBlock>
                     <img src={mail} alt="mail" />
                     <a href="mailto:zzosdunk@gmail.com">
                         <p>zzosdunk@gmail.com</p>
                     </a>
-                </div>
-                <div className="dz__contactDataBlock">
+                </ContactDataBlock>
+                <ContactDataBlock>
                     <img src={map} alt="location" />
                     <p>
                         <FormattedMessage
@@ -41,9 +48,9 @@ function ContactDescription() {
                             description="Location"
                         />
                     </p>
-                </div>
-            </div>
-        </div>
+                </ContactDataBlock>
+            </ContactData>
+        </ContactDescriptionStyled>
     );
 }
 

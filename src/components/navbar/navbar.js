@@ -1,96 +1,144 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { FormattedMessage } from "react-intl";
 
-import logo from "../../assets/logo.png";
-import "./navbar.css";
-import Login from "../Login/Login";
-import LanguageDropdown from "./LanguageDropdown";
+import { Typography } from "@mui/material";
+import { Pets } from "@mui/icons-material";
 
-function Navbar() {
-    const currentLanguage = useSelector((state) => state.lang.language);
+import {
+    MaterialUISwitch,
+    StyledToolbar,
+    LeftSide,
+    Links,
+    Logo,
+    Functionality,
+    Icons,
+    NavbarSign,
+    MobileNavbarStyled,
+} from "./navbar.styles";
+
+import Login from "../Login/Login";
+import LanguageMenu from "./LanguageMenu";
+import MobileNavbar from "./MobileNavbar";
+import { langActions } from "../../store/language";
+
+import { themeActions } from "../../store/theme";
+
+const LINKS = [
+    { text: "About", link: "#about" },
+    { text: "Experience", link: "#experience" },
+    { text: "Skills", link: "#skills" },
+    { text: "Projects", link: "#projects" },
+    { text: "Contact", link: "#contact" },
+];
+
+function Nav() {
+    const dispatch = useDispatch();
+
     const userEmail = useSelector((state) => state.auth.userEmail);
     const isAuth = useSelector((state) => state.auth.isAuthenticated);
-
-    const [toggleMenu, setToggleMenu] = useState(false);
+    const currentTheme = useSelector((state) => state.theme.isDarkTheme);
 
     const userName = userEmail.substr(0, userEmail.indexOf("@"));
 
-    const LINKS = [
-        { text: "About", link: "#about" },
-        { text: "Experience", link: "#experience" },
-        { text: "Skills", link: "#skills" },
-        { text: "Projects", link: "#projects" },
-        { text: "Contact", link: "#contact" },
-    ];
+    const languageChooseHandler = (chosenLanguage) => {
+        dispatch(langActions.changeLanguage(chosenLanguage));
+    };
+
+    const [isDarkTheme, setIsDarkTheme] = useState(true);
+
+    const changeThemeHandler = () => {
+        setIsDarkTheme((prev) => !prev);
+    };
+
+    useEffect(() => {
+        dispatch(themeActions.changeTheme(isDarkTheme));
+    }, [dispatch, isDarkTheme]);
 
     return (
-        <div className="dz__navbar" id="home">
-            <div className="dz__navbar-links">
-                <div className="dz__navbar-links_logo">
-                    <img src={logo} alt="logo" />
-                </div>
-                <div className="dz__navbar-links_container">
-                    {LINKS.map((link) => (
-                        <p key={link.text}>
-                            <a href={link.link}>
+        <>
+            <StyledToolbar id="home">
+                <LeftSide>
+                    <Logo>
+                        <Typography
+                            variant="h6"
+                            sx={{ display: { xs: "none", sm: "block" } }}
+                        >
+                            DENYS ZOSYM
+                        </Typography>
+                        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
+                    </Logo>
+                    <Links>
+                        {LINKS.map((link) => (
+                            <Typography key={link.text} variant="a">
+                                <a href={link.link}>
+                                    <FormattedMessage
+                                        id={`${link.text}NavbarElement.text`}
+                                        defaultMessage="{sectionID}"
+                                        description="Navbar Element"
+                                        values={{
+                                            sectionID: link.text,
+                                        }}
+                                    />
+                                </a>
+                            </Typography>
+                        ))}
+                    </Links>
+                </LeftSide>
+                <Functionality>
+                    <NavbarSign>
+                        {!isAuth ? (
+                            <Login />
+                        ) : (
+                            <Typography variant="p">
                                 <FormattedMessage
-                                    id={`${link.text}NavbarElement.text`}
-                                    defaultMessage="{sectionID}"
-                                    description="Navbar Element"
-                                    values={{
-                                        sectionID: link.text,
-                                    }}
-                                />
-                            </a>
-                        </p>
-                    ))}
-                </div>
-            </div>
-            <div className="dz__navbar-sign">
-                {!isAuth ? (
-                    <Login />
-                ) : (
-                    <p>
-                        <FormattedMessage
-                            id="GreetingsNavbar.text"
-                            defaultMessage="Hello, "
-                            description="Navbar Greetings"
-                        />{" "}
-                        {userName}
-                    </p>
-                )}
-            </div>
-            <LanguageDropdown chosenLanguage={currentLanguage} />
-            <div className="dz__navbar-menu">
-                {toggleMenu ? (
-                    <RiCloseLine
-                        color="#fff"
-                        size={27}
-                        onClick={() => setToggleMenu(false)}
-                    />
-                ) : (
-                    <RiMenu3Line
-                        color="#fff"
-                        size={27}
-                        onClick={() => setToggleMenu(true)}
-                    />
-                )}
-                {toggleMenu && (
-                    <div className="dz__navbar-menu_container scale-up-center">
-                        <div className="dz__navbar-menu_container-links">
-                            {LINKS.map((link) => (
-                                <p key={link.text}>
-                                    <a href={link.link}>{link.text}</a>
-                                </p>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
-        </div>
+                                    id="GreetingsNavbar.text"
+                                    defaultMessage="Hello, "
+                                    description="Navbar Greetings"
+                                />{" "}
+                                {userName}
+                            </Typography>
+                        )}
+                    </NavbarSign>
+
+                    <Icons>
+                        <MaterialUISwitch
+                            onChange={changeThemeHandler}
+                            checked={currentTheme}
+                        />
+                        <LanguageMenu languageHandler={languageChooseHandler} />
+                    </Icons>
+                </Functionality>
+            </StyledToolbar>
+            <MobileNavbarStyled>
+                <MobileNavbar links={LINKS} />
+                <Functionality>
+                    <NavbarSign>
+                        {!isAuth ? (
+                            <Login />
+                        ) : (
+                            <Typography variant="p">
+                                <FormattedMessage
+                                    id="GreetingsNavbar.text"
+                                    defaultMessage="Hello, "
+                                    description="Navbar Greetings"
+                                />{" "}
+                                {userName}
+                            </Typography>
+                        )}
+                    </NavbarSign>
+
+                    <Icons>
+                        <MaterialUISwitch
+                            onChange={changeThemeHandler}
+                            checked={currentTheme}
+                        />
+                        <LanguageMenu languageHandler={languageChooseHandler} />
+                    </Icons>
+                </Functionality>
+            </MobileNavbarStyled>
+        </>
     );
 }
 
-export default Navbar;
+export default Nav;
