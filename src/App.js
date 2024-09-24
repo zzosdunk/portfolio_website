@@ -1,5 +1,6 @@
 import { IntlProvider } from "react-intl";
 import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "@fontsource/montserrat";
 
@@ -9,13 +10,12 @@ import MessagesPL from "./translations/pl.json";
 import MessagesUA from "./translations/ua.json";
 import MessagesEN from "./translations/en.json";
 
-import Navbar from "./components/navbar/navbar";
-import Header from "./containers/header/header";
-import SkillsList from "./components/skills/SkillsList";
-import Footer from "./containers/Footer/Footer";
-import ContactMe from "./components/Contact/ContactMe";
-import Experience from "./containers/Experience/Experience";
-import Projects from "./containers/Projects/Projects";
+import Home from "./pages/HomePage/Home";
+import Blog from "./pages/BlogPage/Blog";
+import Contact from "./pages/ContactPage/Contact";
+import Author from "./pages/AuthorPage/Author";
+
+import { articles, articlesPages } from "./components/Articles/articles";
 
 const messages = {
     Polish: MessagesPL,
@@ -34,7 +34,7 @@ function App() {
                 main: "#22edfb",
             },
             secondary: {
-                main: "#ff4d71",
+                main: "#f0d43a",
             },
         },
         typography: {
@@ -42,10 +42,10 @@ function App() {
             h1: {
                 fontSize: 62,
                 fontWeight: 800,
-                color: currentTheme ? "#ff4d71" : "#22edfb",
+                color: currentTheme ? "#f0d43a" : "#22edfb",
             },
             header: {
-                color: currentTheme ? "#81AFDD" : "#042c54",
+                color: currentTheme ? "#f0d43a" : "#22edfb",
                 fontSize: 20,
                 fontWeight: 400,
             },
@@ -87,13 +87,32 @@ function App() {
                             : "radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgb(139, 175, 196) 25%)",
                     }}
                 >
-                    <Navbar />
-                    <Header />
-                    <Experience />
-                    <SkillsList />
-                    <Projects />
-                    <ContactMe />
-                    <Footer />
+                    {/* <RouterProvider router={router} /> */}
+                    <Router>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/blog" element={<Blog />} />
+                            <Route path="/author" element={<Author />} />
+                            <Route path="/contact" element={<Contact />} />
+
+                            {articles.map((article) => {
+                                const ArticleComponent =
+                                    articlesPages[article.id];
+                                return (
+                                    <Route
+                                        key={article.id}
+                                        path={`/article/${article.url}`}
+                                        element={
+                                            <ArticleComponent
+                                                title={article.title}
+                                                headerImg={article.headerImg}
+                                            />
+                                        }
+                                    />
+                                );
+                            })}
+                        </Routes>
+                    </Router>
                 </Box>
             </ThemeProvider>
         </IntlProvider>

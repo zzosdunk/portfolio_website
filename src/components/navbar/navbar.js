@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FormattedMessage } from "react-intl";
+import { NavLink } from "react-router-dom";
 
 import { Typography } from "@mui/material";
 import { Pets } from "@mui/icons-material";
@@ -24,12 +25,13 @@ import { langActions } from "../../store/language";
 
 import { themeActions } from "../../store/theme";
 
+import logo from "../../assets/logo_transparent_notext_small.png";
+
 const LINKS = [
-    { text: "About", link: "#about" },
-    { text: "Experience", link: "#experience" },
-    { text: "Skills", link: "#skills" },
-    { text: "Projects", link: "#projects" },
-    { text: "Contact", link: "#contact" },
+    { title: "Home", link: "/" },
+    { title: "Blog", link: "/blog" },
+    { title: "Author", link: "/author" },
+    { title: "Contact", link: "/contact" },
 ];
 
 function Nav() {
@@ -62,25 +64,20 @@ function Nav() {
                     <Logo>
                         <Typography
                             variant="h6"
-                            sx={{ display: { xs: "none", sm: "block" } }}
+                            sx={{
+                                display: { xs: "none", sm: "block" },
+                            }}
                         >
-                            DENYS ZOSYM
+                            <img src={logo} alt="frontImage" />
                         </Typography>
                         <Pets sx={{ display: { xs: "block", sm: "none" } }} />
                     </Logo>
                     <Links>
                         {LINKS.map((link) => (
-                            <Typography key={link.text} variant="a">
-                                <a href={link.link}>
-                                    <FormattedMessage
-                                        id={`${link.text}NavbarElement.text`}
-                                        defaultMessage="{sectionID}"
-                                        description="Navbar Element"
-                                        values={{
-                                            sectionID: link.text,
-                                        }}
-                                    />
-                                </a>
+                            <Typography key={link.title} variant="a">
+                                <NavLink key={link.title} to={link.link}>
+                                    {link.title}
+                                </NavLink>
                             </Typography>
                         ))}
                     </Links>

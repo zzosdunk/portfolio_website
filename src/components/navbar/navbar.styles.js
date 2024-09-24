@@ -75,6 +75,7 @@ export const Links = styled("div")(({ theme }) => ({
 export const Logo = styled("div")({
     display: "flex",
     alignItems: "center",
+    marginTop: 20,
 });
 
 export const Functionality = styled("div")({
