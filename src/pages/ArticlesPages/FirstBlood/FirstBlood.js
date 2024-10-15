@@ -1,17 +1,14 @@
-import {
-    Box,
-    Typography,
-    Card,
-    CardMedia,
-    CardContent,
-    Grid,
-} from "@mui/material";
+import { Box, Typography, Card, CardMedia, Grid } from "@mui/material";
 
 import PropTypes from "prop-types";
+
+import { Text } from "../../../components/Articles/Articles.styles";
+
 import Footer from "../../../containers/Footer/Footer";
 import Navbar from "../../../components/navbar/navbar";
+import RelatedArticles from "../../../components/Articles/RelatedArticles";
 
-function FirstBlood({ title, headerImg }) {
+function FirstBlood({ articleData, headerImg, articles }) {
     return (
         <>
             <Navbar />
@@ -20,13 +17,12 @@ function FirstBlood({ title, headerImg }) {
                     <Grid item xs={12} md={8}>
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="h3" color="text.primary">
-                                {title}
+                                {articleData.title}
                             </Typography>
                         </Box>
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="400"
                                 image={headerImg}
                                 alt="Article Cover"
                             />
@@ -34,11 +30,11 @@ function FirstBlood({ title, headerImg }) {
 
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="body2" color="text.secondary">
-                                Published on: 2024-09-15 | Author: John Doe
+                                Author: Denys Zosym
                             </Typography>
                         </Box>
 
-                        <Typography variant="body1" sx={{ width: "100%" }}>
+                        <Text>
                             Games featuring the mechanic of eliminating enemies
                             should primarily offer players the chance to develop
                             confidence and grasp their capabilities within the
@@ -57,9 +53,11 @@ function FirstBlood({ title, headerImg }) {
                             design a location where the enemy is unarmed and the
                             sole point of focus. This way, the player can
                             concentrate solely on eliminating the enemy without
-                            any distracting elements. Keep creating and dream
-                            bigger
-                        </Typography>
+                            any distracting elements.
+                            <br />
+                            <br />
+                            Keep creating and dream bigger 🙂
+                        </Text>
                     </Grid>
 
                     <Grid item xs={12} md={4}>
@@ -73,15 +71,10 @@ function FirstBlood({ title, headerImg }) {
                             <Typography variant="h6" gutterBottom>
                                 Related Articles
                             </Typography>
-                            {[1, 2, 3].map((article) => (
-                                <Card key={article} sx={{ marginBottom: 2 }}>
-                                    <CardContent>
-                                        <Typography variant="h3" gutterBottom>
-                                            Antoher Article {article}
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            ))}
+                            <RelatedArticles
+                                articleData={articleData}
+                                articles={articles}
+                            />
                         </Box>
                     </Grid>
                 </Grid>
@@ -92,8 +85,21 @@ function FirstBlood({ title, headerImg }) {
 }
 
 FirstBlood.propTypes = {
-    title: PropTypes.string.isRequired,
+    articleData: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+    }).isRequired,
     headerImg: PropTypes.string.isRequired,
+    articles: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            title: PropTypes.string.isRequired,
+            headerImg: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 };
 
 export default FirstBlood;

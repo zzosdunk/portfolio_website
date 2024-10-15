@@ -1,17 +1,11 @@
-import {
-    Box,
-    Typography,
-    Card,
-    CardMedia,
-    CardContent,
-    Grid,
-} from "@mui/material";
+import { Box, Typography, Card, CardMedia, Grid } from "@mui/material";
 
 import PropTypes from "prop-types";
 import Footer from "../../../containers/Footer/Footer";
 import Navbar from "../../../components/navbar/navbar";
+import RelatedArticles from "../../../components/Articles/RelatedArticles";
 
-function DecisionPoints({ title, headerImg }) {
+function DecisionPoints({ articleData, headerImg, articles }) {
     return (
         <>
             <Navbar />
@@ -20,13 +14,12 @@ function DecisionPoints({ title, headerImg }) {
                     <Grid item xs={12} md={8}>
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="h3" color="text.primary">
-                                {title}
+                                {articleData.title}
                             </Typography>
                         </Box>
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="400"
                                 image={headerImg}
                                 alt="Article Cover"
                             />
@@ -34,7 +27,7 @@ function DecisionPoints({ title, headerImg }) {
 
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="body2" color="text.secondary">
-                                Published on: 2024-09-15 | Author: John Doe
+                                Published on: 2024-09-15 | Author: Denys Zosym
                             </Typography>
                         </Box>
 
@@ -73,15 +66,10 @@ function DecisionPoints({ title, headerImg }) {
                             <Typography variant="h6" gutterBottom>
                                 Related Articles
                             </Typography>
-                            {[1, 2, 3].map((article) => (
-                                <Card key={article} sx={{ marginBottom: 2 }}>
-                                    <CardContent>
-                                        <Typography variant="h3" gutterBottom>
-                                            Antoher Article {article}
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            ))}
+                            <RelatedArticles
+                                articleData={articleData}
+                                articles={articles}
+                            />
                         </Box>
                     </Grid>
                 </Grid>
@@ -92,8 +80,21 @@ function DecisionPoints({ title, headerImg }) {
 }
 
 DecisionPoints.propTypes = {
-    title: PropTypes.string.isRequired,
+    articleData: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+    }).isRequired,
     headerImg: PropTypes.string.isRequired,
+    articles: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            title: PropTypes.string.isRequired,
+            headerImg: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 };
 
 export default DecisionPoints;

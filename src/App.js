@@ -45,7 +45,7 @@ function App() {
                 color: currentTheme ? "#f0d43a" : "#22edfb",
             },
             header: {
-                color: currentTheme ? "#f0d43a" : "#22edfb",
+                color: currentTheme ? "#81AFDD" : "#042c54",
                 fontSize: 20,
                 fontWeight: 400,
             },
@@ -106,6 +106,8 @@ function App() {
                                             <ArticleComponent
                                                 title={article.title}
                                                 headerImg={article.headerImg}
+                                                articleData={article}
+                                                articles={articles}
                                             />
                                         }
                                     />

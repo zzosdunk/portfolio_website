@@ -28,60 +28,110 @@ import gamesmoviesHeader from "../../assets/ArticlesAssets/GamesVSMovies/gamesVS
 import decisionPointsHeader from "../../assets/ArticlesAssets/DecisionPoints/decisionPointsHeader.png";
 import levelStoryHeader from "../../assets/ArticlesAssets/LevelStorytelling/levelstorytellingHeader.png";
 
+const ArticleTypes = {
+    LEVEL_DESIGN: "Level Design",
+    GAME_DESIGN: "Game Design",
+    OTHER: "Other",
+};
+
 const articles = [
     {
         id: 1,
         url: "FirstBlood",
         title: "First Blood",
         headerImg: firstBloodHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
     },
     {
         id: 2,
         url: "ExploringElevations",
         title: "Exploring Elevations",
         headerImg: elevationsHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
     },
-    { id: 3, url: "Seasons", title: "Seasons", headerImg: seasonsHeader },
-    { id: 4, url: "rld", title: "Rational Level Design", headerImg: rldHeader },
-    { id: 5, url: "Landmarks", title: "Landmarks", headerImg: landmarksHeader },
-    { id: 6, url: "Covers", title: "Covers", headerImg: coversHeader },
+    {
+        id: 3,
+        url: "Seasons",
+        title: "Seasons",
+        headerImg: seasonsHeader,
+        type: ArticleTypes.GAME_DESIGN,
+    },
+    {
+        id: 4,
+        url: "rld",
+        title: "Rational Level Design",
+        headerImg: rldHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+    },
+    {
+        id: 5,
+        url: "Landmarks",
+        title: "Landmarks",
+        headerImg: landmarksHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+    },
+    {
+        id: 6,
+        url: "Covers",
+        title: "Covers",
+        headerImg: coversHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+    },
     {
         id: 7,
         url: "ModularDesign",
         title: "Modular Design",
         headerImg: modularDesignHeader,
+        type: ArticleTypes.GAME_DESIGN,
     },
     {
         id: 8,
         url: "BlockoutColors",
         title: "Blockout Colors",
         headerImg: colors,
+        type: ArticleTypes.LEVEL_DESIGN,
     },
-    { id: 9, url: "Shapes", title: "Shapes", headerImg: shapesHeader },
-    { id: 10, url: "Rewards", title: "Rewards", headerImg: rewardsHeader },
+    {
+        id: 9,
+        url: "Shapes",
+        title: "Shapes",
+        headerImg: shapesHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+    },
+    {
+        id: 10,
+        url: "Rewards",
+        title: "Rewards",
+        headerImg: rewardsHeader,
+        type: ArticleTypes.GAME_DESIGN,
+    },
     {
         id: 11,
         url: "TalentTrees",
         title: "Talent Trees",
         headerImg: talentTreesHeader,
+        type: ArticleTypes.GAME_DESIGN,
     },
     {
         id: 12,
         url: "GamesMovies",
         title: "Games vs. Movies",
         headerImg: gamesmoviesHeader,
+        type: ArticleTypes.OTHER,
     },
     {
         id: 13,
         url: "DecisionPoints",
         title: "Decision Points",
         headerImg: decisionPointsHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
     },
     {
         id: 14,
         url: "LevelStorytelling",
         title: "Level Storytelling",
         headerImg: levelStoryHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
     },
 ];
 
@@ -102,4 +152,8 @@ const articlesPages = {
     14: LevelStorytelling,
 };
 
-export { articles, articlesPages };
+function getArticle(articleId) {
+    return articles.filter((article) => article.id === articleId);
+}
+
+export { articles, articlesPages, getArticle };

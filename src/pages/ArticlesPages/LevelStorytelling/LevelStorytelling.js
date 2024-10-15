@@ -1,11 +1,4 @@
-import {
-    Box,
-    Typography,
-    Card,
-    CardMedia,
-    CardContent,
-    Grid,
-} from "@mui/material";
+import { Box, Typography, Card, CardMedia, Grid } from "@mui/material";
 
 import PropTypes from "prop-types";
 
@@ -19,12 +12,13 @@ import {
 
 import Footer from "../../../containers/Footer/Footer";
 import Navbar from "../../../components/navbar/navbar";
+import RelatedArticles from "../../../components/Articles/RelatedArticles";
 
 import tlou from "../../../assets/ArticlesAssets/LevelStorytelling/levelstorytelling_lastOfUs.png";
 import dyinglight from "../../../assets/ArticlesAssets/LevelStorytelling/levelstorytelling_dyinglight.png";
 import re from "../../../assets/ArticlesAssets/LevelStorytelling/levelstorytelling_residentevil.png";
 
-function LevelStorytelling({ title, headerImg }) {
+function LevelStorytelling({ articleData, headerImg, articles }) {
     return (
         <>
             <Navbar />
@@ -33,7 +27,7 @@ function LevelStorytelling({ title, headerImg }) {
                     <Grid item xs={12} md={8}>
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="h3" color="text.primary">
-                                {title}
+                                {articleData.title}
                             </Typography>
                         </Box>
                         <Card>
@@ -198,15 +192,10 @@ function LevelStorytelling({ title, headerImg }) {
                             <Typography variant="h6" gutterBottom>
                                 Related Articles
                             </Typography>
-                            {[1, 2, 3].map((article) => (
-                                <Card key={article} sx={{ marginBottom: 2 }}>
-                                    <CardContent>
-                                        <Typography variant="h3" gutterBottom>
-                                            Antoher Article {article}
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            ))}
+                            <RelatedArticles
+                                articleData={articleData}
+                                articles={articles}
+                            />
                         </Box>
                     </Grid>
                 </Grid>
@@ -217,8 +206,21 @@ function LevelStorytelling({ title, headerImg }) {
 }
 
 LevelStorytelling.propTypes = {
-    title: PropTypes.string.isRequired,
+    articleData: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+    }).isRequired,
     headerImg: PropTypes.string.isRequired,
+    articles: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            title: PropTypes.string.isRequired,
+            headerImg: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 };
 
 export default LevelStorytelling;

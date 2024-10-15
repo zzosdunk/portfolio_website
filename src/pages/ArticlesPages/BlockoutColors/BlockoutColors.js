@@ -1,17 +1,17 @@
-import {
-    Box,
-    Typography,
-    Card,
-    CardMedia,
-    CardContent,
-    Grid,
-} from "@mui/material";
+import { Box, Typography, Card, CardMedia, Grid } from "@mui/material";
 
 import PropTypes from "prop-types";
+
+import {
+    Text,
+    BlockHeader,
+} from "../../../components/Articles/Articles.styles";
+
 import Footer from "../../../containers/Footer/Footer";
 import Navbar from "../../../components/navbar/navbar";
+import RelatedArticles from "../../../components/Articles/RelatedArticles";
 
-function BlockoutColors({ title, headerImg }) {
+function BlockoutColors({ articleData, headerImg, articles }) {
     return (
         <>
             <Navbar />
@@ -20,13 +20,12 @@ function BlockoutColors({ title, headerImg }) {
                     <Grid item xs={12} md={8}>
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="h3" color="text.primary">
-                                {title}
+                                {articleData.title}
                             </Typography>
                         </Box>
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="400"
                                 image={headerImg}
                                 alt="Article Cover"
                             />
@@ -38,28 +37,75 @@ function BlockoutColors({ title, headerImg }) {
                             </Typography>
                         </Box>
 
-                        <Typography variant="body1" sx={{ width: "100%" }}>
-                            Games featuring the mechanic of eliminating enemies
-                            should primarily offer players the chance to develop
-                            confidence and grasp their capabilities within the
-                            game world. Players need to experience the
-                            &quot;taste of blood&quot; without much difficulty
-                            during their initial encounter with enemy
-                            elimination. This straightforward approach helps
-                            players understand the mechanic, while also acting
-                            as a valuable teaching tool within a safe
-                            environment. As a result, players become more
-                            self-assured in their abilities, and when facing
-                            real enemies, they won&apos;t feel stressed or
-                            uncertain about how to overcome them. To create such
-                            a scenario, it is sufficient to position the first
-                            enemy with their back turned to the player, or to
-                            design a location where the enemy is unarmed and the
-                            sole point of focus. This way, the player can
-                            concentrate solely on eliminating the enemy without
-                            any distracting elements. Keep creating and dream
-                            bigger
-                        </Typography>
+                        <Text>
+                            As a level designer, I constantly collaborate with
+                            other departments during level development. To
+                            ensure our interaction is as efficient and clear as
+                            possible, I employ and recommend the use of a visual
+                            communication language. This is particularly useful
+                            when working with the art department, so that
+                            artists can always understand what you, as a
+                            designer, want to convey in your blockout. As an
+                            example of such communication, I&apos;d like to
+                            discuss the significance of colors in blockouts.
+                            Using my project, in which I created a gameplay
+                            level for the Assassin&apos;s Creed series, as an
+                            example, I&apos;d like to break down the meaning of
+                            each color and its application.
+                            <br />
+                            <br />
+                            As you can see, I use a specific palette of simple
+                            colors in my blockout. This is intentionally done to
+                            better convey all the ideas, main paths,
+                            restrictions, and other elements through the
+                            blockout. There are two color palettes in this
+                            level: one is for the terrain, and the other is for
+                            the objects in the scene.
+                        </Text>
+                        <BlockHeader>Color legend for the terrain:</BlockHeader>
+                        <Text>
+                            1. White: Represents the leading line that would
+                            guide the player.
+                            <br />
+                            2. Yellow: Indicates an alternate path the player
+                            can take.
+                            <br />
+                            3. Red: Marks locations that are restricted to the
+                            player, and places they are not allowed to pass
+                            through.
+                            <br />
+                            4. Green: Depicts the forest terrain, serving
+                            exclusively as level art.
+                            <br />
+                            5. Blue: Represents water, in this case, a river
+                            flows through here.
+                        </Text>
+                        <BlockHeader>
+                            Color legend for objects in the scene:
+                        </BlockHeader>
+                        <Text>
+                            1. Yellow: Indicates an object that the player can
+                            climb, such as a building.
+                            <br />
+                            2. Red figure: Represents an enemy.
+                            <br />
+                            3. Purple figure: Denotes an enemy that is important
+                            for the quest.
+                            <br />
+                            4. Green figure: Depicts an ally.
+                            <br />
+                            <br />
+                            It&apos;s important to note that the colors, shapes,
+                            and other details in the blockout may vary and be
+                            unique for each project, and they should be
+                            discussed with your team. However, such visual
+                            communication is a fundamental element of the
+                            blockout and significantly enhances the production
+                            of levels.
+                            <br />
+                            <br />
+                            Keep creating and dream bigger 🙂
+                        </Text>
                     </Grid>
 
                     <Grid item xs={12} md={4}>
@@ -73,15 +119,10 @@ function BlockoutColors({ title, headerImg }) {
                             <Typography variant="h6" gutterBottom>
                                 Related Articles
                             </Typography>
-                            {[1, 2, 3].map((article) => (
-                                <Card key={article} sx={{ marginBottom: 2 }}>
-                                    <CardContent>
-                                        <Typography variant="h3" gutterBottom>
-                                            Antoher Article {article}
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            ))}
+                            <RelatedArticles
+                                articleData={articleData}
+                                articles={articles}
+                            />
                         </Box>
                     </Grid>
                 </Grid>
@@ -92,8 +133,21 @@ function BlockoutColors({ title, headerImg }) {
 }
 
 BlockoutColors.propTypes = {
-    title: PropTypes.string.isRequired,
+    articleData: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+    }).isRequired,
     headerImg: PropTypes.string.isRequired,
+    articles: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            title: PropTypes.string.isRequired,
+            headerImg: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 };
 
 export default BlockoutColors;
