@@ -15,8 +15,11 @@ function Blog() {
         setPage(value);
     };
 
+    // Переворачиваем массив статей, чтобы последние статьи отображались первыми
+    const reversedArticles = [...articles].reverse();
+
     // Определяем статьи для отображения на текущей странице
-    const displayedArticles = articles.slice(
+    const displayedArticles = reversedArticles.slice(
         (page - 1) * articlesPerPage,
         page * articlesPerPage
     );
@@ -29,7 +32,6 @@ function Blog() {
                 <Grid container spacing={4}>
                     {displayedArticles.map((article) => (
                         <Grid item xs={12} key={article.id}>
-                            {/* Используем новый ArticleCard компонент */}
                             <ArticleCard article={article} />
                         </Grid>
                     ))}

@@ -50,6 +50,11 @@
     "EnglishLanguage.text": "Англійська",
     "PolishLanguage.text": "Польска",
     "UkrainianLanguage.text": "Українська",
-    "GreetingsNavbar.text": "Привіт, "
-  }
-  
+    "GreetingsNavbar.text": "Привіт, ",
+    "pwf1Responsibility.text": "Developing gameplay mechanics",
+    "pwf2Responsibility.text": "Level blockout",
+    "pwf3Responsibility.text": "Level design testing",
+    "pwf4Responsibility.text": "Designing and developing game economy",
+    "pwf5Responsibility.text": "Designing gameplay mechanics",
+    "pwf6Responsibility.text": "Gameplay mechanics balance"
+}

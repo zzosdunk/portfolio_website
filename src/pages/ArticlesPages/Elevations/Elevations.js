@@ -30,7 +30,8 @@ function Elevations({ articleData, headerImg, articles }) {
 
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="body2" color="text.secondary">
-                                Author: Denys Zosym
+                                Category: {articleData.type} | Author: Denys
+                                Zosym
                             </Typography>
                         </Box>
 

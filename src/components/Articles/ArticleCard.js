@@ -6,6 +6,8 @@ import {
     TitleStyled,
     TypeStyled,
     ButtonStyled,
+    TextColumn,
+    ButtonColumn,
 } from "./ArticleCard.styles";
 
 function ArticleCard({ article }) {
@@ -16,11 +18,15 @@ function ArticleCard({ article }) {
 
             {/* Контент внутри карточки */}
             <ContentStyled>
-                <TitleStyled>{article.title}</TitleStyled>
-                <TypeStyled>{article.type}</TypeStyled>
-                <ButtonStyled href={`/article/${article.url}`}>
-                    Read more
-                </ButtonStyled>
+                <TextColumn>
+                    <TitleStyled>{article.title}</TitleStyled>
+                    <TypeStyled>{article.type}</TypeStyled>
+                </TextColumn>
+                <ButtonColumn>
+                    <ButtonStyled href={`/article/${article.url}`}>
+                        Read more
+                    </ButtonStyled>
+                </ButtonColumn>
             </ContentStyled>
         </ArticleStyled>
     );

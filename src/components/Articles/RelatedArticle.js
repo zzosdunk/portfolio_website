@@ -19,7 +19,7 @@ function RelatedArticle({ article }) {
         >
             {/* Фоновое изображение */}
             <BackgroundImage
-                headerImg={article.headerImg}
+                headerImg={article.previewImg}
                 className={isHovered ? "hovered" : ""}
             />
 
@@ -47,6 +47,7 @@ RelatedArticle.propTypes = {
         title: PropTypes.string.isRequired,
         headerImg: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired,
+        previewImg: PropTypes.string.isRequired,
     }).isRequired,
 };
 

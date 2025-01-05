@@ -1,34 +1,41 @@
 import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 
 import RelatedArticle from "./RelatedArticle";
 
 function RelatedArticles({ articleData, articles }) {
+    const [relatedArticles, setRelatedArticles] = useState([]);
+
+    // Функция для получения случайных статей
     function getRandomArticles(articles, count) {
         const shuffled = [...articles].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
     }
 
-    const sameTypeArticles = articles.filter(
-        (article) =>
-            article.type === articleData.type && article.id !== articleData.id
-    );
+    useEffect(() => {
+        // Фильтруем статьи того же типа, что и текущая
+        const sameTypeArticles = articles.filter(
+            (article) =>
+                article.type === articleData.type &&
+                article.id !== articleData.id
+        );
 
-    const otherTypeArticle = articles.filter(
-        (article) => article.type !== articleData.type
-    );
+        // Фильтруем статьи другого типа
+        const otherTypeArticle = articles.filter(
+            (article) => article.type !== articleData.type
+        );
 
-    const randomSameTypeArticles = getRandomArticles(sameTypeArticles, 2);
-    const randomOtherArticle = getRandomArticles(otherTypeArticle, 1);
+        // Получаем 2 случайные статьи того же типа и 1 статью другого типа
+        const randomSameTypeArticles = getRandomArticles(sameTypeArticles, 2);
+        const randomOtherArticle = getRandomArticles(otherTypeArticle, 1);
 
-    console.log("Related articles: ", randomSameTypeArticles);
+        // Объединяем их в один массив
+        setRelatedArticles([...randomSameTypeArticles, ...randomOtherArticle]);
+    }, [articleData, articles]); // Этот эффект выполнится только при монтировании и изменении данных статей
 
     return (
         <>
-            {randomSameTypeArticles.map((article) => (
-                <RelatedArticle key={article.id} article={article} />
-            ))}
-
-            {randomOtherArticle.map((article) => (
+            {relatedArticles.map((article) => (
                 <RelatedArticle key={article.id} article={article} />
             ))}
         </>

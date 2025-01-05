@@ -33,7 +33,8 @@ function BlockoutColors({ articleData, headerImg, articles }) {
 
                         <Box sx={{ marginTop: 2, marginBottom: 2 }}>
                             <Typography variant="body2" color="text.secondary">
-                                Published on: 2024-09-15 | Author: John Doe
+                                Category: {articleData.type} | Author: Denys
+                                Zosym
                             </Typography>
                         </Box>
 

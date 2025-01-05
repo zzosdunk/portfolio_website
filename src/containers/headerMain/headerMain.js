@@ -11,14 +11,8 @@ function HeaderMain() {
                 <Typography variant="h1">Crafted with Passion</Typography>
                 <Typography variant="header">
                     <FormattedMessage
-                        id="header.text"
-                        defaultMessage="For more than three years I have been creating various game and
-          business projects on Unity, but the beginning of my journey in IT lies
-          in web design. Even at school, I loved to take part in various
-          olympiads, created websites with the help of different website
-          constructors, and now I would like to return to the roots, turning my
-          old hobby into my main activity and start writing a new chapter in my
-          professional career dedicated to web development!"
+                        id="BlogDescription.text"
+                        defaultMessage="Welcome to a blog dedicated to game development, where I share my ideas, experiences, and thoughts on creating captivating worlds and engaging gameplay mechanics. Here, you'll find articles focused on game and level design, ranging from the intricacies of gameplay construction to the development of unforgettable levels that immerse players in the game's atmosphere."
                         description="Welcome header on app main page"
                     />
                 </Typography>

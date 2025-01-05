@@ -21,10 +21,11 @@ function Projects() {
                     name: value.name,
                     description: value.description,
                     link: value.link,
-                    logo: value.logo,
+                    imgUrl: value.logo,
                     timeperiod: value.timeperiod,
                     leader: value.leader,
                     translationID: value.translationID,
+                    url: value.url,
                 })
             );
 
@@ -49,14 +50,7 @@ function Projects() {
                     {!isLoading &&
                         projects.map((project) => (
                             <Grid key={project.id} item xs={12} md={4}>
-                                <ProjectItem
-                                    imgUrl={project.logo}
-                                    date={project.timeperiod}
-                                    text={project.name}
-                                    description={project.description}
-                                    leaderStatus={project.leader}
-                                    translationID={project.translationID}
-                                />
+                                <ProjectItem project={project} />
                             </Grid>
                         ))}
                     {isLoading && (

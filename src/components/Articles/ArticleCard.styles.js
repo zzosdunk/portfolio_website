@@ -32,8 +32,8 @@ export const ImageBlurOverlayStyled = styled("div")(() => ({
 export const ContentStyled = styled("div")(() => ({
     zIndex: 2, // Контент над фоном и размытием
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
     height: "100%",
     width: "100%",
     padding: "10px",
@@ -79,7 +79,7 @@ export const ButtonStyled = styled(Link)(({ theme }) => ({
     textAlign: "center",
     borderRadius: "4px",
     textDecoration: "none",
-    alignSelf: "flex-end",
+
     display: "flex", // Flexbox для центрирования
     justifyContent: "center", // Центрирование по горизонтали
     alignItems: "center",
@@ -89,4 +89,19 @@ export const ButtonStyled = styled(Link)(({ theme }) => ({
                 ? theme.palette.secondary.dark
                 : theme.palette.primary.dark,
     },
+}));
+
+export const TextColumn = styled("div")(() => ({
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "top",
+    width: "70%", // Ширина первой колонки
+}));
+
+// Контейнер для кнопки
+export const ButtonColumn = styled("div")(() => ({
+    display: "flex",
+    alignItems: "center", // Центрирование по вертикали
+    justifyContent: "flex-end", // Вправо по горизонтали
+    width: "30%", // Ширина второй колонки
 }));

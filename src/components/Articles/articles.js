@@ -17,7 +17,7 @@ import firstBloodHeader from "../../assets/ArticlesAssets/FirstBlood/firstBloodH
 import elevationsHeader from "../../assets/ArticlesAssets/Elevations/elevationsHeader.png";
 import seasonsHeader from "../../assets/ArticlesAssets/Novelty/seasonsHeader.png";
 import rldHeader from "../../assets/ArticlesAssets/RLD/rldHeader.png";
-import landmarksHeader from "../../assets/ArticlesAssets/Landmarks/ladnmarksHeader.png";
+import landmarksHeader from "../../assets/ArticlesAssets/Landmarks/landmarksHeader.png";
 import coversHeader from "../../assets/ArticlesAssets/Covers/coversHeader.png";
 import modularDesignHeader from "../../assets/ArticlesAssets/ModularDesign/modularDesignHeader.png";
 import colors from "../../assets/ArticlesAssets/BlockoutColors/colouringHeader.png";
@@ -27,6 +27,20 @@ import talentTreesHeader from "../../assets/ArticlesAssets/TalentTrees/talentTre
 import gamesmoviesHeader from "../../assets/ArticlesAssets/GamesVSMovies/gamesVSmoviesHeader.png";
 import decisionPointsHeader from "../../assets/ArticlesAssets/DecisionPoints/decisionPointsHeader.png";
 import levelStoryHeader from "../../assets/ArticlesAssets/LevelStorytelling/levelstorytellingHeader.png";
+
+import firstBloodPreview from "../../assets/ArticlesAssets/PREVIEWS/firstBloodPreview.png";
+import elevationsPreview from "../../assets/ArticlesAssets/PREVIEWS/elevationsPreview.png";
+import seasonsPreview from "../../assets/ArticlesAssets/PREVIEWS/seasonsPreview.png";
+import rldPreview from "../../assets/ArticlesAssets/PREVIEWS/rldPreview.png";
+import landmarksPreview from "../../assets/ArticlesAssets/PREVIEWS/landMarksPreview.png";
+import coversPreview from "../../assets/ArticlesAssets/PREVIEWS/CoversPreview.png";
+import modularDesignPreview from "../../assets/ArticlesAssets/PREVIEWS/modularDesignPreview.png";
+import colorsPreview from "../../assets/ArticlesAssets/PREVIEWS/blockoutColorsPreview.png";
+import rewardsPreview from "../../assets/ArticlesAssets/PREVIEWS/rewardsPreview.png";
+import talentTreesPreview from "../../assets/ArticlesAssets/PREVIEWS/talentTreesPreview.png";
+import gamesmoviesPreview from "../../assets/ArticlesAssets/PREVIEWS/gamesMoviesPreview.png";
+import decisionPointsPreview from "../../assets/ArticlesAssets/PREVIEWS/decisionPointsPreview.png";
+import levelStoryPreview from "../../assets/ArticlesAssets/PREVIEWS/levelStoryPreview.png";
 
 const ArticleTypes = {
     LEVEL_DESIGN: "Level Design",
@@ -41,6 +55,7 @@ const articles = [
         title: "First Blood",
         headerImg: firstBloodHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: firstBloodPreview,
     },
     {
         id: 2,
@@ -48,6 +63,7 @@ const articles = [
         title: "Exploring Elevations",
         headerImg: elevationsHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: elevationsPreview,
     },
     {
         id: 3,
@@ -55,6 +71,7 @@ const articles = [
         title: "Seasons",
         headerImg: seasonsHeader,
         type: ArticleTypes.GAME_DESIGN,
+        previewImg: seasonsPreview,
     },
     {
         id: 4,
@@ -62,6 +79,7 @@ const articles = [
         title: "Rational Level Design",
         headerImg: rldHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: rldPreview,
     },
     {
         id: 5,
@@ -69,6 +87,7 @@ const articles = [
         title: "Landmarks",
         headerImg: landmarksHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: landmarksPreview,
     },
     {
         id: 6,
@@ -76,6 +95,7 @@ const articles = [
         title: "Covers",
         headerImg: coversHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: coversPreview,
     },
     {
         id: 7,
@@ -83,6 +103,7 @@ const articles = [
         title: "Modular Design",
         headerImg: modularDesignHeader,
         type: ArticleTypes.GAME_DESIGN,
+        previewImg: modularDesignPreview,
     },
     {
         id: 8,
@@ -90,6 +111,7 @@ const articles = [
         title: "Blockout Colors",
         headerImg: colors,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: colorsPreview,
     },
     {
         id: 9,
@@ -97,6 +119,7 @@ const articles = [
         title: "Shapes",
         headerImg: shapesHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: shapesHeader,
     },
     {
         id: 10,
@@ -104,6 +127,7 @@ const articles = [
         title: "Rewards",
         headerImg: rewardsHeader,
         type: ArticleTypes.GAME_DESIGN,
+        previewImg: rewardsPreview,
     },
     {
         id: 11,
@@ -111,6 +135,7 @@ const articles = [
         title: "Talent Trees",
         headerImg: talentTreesHeader,
         type: ArticleTypes.GAME_DESIGN,
+        previewImg: talentTreesPreview,
     },
     {
         id: 12,
@@ -118,6 +143,7 @@ const articles = [
         title: "Games vs. Movies",
         headerImg: gamesmoviesHeader,
         type: ArticleTypes.OTHER,
+        previewImg: gamesmoviesPreview,
     },
     {
         id: 13,
@@ -125,6 +151,7 @@ const articles = [
         title: "Decision Points",
         headerImg: decisionPointsHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: decisionPointsPreview,
     },
     {
         id: 14,
@@ -132,6 +159,7 @@ const articles = [
         title: "Level Storytelling",
         headerImg: levelStoryHeader,
         type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: levelStoryPreview,
     },
 ];
 
