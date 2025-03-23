@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import {
     PageContainer,
     TitleStyled,
@@ -28,7 +29,11 @@ function CastleFlipperPage() {
             <PageContainer>
                 {/* Название проекта */}
                 <TitleStyled variant="h3" color="text.primary">
-                    Castle Flipper
+                    <FormattedMessage
+                        id="cfdescription10.text"
+                        defaultMessage="Castle Flipper"
+                        description="Castle Fliper project"
+                    />
                 </TitleStyled>
 
                 {/* Галерея */}
@@ -45,12 +50,11 @@ function CastleFlipperPage() {
                 {/* Описание проекта */}
                 <DescriptionContainer>
                     <Text>
-                        My first project that marked the beginning of my journey
-                        in game development. In this project, I primarily
-                        handled programming tasks; however, due to the small
-                        size of the team working on it, I had the opportunity to
-                        take on design-related assignments as well. For example,
-                        I worked on the following tasks:
+                        <FormattedMessage
+                            id="cfdescription1.text"
+                            defaultMessage="My first project that marked the beginning of my journey in game development. In this project, I primarily handled programming tasks; however, due to the small size of the team working on it, I had the opportunity to take on design-related assignments as well. For example, I worked on the following tasks:"
+                            description="Castle Fliper project"
+                        />
                     </Text>
                     <br />
                     <ListContainer>
@@ -58,8 +62,11 @@ function CastleFlipperPage() {
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Designing and programming the game&apos;s
-                                    architecture
+                                    <FormattedMessage
+                                        id="cfdescription2.text"
+                                        defaultMessage="Designing and programming the game's architecture"
+                                        description="Castle Fliper project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
@@ -67,7 +74,11 @@ function CastleFlipperPage() {
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Designing and programming core mechanics
+                                    <FormattedMessage
+                                        id="cfdescription3.text"
+                                        defaultMessage="Designing and programming core mechanics"
+                                        description="Castle Fliper project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
@@ -75,39 +86,71 @@ function CastleFlipperPage() {
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Programming UI behaviors and animations
+                                    <FormattedMessage
+                                        id="cfdescription4.text"
+                                        defaultMessage="Programming UI behaviors and animations"
+                                        description="Castle Fliper project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
-                                <Text>Designing level blockouts</Text>
-                            </ListTextStyled>
-                        </ListItemStyled>
-                        <ListItemStyled>
-                            <ListMarkerStyled />
-                            <ListTextStyled>
-                                <Text>Designing and creating the trailer</Text>
-                            </ListTextStyled>
-                        </ListItemStyled>
-                        <ListItemStyled>
-                            <ListMarkerStyled />
-                            <ListTextStyled>
-                                <Text>Game optimization</Text>
-                            </ListTextStyled>
-                        </ListItemStyled>
-                        <ListItemStyled>
-                            <ListMarkerStyled />
-                            <ListTextStyled>
-                                <Text>Scene lighting design</Text>
+                                <Text>
+                                    <FormattedMessage
+                                        id="cfdescription5.text"
+                                        defaultMessage="Designing level blockouts"
+                                        description="Castle Fliper project"
+                                    />
+                                </Text>
                             </ListTextStyled>
                         </ListItemStyled>
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Designing and creating cinematic gameplay
+                                    <FormattedMessage
+                                        id="cfdescription6.text"
+                                        defaultMessage="Designing and creating the trailer"
+                                        description="Castle Fliper project"
+                                    />
+                                </Text>
+                            </ListTextStyled>
+                        </ListItemStyled>
+                        <ListItemStyled>
+                            <ListMarkerStyled />
+                            <ListTextStyled>
+                                <Text>
+                                    <FormattedMessage
+                                        id="cfdescription7.text"
+                                        defaultMessage="Game optimization"
+                                        description="Castle Fliper project"
+                                    />
+                                </Text>
+                            </ListTextStyled>
+                        </ListItemStyled>
+                        <ListItemStyled>
+                            <ListMarkerStyled />
+                            <ListTextStyled>
+                                <Text>
+                                    <FormattedMessage
+                                        id="cfdescription8.text"
+                                        defaultMessage="Scene lighting design"
+                                        description="Castle Fliper project"
+                                    />
+                                </Text>
+                            </ListTextStyled>
+                        </ListItemStyled>
+                        <ListItemStyled>
+                            <ListMarkerStyled />
+                            <ListTextStyled>
+                                <Text>
+                                    <FormattedMessage
+                                        id="cfdescription9.text"
+                                        defaultMessage="Designing and creating cinematic gameplay"
+                                        description="Castle Fliper project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>

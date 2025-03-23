@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+
 import {
     PageContainer,
     TitleStyled,
@@ -44,12 +46,11 @@ function TBAPage() {
                 {/* Описание проекта */}
                 <DescriptionContainer>
                     <Text>
-                        My first project that marked the beginning of my journey
-                        in game development. In this project, I primarily
-                        handled programming tasks; however, due to the small
-                        size of the team working on it, I had the opportunity to
-                        take on design-related assignments as well. For example,
-                        I worked on the following tasks:
+                        <FormattedMessage
+                            id="tbadescription1.text"
+                            defaultMessage="For the past two years, I have been working on the largest project of my career, which has not yet been announced. In this project, I held the position of Lead Level Designer, and my responsibilities and tasks significantly expanded. Here's what I've been working on:"
+                            description="TBA project"
+                        />
                     </Text>
                     <br />
                     <ListContainer>
@@ -57,8 +58,11 @@ function TBAPage() {
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Designing and programming the game&apos;s
-                                    architecture
+                                    <FormattedMessage
+                                        id="tbadescription2.text"
+                                        defaultMessage="Based on the IP and reverse engineering practices, I built the entire game world and adapted most of its locations to fit the game's needs"
+                                        description="TBA project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
@@ -66,7 +70,11 @@ function TBAPage() {
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Designing and programming core mechanics
+                                    <FormattedMessage
+                                        id="tbadescription3.text"
+                                        defaultMessage="Developed standards for blockout creation, defined all metrics, and established the core level design principles for the game"
+                                        description="TBA project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
@@ -74,43 +82,94 @@ function TBAPage() {
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Programming UI behaviors and animations
+                                    <FormattedMessage
+                                        id="tbadescription4.text"
+                                        defaultMessage="Designed the foundations and exploration locations"
+                                        description="TBA project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
-                                <Text>Designing level blockouts</Text>
-                            </ListTextStyled>
-                        </ListItemStyled>
-                        <ListItemStyled>
-                            <ListMarkerStyled />
-                            <ListTextStyled>
-                                <Text>Designing and creating the trailer</Text>
-                            </ListTextStyled>
-                        </ListItemStyled>
-                        <ListItemStyled>
-                            <ListMarkerStyled />
-                            <ListTextStyled>
-                                <Text>Game optimization</Text>
-                            </ListTextStyled>
-                        </ListItemStyled>
-                        <ListItemStyled>
-                            <ListMarkerStyled />
-                            <ListTextStyled>
-                                <Text>Scene lighting design</Text>
+                                <Text>
+                                    <FormattedMessage
+                                        id="tbadescription5.text"
+                                        defaultMessage="In addition to creating blockouts, I coordinated and conceptualized all quests for the game"
+                                        description="TBA project"
+                                    />
+                                </Text>
                             </ListTextStyled>
                         </ListItemStyled>
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
-                                    Designing and creating cinematic gameplay
+                                    <FormattedMessage
+                                        id="tbadescription6.text"
+                                        defaultMessage="Led the level design and level art teams and closely collaborated with other departments to ensure proper implementation of quest ideas"
+                                        description="TBA project"
+                                    />
+                                </Text>
+                            </ListTextStyled>
+                        </ListItemStyled>
+                        <ListItemStyled>
+                            <ListMarkerStyled />
+                            <ListTextStyled>
+                                <Text>
+                                    <FormattedMessage
+                                        id="tbadescription7.text"
+                                        defaultMessage="Worked on designing and balancing all enemy types"
+                                        description="TBA project"
+                                    />
+                                </Text>
+                            </ListTextStyled>
+                        </ListItemStyled>
+                        <ListItemStyled>
+                            <ListMarkerStyled />
+                            <ListTextStyled>
+                                <Text>
+                                    <FormattedMessage
+                                        id="tbadescription8.text"
+                                        defaultMessage="Designed mechanics, gameplay, and all boss fight locations"
+                                        description="TBA project"
+                                    />
+                                </Text>
+                            </ListTextStyled>
+                        </ListItemStyled>
+                        <ListItemStyled>
+                            <ListMarkerStyled />
+                            <ListTextStyled>
+                                <Text>
+                                    <FormattedMessage
+                                        id="tbadescription9.text"
+                                        defaultMessage="Defined the game's overall pacing and player progression"
+                                        description="TBA project"
+                                    />
+                                </Text>
+                            </ListTextStyled>
+                        </ListItemStyled>
+                        <ListItemStyled>
+                            <ListMarkerStyled />
+                            <ListTextStyled>
+                                <Text>
+                                    <FormattedMessage
+                                        id="tbadescription10.text"
+                                        defaultMessage="Besides level design duties, I planned and monitored tasks across various teams as part of production milestones"
+                                        description="TBA project"
+                                    />
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
                     </ListContainer>
+                    <Text>
+                        <FormattedMessage
+                            id="tbadescription11.text"
+                            defaultMessage="I'll gladly share more details later, but I can already say that this project was initially a new challenge for me, as it is being developed in the Horror genre and for a platform new to me — VR."
+                            description="TBA project"
+                        />
+                    </Text>
                 </DescriptionContainer>
             </PageContainer>
             <Footer />

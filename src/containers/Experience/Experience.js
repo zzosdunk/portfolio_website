@@ -21,14 +21,21 @@ function Experience() {
         { id: "pwf4", text: "Designing and developing game economy" },
         { id: "pwf5", text: "Designing gameplay mechanics" },
         { id: "pwf6", text: "Gameplay mechanics balance" },
+        { id: "pwf7", text: "Gameplay mechanics balance" },
+        { id: "pwf8", text: "Gameplay mechanics balance" },
+        { id: "pwf9", text: "Gameplay mechanics balance" },
     ];
     const DEGENERALS = [
-        { id: "dg1", text: "Developing gameplay mechanics" },
-        { id: "dg2", text: "Level blockout" },
-        { id: "dg3", text: "Level design testing" },
-        { id: "dg4", text: "Designing and developing game economy" },
-        { id: "dg5", text: "Designing gameplay mechanics" },
-        { id: "dg6", text: "Gameplay mechanics balance" },
+        { id: "dg1", text: "Designing coop gameplay pillars" },
+        { id: "dg2", text: "Working on level blockouts" },
+        { id: "dg3", text: "Designing player hub" },
+        { id: "dg4", text: "Level design playtests" },
+        { id: "dg5", text: "Designing game economy" },
+        {
+            id: "dg6",
+            text: "Working on game design documentation",
+        },
+        { id: "dg7", text: "Designing and balancing gameplay mechanics" },
     ];
     const JUGGLER = [
         {

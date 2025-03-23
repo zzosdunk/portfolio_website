@@ -86,8 +86,8 @@ export const ButtonStyled = styled(Link)(({ theme }) => ({
     "&:hover": {
         backgroundColor:
             theme.palette.mode === "dark"
-                ? theme.palette.secondary.dark
-                : theme.palette.primary.dark,
+                ? theme.palette.primary.dark
+                : theme.palette.tertiary.dark,
     },
 }));
 

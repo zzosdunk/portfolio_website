@@ -1,5 +1,4 @@
 import Navbar from "../../components/navbar/navbar";
-import Header from "../../containers/header/header";
 import Experience from "../../containers/Experience/Experience";
 import Projects from "../../containers/Projects/Projects";
 import SkillsList from "../../components/skills/SkillsList";
@@ -9,7 +8,6 @@ function Author() {
     return (
         <>
             <Navbar />
-            <Header />
             <Experience />
             <SkillsList />
             <Projects />

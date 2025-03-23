@@ -30,7 +30,7 @@ import logo from "../../assets/logo_transparent_notext_small.png";
 const LINKS = [
     { title: "Home", link: "/" },
     { title: "Blog", link: "/blog" },
-    { title: "Author", link: "/author" },
+    { title: "Portfolio", link: "/portfolio" },
     { title: "Contact", link: "/contact" },
 ];
 

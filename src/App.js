@@ -69,7 +69,11 @@ function App() {
                 main: "#22edfb",
             },
             secondary: {
+                main: "#ff4d71",
+            },
+            tertiary: {
                 main: "#f0d43a",
+                dark: "#d6bd33",
             },
         },
         typography: {
@@ -77,7 +81,7 @@ function App() {
             h1: {
                 fontSize: 62,
                 fontWeight: 800,
-                color: currentTheme ? "#f0d43a" : "#22edfb",
+                color: currentTheme ? "#ff4d71" : "#22edfb",
             },
             header: {
                 color: currentTheme ? "#81AFDD" : "#042c54",
@@ -118,7 +122,7 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/blog" element={<Blog />} />
-                            <Route path="/author" element={<Author />} />
+                            <Route path="/portfolio" element={<Author />} />
                             <Route path="/contact" element={<Contact />} />
 
                             {articles.map((article) => {
