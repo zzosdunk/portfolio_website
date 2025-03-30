@@ -1,4 +1,4 @@
-import { styled, Typography } from "@mui/material";
+import { styled, Typography, Button } from "@mui/material";
 
 export const ContainerProject = styled("div")(({ theme }) => ({
     width: "100%",
@@ -33,7 +33,7 @@ export const ProjectStatus = styled("img")({
 export const ProjectContent = styled("div")({
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     padding: "1rem 1.5rem",
     height: "100%",
 });
@@ -48,6 +48,22 @@ export const ProjectTitle = styled(Typography)(({ theme }) => ({
         lineHeight: "25px",
     },
 }));
+
+export const ProjectHeader = styled("div")({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: "10px",
+    height: "auto", // Автоматическая высота на основе вложенных элементов
+});
+
+export const ProjectButton = styled(Button)({
+    height: "100%", // Кнопка будет иметь ту же высоту, что и родительский контейнер
+    padding: "0 16px", // Оставляем стандартные боковые отступы
+    fontSize: "14px", // Подстраиваем размер текста под высоту
+    textTransform: "none", // Убираем автоматический upper-case для текста
+    lineHeight: "normal", // Совпадает с текстовыми элементами
+});
 
 export const ProjectDescription = styled(Typography)(({ theme }) => ({
     fontSize: "14px",

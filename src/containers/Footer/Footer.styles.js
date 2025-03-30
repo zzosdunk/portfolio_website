@@ -5,6 +5,7 @@ export const FooterStyled = styled("div")(({ theme }) => ({
     padding: "4rem 6rem",
     flexDirection: "column",
     justifyContent: "center",
+    marginTop: "3rem",
     alignItems: "center",
     background: theme.palette.mode === "dark" ? "#031b34" : "#22b6fbaf",
     [theme.breakpoints.down("md")]: {

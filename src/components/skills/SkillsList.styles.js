@@ -16,7 +16,6 @@ export const SkillsListStyled = styled("div")({
     flexWrap: "wrap",
     width: "100%",
     padding: "2rem",
-    marginBottom: "20px",
     borderRadius: "1rem",
     background: "linear-gradient(103.22deg, #ff4d71 15.86%, #22edfb 99.55%)",
     justifyContent: "center",

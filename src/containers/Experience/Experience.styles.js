@@ -6,7 +6,6 @@ export const ExperienceStyled = styled("div")(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
     filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
-    padding: "4rem 6rem",
     [theme.breakpoints.down("md")]: {
         padding: "0 2rem",
     },
