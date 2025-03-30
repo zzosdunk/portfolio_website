@@ -153,9 +153,6 @@ function App() {
                                     projectsPages[normalizedId]; // Используем нормализованный ID
 
                                 if (!ProjectComponent) {
-                                    console.error(
-                                        `Component for project ID ${project.id} not found.`
-                                    );
                                     return null;
                                 }
 
