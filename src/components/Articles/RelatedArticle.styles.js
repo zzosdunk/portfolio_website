@@ -68,13 +68,13 @@ export const ActionButton = styled(Button)(({ theme }) => ({
     opacity: 0, // Скрыта по умолчанию
     transition: "opacity 0.3s ease-in-out",
     zIndex: 3, // Поверх фона и текста
-    backgroundColor: theme.palette.mode === "dark" ? "#f0d43a" : "#042c54",
+    backgroundColor: theme.palette.mode === "dark" ? "#042c54" : "#f0d43a",
     color: "#fff",
     "&:hover": {
         backgroundColor:
             theme.palette.mode === "dark"
-                ? theme.palette.primary.dark
-                : theme.palette.tertiary.dark,
+                ? theme.palette.tertiary.dark
+                : theme.palette.primary.dark,
     },
     "&.button": {}, // Класс для кнопки
 }));

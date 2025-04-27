@@ -1,13 +1,12 @@
 /* eslint-disable import/prefer-default-export */
-import { styled, Link } from "@mui/material";
+import { styled, Button } from "@mui/material";
 
-export const LearnButton = styled(Link)(({ theme }) => ({
-    width: "300px",
-    height: "70px",
-    padding: "14px 28px",
-    borderRadius: "4px",
-    textDecoration: "none",
-    fontSize: "20px",
+export const LearnSmallButton = styled(Button)(({ theme }) => ({
+    height: "100%", // Кнопка будет иметь ту же высоту, что и родительский контейнер
+    padding: "10px 16px", // Оставляем стандартные боковые отступы
+    fontSize: "16px", // Подстраиваем размер текста под высоту
+    textTransform: "none", // Убираем автоматический upper-case для текста
+    lineHeight: "normal", // Совпадает с текстовыми элементами
     color: "#fff",
     background:
         theme.palette.mode === "dark"
@@ -23,9 +22,5 @@ export const LearnButton = styled(Link)(({ theme }) => ({
     "&:hover": {
         backgroundPosition: "left bottom",
         color: "#000",
-    },
-
-    [theme.breakpoints.down("sm")]: {
-        width: "100%",
     },
 }));

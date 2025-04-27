@@ -7,7 +7,10 @@ export const FooterStyled = styled("div")(({ theme }) => ({
     justifyContent: "center",
     marginTop: "3rem",
     alignItems: "center",
-    background: theme.palette.mode === "dark" ? "#031b34" : "#22b6fbaf",
+    background:
+        theme.palette.mode === "dark"
+            ? "linear-gradient(180deg, #042c54 15.86%, rgba(27, 120, 222, 1) 99.55%)"
+            : "linear-gradient(180deg, #22edfb 1%, #0b75a7 75%)",
     [theme.breakpoints.down("md")]: {
         padding: "0 2rem",
     },

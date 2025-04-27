@@ -3,7 +3,7 @@ import { FormattedMessage } from "react-intl";
 
 import Fade from "@mui/material/Fade";
 import { TooltipStyled } from "../../components/skills/SkillItem.styles";
-import LearnMoreButton from "../../components/Buttons/LearnMoreButton";
+import LearnMoreSmallButton from "../../components/Buttons/LearnMoreSmallButton";
 
 import {
     ContainerProject,
@@ -40,9 +40,8 @@ function ProjectItem({ project }) {
                     <ProjectTimeperiod component="p">
                         {project.timeperiod}
                     </ProjectTimeperiod>
-                    <LearnMoreButton variant="contained" link={project.url}>
-                        Learn More
-                    </LearnMoreButton>
+
+                    <LearnMoreSmallButton link={project.url} />
                 </ProjectHeader>
                 <ProjectTitle component="h2">{project.name}</ProjectTitle>
                 <ProjectDescription component="p">

@@ -1,21 +1,21 @@
 import { FormattedMessage } from "react-intl";
 import PropTypes from "prop-types";
-import { LearnButton } from "./LearnMoreButton.styles";
+import { LearnSmallButton } from "./LearnMoreSmallButton.styles";
 
-function LearnMoreButton({ link }) {
+function LearnMoreSmallButton({ link }) {
     return (
-        <LearnButton variant="contained" href={`${link}`}>
+        <LearnSmallButton variant="contained" href={`${link}`}>
             <FormattedMessage
                 id="LearnMoreButton.text"
                 defaultMessage="Learn more"
                 description="Learn more button"
             />
-        </LearnButton>
+        </LearnSmallButton>
     );
 }
 
-LearnMoreButton.propTypes = {
+LearnMoreSmallButton.propTypes = {
     link: PropTypes.string.isRequired,
 };
 
-export default LearnMoreButton;
+export default LearnMoreSmallButton;

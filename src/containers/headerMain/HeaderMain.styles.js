@@ -32,3 +32,14 @@ export const HeaderImage = styled("div")({
         height: "auto",
     },
 });
+
+export const ButtonWrapper = styled("div")(({ theme }) => ({
+    display: "flex",
+    justifyContent: "left",
+    width: "100%",
+    marginTop: "16px",
+
+    [theme.breakpoints.down("sm")]: {
+        marginTop: "12px",
+    },
+}));

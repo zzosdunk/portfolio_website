@@ -3,7 +3,13 @@ import { FormattedMessage } from "react-intl";
 import logo from "../../assets/logo_transparent_web.png";
 import cvimg from "../../assets/CV_img.png";
 
-import { HeaderStyled, HeaderImage, Content } from "./HeaderMain.styles";
+import {
+    HeaderStyled,
+    HeaderImage,
+    Content,
+    ButtonWrapper,
+} from "./HeaderMain.styles";
+import LearnMoreButton from "../../components/Buttons/LearnMoreButton";
 
 function HeaderMain() {
     const theme = useTheme();
@@ -28,10 +34,13 @@ function HeaderMain() {
                             description="Welcome header on app main page"
                         />
                     </Typography>
+                    <ButtonWrapper>
+                        <LearnMoreButton link="/portfolio" />
+                    </ButtonWrapper>
                 </Content>
             </HeaderStyled>
 
-            <HeaderStyled id="about">
+            <HeaderStyled id="blog">
                 <Content>
                     <Typography
                         variant="h1"
@@ -50,6 +59,9 @@ function HeaderMain() {
                             description="Blog Description"
                         />
                     </Typography>
+                    <ButtonWrapper>
+                        <LearnMoreButton link="/blog" />
+                    </ButtonWrapper>
                 </Content>
 
                 <HeaderImage>
