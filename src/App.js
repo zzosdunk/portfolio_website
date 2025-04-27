@@ -67,6 +67,7 @@ function App() {
             mode: currentTheme ? "dark" : "light",
             primary: {
                 main: "#22edfb",
+                dark: "#042c54",
             },
             secondary: {
                 main: "#ff4d71",

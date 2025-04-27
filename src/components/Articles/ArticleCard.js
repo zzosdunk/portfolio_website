@@ -5,10 +5,11 @@ import {
     ContentStyled,
     TitleStyled,
     TypeStyled,
-    ButtonStyled,
     TextColumn,
     ButtonColumn,
 } from "./ArticleCard.styles";
+
+import LearnMoreButton from "../Buttons/LearnMoreButton";
 
 function ArticleCard({ article }) {
     return (
@@ -23,9 +24,9 @@ function ArticleCard({ article }) {
                     <TypeStyled>{article.type}</TypeStyled>
                 </TextColumn>
                 <ButtonColumn>
-                    <ButtonStyled href={`/article/${article.url}`}>
+                    <LearnMoreButton link={`/article/${article.url}`}>
                         Read more
-                    </ButtonStyled>
+                    </LearnMoreButton>
                 </ButtonColumn>
             </ContentStyled>
         </ArticleStyled>

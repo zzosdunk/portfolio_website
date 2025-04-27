@@ -12,6 +12,9 @@ import TalentTrees from "../../pages/ArticlesPages/TalentTrees/TalentTrees";
 import GamesMovies from "../../pages/ArticlesPages/GamesVSMovies/GamesMovies";
 import DecisionPoints from "../../pages/ArticlesPages/DecisionPoints/DecisionPoints";
 import LevelStorytelling from "../../pages/ArticlesPages/LevelStorytelling/LevelStorytelling";
+import MentalMap from "../../pages/ArticlesPages/MentalMap/MentalMap";
+import Choises from "../../pages/ArticlesPages/Choises/Choises";
+import Pacing from "../../pages/ArticlesPages/Pacing/Pacing";
 
 import firstBloodHeader from "../../assets/ArticlesAssets/FirstBlood/firstBloodHeader.png";
 import elevationsHeader from "../../assets/ArticlesAssets/Elevations/elevationsHeader.png";
@@ -27,6 +30,9 @@ import talentTreesHeader from "../../assets/ArticlesAssets/TalentTrees/talentTre
 import gamesmoviesHeader from "../../assets/ArticlesAssets/GamesVSMovies/gamesVSmoviesHeader.png";
 import decisionPointsHeader from "../../assets/ArticlesAssets/DecisionPoints/decisionPointsHeader.png";
 import levelStoryHeader from "../../assets/ArticlesAssets/LevelStorytelling/levelstorytellingHeader.png";
+import mentalMapHeader from "../../assets/ArticlesAssets/MentalMap/mental_map.png";
+import choisesHeader from "../../assets/ArticlesAssets/Choises/choises.png";
+import pacingHeader from "../../assets/ArticlesAssets/Pacing/pacing.png";
 
 import firstBloodPreview from "../../assets/ArticlesAssets/PREVIEWS/firstBloodPreview.png";
 import elevationsPreview from "../../assets/ArticlesAssets/PREVIEWS/elevationsPreview.png";
@@ -41,6 +47,9 @@ import talentTreesPreview from "../../assets/ArticlesAssets/PREVIEWS/talentTrees
 import gamesmoviesPreview from "../../assets/ArticlesAssets/PREVIEWS/gamesMoviesPreview.png";
 import decisionPointsPreview from "../../assets/ArticlesAssets/PREVIEWS/decisionPointsPreview.png";
 import levelStoryPreview from "../../assets/ArticlesAssets/PREVIEWS/levelStoryPreview.png";
+import mentalMapPreview from "../../assets/ArticlesAssets/PREVIEWS/mentalMapPreview.png";
+import choisesPreview from "../../assets/ArticlesAssets/PREVIEWS/choisesPreview.png";
+import pacingPreview from "../../assets/ArticlesAssets/PREVIEWS/pacingPreview.png";
 
 const ArticleTypes = {
     LEVEL_DESIGN: "Level Design",
@@ -161,6 +170,30 @@ const articles = [
         type: ArticleTypes.LEVEL_DESIGN,
         previewImg: levelStoryPreview,
     },
+    {
+        id: 15,
+        url: "MentalMap",
+        title: "Mental Map",
+        headerImg: mentalMapHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: mentalMapPreview,
+    },
+    {
+        id: 16,
+        url: "Choises",
+        title: "Choises",
+        headerImg: choisesHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: choisesPreview,
+    },
+    {
+        id: 17,
+        url: "Pacing",
+        title: "Pacing",
+        headerImg: pacingHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: pacingPreview,
+    },
 ];
 
 const articlesPages = {
@@ -178,6 +211,9 @@ const articlesPages = {
     12: GamesMovies,
     13: DecisionPoints,
     14: LevelStorytelling,
+    15: MentalMap,
+    16: Choises,
+    17: Pacing,
 };
 
 function getArticle(articleId) {

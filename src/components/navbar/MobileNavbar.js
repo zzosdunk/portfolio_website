@@ -30,11 +30,11 @@ function MobileNavbar({ links }) {
                 onClose={handleClose}
             >
                 {links.map((link) => (
-                    <NavbarItem key={link.text}>
+                    <NavbarItem key={link.title}>
                         <Typography variant="a">
                             <a href={link.link}>
                                 <FormattedMessage
-                                    id={`${link.text}NavbarElement.text`}
+                                    id={`${link.title}NavbarElement.text`}
                                     defaultMessage="{sectionID}"
                                     description="Navbar Element"
                                     values={{

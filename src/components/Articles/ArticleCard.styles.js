@@ -1,7 +1,7 @@
 import { styled, Typography, Link } from "@mui/material";
 
 // Контейнер для всей карточки с фоном headerImg
-export const ArticleStyled = styled("div")(({ headerImg }) => ({
+export const ArticleStyled = styled("div")(({ headerImg, theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -13,6 +13,11 @@ export const ArticleStyled = styled("div")(({ headerImg }) => ({
     background: `url(${headerImg}) no-repeat center center / cover`, // Фон - изображение на всю карточку
     "&:hover": {
         boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+    },
+    [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+        height: "auto",
+        paddingBottom: "24px",
     },
 }));
 
@@ -29,7 +34,7 @@ export const ImageBlurOverlayStyled = styled("div")(() => ({
 }));
 
 // Блок для контента внутри карточки
-export const ContentStyled = styled("div")(() => ({
+export const ContentStyled = styled("div")(({ theme }) => ({
     zIndex: 2, // Контент над фоном и размытием
     display: "flex",
     flexDirection: "row",
@@ -37,6 +42,10 @@ export const ContentStyled = styled("div")(() => ({
     height: "100%",
     width: "100%",
     padding: "10px",
+    [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+        alignItems: "center",
+    },
 }));
 
 // Стили для изображения слева
@@ -67,7 +76,8 @@ export const TitleStyled = styled(Typography)(() => ({
 // Стили для типа статьи
 export const TypeStyled = styled(Typography)(({ theme }) => ({
     fontSize: "14px",
-    color: theme.palette.primary.main,
+    color:
+        theme.palette.mode === "dark" ? theme.palette.primary.main : "#f0d43a",
 }));
 
 // Стили для кнопки перехода
@@ -89,19 +99,33 @@ export const ButtonStyled = styled(Link)(({ theme }) => ({
                 ? theme.palette.primary.dark
                 : theme.palette.tertiary.dark,
     },
+    [theme.breakpoints.down("sm")]: {
+        width: "90%", // Почти вся ширина
+        height: "60px",
+    },
 }));
 
-export const TextColumn = styled("div")(() => ({
+export const TextColumn = styled("div")(({ theme }) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "top",
     width: "70%", // Ширина первой колонки
+    [theme.breakpoints.down("sm")]: {
+        width: "100%",
+        alignItems: "center",
+        textAlign: "center",
+    },
 }));
 
 // Контейнер для кнопки
-export const ButtonColumn = styled("div")(() => ({
+export const ButtonColumn = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center", // Центрирование по вертикали
     justifyContent: "flex-end", // Вправо по горизонтали
     width: "30%", // Ширина второй колонки
+    [theme.breakpoints.down("sm")]: {
+        width: "100%",
+        justifyContent: "center",
+        marginTop: "16px",
+    },
 }));

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import { NavLink } from "react-router-dom";
@@ -22,9 +21,7 @@ import Login from "../Login/Login";
 import LanguageMenu from "./LanguageMenu";
 import MobileNavbar from "./MobileNavbar";
 import { langActions } from "../../store/language";
-
 import { themeActions } from "../../store/theme";
-
 import logo from "../../assets/logo_transparent_notext_small.png";
 
 const LINKS = [
@@ -40,6 +37,7 @@ function Nav() {
     const userEmail = useSelector((state) => state.auth.userEmail);
     const isAuth = useSelector((state) => state.auth.isAuthenticated);
     const currentTheme = useSelector((state) => state.theme.isDarkTheme);
+    console.log(currentTheme);
 
     const userName = userEmail.substr(0, userEmail.indexOf("@"));
 
@@ -47,15 +45,10 @@ function Nav() {
         dispatch(langActions.changeLanguage(chosenLanguage));
     };
 
-    const [isDarkTheme, setIsDarkTheme] = useState(true);
-
     const changeThemeHandler = () => {
-        setIsDarkTheme((prev) => !prev);
+        // Переключаем тему в Redux при клике на переключатель
+        dispatch(themeActions.changeTheme(!currentTheme));
     };
-
-    useEffect(() => {
-        dispatch(themeActions.changeTheme(isDarkTheme));
-    }, [dispatch, isDarkTheme]);
 
     return (
         <>
@@ -76,7 +69,14 @@ function Nav() {
                         {LINKS.map((link) => (
                             <Typography key={link.title} variant="a">
                                 <NavLink key={link.title} to={link.link}>
-                                    {link.title}
+                                    <FormattedMessage
+                                        id={`${link.title}NavbarElement.text`}
+                                        defaultMessage="{sectionID}"
+                                        description="Navbar Element"
+                                        values={{
+                                            sectionID: link.text,
+                                        }}
+                                    />
                                 </NavLink>
                             </Typography>
                         ))}
@@ -99,6 +99,7 @@ function Nav() {
                     </NavbarSign>
 
                     <Icons>
+                        {/* Передаем состояние currentTheme как значение для переключателя */}
                         <MaterialUISwitch
                             onChange={changeThemeHandler}
                             checked={currentTheme}
