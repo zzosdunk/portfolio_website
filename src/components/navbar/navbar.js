@@ -37,7 +37,6 @@ function Nav() {
     const userEmail = useSelector((state) => state.auth.userEmail);
     const isAuth = useSelector((state) => state.auth.isAuthenticated);
     const currentTheme = useSelector((state) => state.theme.isDarkTheme);
-    console.log(currentTheme);
 
     const userName = userEmail.substr(0, userEmail.indexOf("@"));
 
