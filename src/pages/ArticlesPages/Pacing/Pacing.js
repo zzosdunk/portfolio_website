@@ -22,6 +22,7 @@ import {
     ListTextStyled,
     StyledCell,
     Text,
+    StyledLink,
 } from "../../../components/Articles/Articles.styles";
 
 import Footer from "../../../containers/Footer/Footer";
@@ -72,11 +73,11 @@ function Pacing({ articleData, headerImg, articles }) {
                             requirements for the car itself. But the most
                             important difference lies in the{" "}
                             <b>approach and strategy</b>. A race car driver has
-                            a limited time window during which they can deliver
+                            a limited time window during which he can deliver
                             their peak performance. In fact, humans in general
                             have a limited period in which they can be truly
                             productive - and <b>the same goes for players</b>. A
-                            player has a limited span of time during which they
+                            player has a limited span of time during which he
                             can stay engaged with a particular process.
                         </Text>
                         <br />
@@ -87,7 +88,7 @@ function Pacing({ articleData, headerImg, articles }) {
                             of the most critical tools in a level designer’s
                             arsenal. Understanding the emotions and mental
                             states a player is experiencing at any given moment
-                            provides the key to guiding them - and to building a
+                            provides the key to guiding them and to build a
                             well-structured level and quest progression.
                             Remember those moments when you felt genuinely
                             exhausted during a game, not just challenged, but
@@ -115,8 +116,8 @@ function Pacing({ articleData, headerImg, articles }) {
                             others.
                             <br />
                             Let’s begin by identifying the core gameplay pillars
-                            available to the developers and the roles each of
-                            them played.
+                            available to developers and the roles each of them
+                            played.
                         </Text>
                         <br />
                         <Text>
@@ -373,13 +374,13 @@ function Pacing({ articleData, headerImg, articles }) {
                             and plays through the game evenly according to that
                             level. Today, I used recordings of a playthrough
                             from the author of the channel{" "}
-                            <a
+                            <StyledLink
                                 href="https://www.youtube.com/@gamingtimespov"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 Gaming Times
-                            </a>{" "}
+                            </StyledLink>{" "}
                             .
                         </Text>
                         <BlockHeader>
@@ -687,8 +688,8 @@ function Pacing({ articleData, headerImg, articles }) {
                         <Text>
                             After all that has been said, I personally interpret
                             pacing as the rhythmic alternation of gameplay
-                            beats, managed by the developers to control the
-                            emotions and difficulty experienced by the player.
+                            beats, managed by the developers to control emotions
+                            and difficulty experienced by the player.
                         </Text>
                         <br />
                         <Text>

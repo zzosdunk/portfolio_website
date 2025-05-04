@@ -40,8 +40,7 @@ function ProjectItem({ project }) {
                     <ProjectTimeperiod component="p">
                         {project.timeperiod}
                     </ProjectTimeperiod>
-
-                    <LearnMoreSmallButton link={project.url} />
+                    <LearnMoreSmallButton link={`/project/${project.url}`} />
                 </ProjectHeader>
                 <ProjectTitle component="h2">{project.name}</ProjectTitle>
                 <ProjectDescription component="p">
