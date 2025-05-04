@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { styled, Typography, CardMedia, TableCell } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const ImageBlock = styled("div")({
     marginTop: "20px",
@@ -11,6 +12,12 @@ export const Image = styled(CardMedia)({
     width: "70%", // Scale to 40% of the original width
     height: "auto", // Maintain aspect ratio
     margin: "auto", // Center the image horizontally
+    transition: "transform 0.3s ease, z-index 0.3s ease, borderRadius 1s ease",
+    cursor: "pointer",
+    "&:hover": {
+        transform: "scale(1.5)", // Увеличение изображения
+        zIndex: 2, // Вывод поверх других элементов
+    },
 });
 
 export const ImageDescription = styled(Typography)(({ theme }) => ({
@@ -42,6 +49,10 @@ export const StyledCell = styled(TableCell)(({ theme }) => ({
     textAlign: "center",
     fontWeight: 500,
     color: theme.palette.mode === "dark" ? "#fff" : "#000",
+    [theme.breakpoints.down("sm")]: {
+        fontSize: "14px",
+        padding: "8px",
+    },
 }));
 
 // Контейнер для списка
@@ -76,4 +87,32 @@ export const ListMarkerStyled = styled("div")(({ theme }) => ({
 export const ListTextStyled = styled("span")(() => ({
     fontSize: "1rem",
     fontWeight: "500",
+}));
+
+export const StyledLink = styled("a")(({ theme }) => ({
+    color: theme.palette.mode === "dark" ? "#f0d43a" : "#22edfb",
+    textDecoration: "none",
+    transition: "color 0.3s ease, border-bottom 0.3s ease",
+    borderBottom: "1px solid transparent",
+    "&:hover": {
+        color: theme.palette.mode === "dark" ? "#f0d43a" : "#042C54",
+        borderBottom:
+            theme.palette.mode === "dark"
+                ? "1px solid #f0d43a"
+                : "1px solid #042C54",
+    },
+}));
+
+export const ThemedLink = styled(Link)(({ theme }) => ({
+    color: theme.palette.mode === "dark" ? "#f0d43a" : "#22edfb",
+    textDecoration: "none",
+    transition: "color 0.3s ease, border-bottom 0.3s ease",
+    borderBottom: "1px solid transparent",
+    "&:hover": {
+        color: theme.palette.mode === "dark" ? "#f0d43a" : "#042C54",
+        borderBottom:
+            theme.palette.mode === "dark"
+                ? "1px solid #f0d43a"
+                : "1px solid #042C54",
+    },
 }));

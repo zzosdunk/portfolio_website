@@ -114,18 +114,7 @@ function TBAPage() {
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
-                        <ListItemStyled>
-                            <ListMarkerStyled />
-                            <ListTextStyled>
-                                <Text>
-                                    <FormattedMessage
-                                        id="tbadescription7.text"
-                                        defaultMessage="Worked on designing and balancing all enemy types"
-                                        description="TBA project"
-                                    />
-                                </Text>
-                            </ListTextStyled>
-                        </ListItemStyled>
+
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>

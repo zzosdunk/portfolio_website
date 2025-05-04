@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Box, Typography, Card, CardMedia, Grid } from "@mui/material";
 
 import PropTypes from "prop-types";
@@ -9,6 +8,7 @@ import {
     ImageBlock,
     ImageDescription,
     Text,
+    ThemedLink,
 } from "../../../components/Articles/Articles.styles";
 
 import Footer from "../../../containers/Footer/Footer";
@@ -264,9 +264,9 @@ function MentalMap({ articleData, headerImg, articles }) {
                             they need to go and why is <b>Landmarks</b>.
                             I&apos;ve already described this method in level
                             design in one of my{" "}
-                            <Link to="/article/Landmarks">
+                            <ThemedLink to="/article/Landmarks">
                                 previous articles
-                            </Link>
+                            </ThemedLink>
                             , but I want to emphasize that it&apos;s a truly
                             powerful tool that aids players significantly. This
                             is especially true in games where players don&apos;t
