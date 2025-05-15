@@ -35,8 +35,8 @@ function ContactDescription() {
                 </ContactDataBlock>
                 <ContactDataBlock>
                     <img src={mail} alt="mail" />
-                    <a href="mailto:zzosdunk@gmail.com">
-                        <p>zzosdunk@gmail.com</p>
+                    <a href="mailto:contact@dzosym.com">
+                        <p>contact@dzosym.com</p>
                     </a>
                 </ContactDataBlock>
                 <ContactDataBlock>

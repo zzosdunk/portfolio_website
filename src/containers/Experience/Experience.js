@@ -20,7 +20,6 @@ function Experience() {
         { id: "pwf3", text: "Level design testing" },
         { id: "pwf4", text: "Designing and developing game economy" },
         { id: "pwf5", text: "Designing gameplay mechanics" },
-        { id: "pwf6", text: "Gameplay mechanics balance" },
         { id: "pwf7", text: "Gameplay mechanics balance" },
         { id: "pwf8", text: "Gameplay mechanics balance" },
         { id: "pwf9", text: "Gameplay mechanics balance" },
