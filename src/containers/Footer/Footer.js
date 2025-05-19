@@ -1,5 +1,5 @@
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import { linkedin, github, facebook, instagram } from "./imports";
+import { linkedin, facebook, instagram } from "./imports";
 
 import {
     FooterStyled,
@@ -31,11 +31,11 @@ function Footer() {
                         <img src={linkedin} alt="linkedin" />
                     </a>
                     <a
-                        href="https://github.com/zzosdunk"
+                        href="https://www.instagram.com/zonikmus/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <img src={github} alt="github" />
+                        <img src={instagram} alt="instagram" />
                     </a>
                     <a
                         href="https://www.facebook.com/zzosdunk"
@@ -43,13 +43,6 @@ function Footer() {
                         rel="noreferrer"
                     >
                         <img src={facebook} alt="facebook" />
-                    </a>
-                    <a
-                        href="https://www.instagram.com/zonikmus/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src={instagram} alt="instagram" />
                     </a>
                 </Socials>
             </Links>
