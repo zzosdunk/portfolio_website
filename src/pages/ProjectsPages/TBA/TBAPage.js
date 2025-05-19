@@ -16,12 +16,12 @@ import {
 import Footer from "../../../containers/Footer/Footer";
 import Navbar from "../../../components/navbar/navbar";
 
-import revr from "../../../assets/ProjectsAssets/TBA/revr.jpg";
+// import revr from "../../../assets/ProjectsAssets/TBA/revr.jpg";
 import tba from "../../../assets/ProjectsAssets/TBA/tba.jpg";
 import vr from "../../../assets/ProjectsAssets/TBA/vr.png";
 
 function TBAPage() {
-    const projectImages = [revr, tba, vr];
+    const projectImages = [tba, vr];
 
     return (
         <>
@@ -54,7 +54,7 @@ function TBAPage() {
                     </Text>
                     <br />
                     <ListContainer>
-                        <ListItemStyled>
+                        {/* <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
@@ -65,7 +65,7 @@ function TBAPage() {
                                     />
                                 </Text>
                             </ListTextStyled>
-                        </ListItemStyled>
+                        </ListItemStyled> */}
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
@@ -78,7 +78,7 @@ function TBAPage() {
                                 </Text>
                             </ListTextStyled>
                         </ListItemStyled>
-                        <ListItemStyled>
+                        {/* <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
@@ -89,7 +89,7 @@ function TBAPage() {
                                     />
                                 </Text>
                             </ListTextStyled>
-                        </ListItemStyled>
+                        </ListItemStyled> */}
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
@@ -115,7 +115,7 @@ function TBAPage() {
                             </ListTextStyled>
                         </ListItemStyled>
 
-                        <ListItemStyled>
+                        {/* <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
                                 <Text>
@@ -126,7 +126,7 @@ function TBAPage() {
                                     />
                                 </Text>
                             </ListTextStyled>
-                        </ListItemStyled>
+                        </ListItemStyled> */}
                         <ListItemStyled>
                             <ListMarkerStyled />
                             <ListTextStyled>
