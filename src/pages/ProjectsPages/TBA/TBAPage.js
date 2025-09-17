@@ -16,12 +16,12 @@ import {
 import Footer from "../../../containers/Footer/Footer";
 import Navbar from "../../../components/navbar/navbar";
 
-// import revr from "../../../assets/ProjectsAssets/TBA/revr.jpg";
-import tba from "../../../assets/ProjectsAssets/TBA/tba.jpg";
-import vr from "../../../assets/ProjectsAssets/TBA/vr.png";
+import sti1 from "../../../assets/ProjectsAssets/TBA/sti1.jpg";
+import sti2 from "../../../assets/ProjectsAssets/TBA/sti2.jpg";
+import sti3 from "../../../assets/ProjectsAssets/TBA/sti3.jpg";
 
 function TBAPage() {
-    const projectImages = [tba, vr];
+    const projectImages = [sti1, sti2, sti3];
 
     return (
         <>
@@ -29,7 +29,7 @@ function TBAPage() {
             <PageContainer>
                 {/* Название проекта */}
                 <TitleStyled variant="h3" color="text.primary">
-                    TBA
+                    Star Trek: Infection
                 </TitleStyled>
 
                 {/* Галерея */}
@@ -152,13 +152,6 @@ function TBAPage() {
                             </ListTextStyled>
                         </ListItemStyled>
                     </ListContainer>
-                    <Text>
-                        <FormattedMessage
-                            id="tbadescription11.text"
-                            defaultMessage="I'll gladly share more details later, but I can already say that this project was initially a new challenge for me, as it is being developed in the Horror genre and for a platform new to me — VR."
-                            description="TBA project"
-                        />
-                    </Text>
                 </DescriptionContainer>
             </PageContainer>
             <Footer />
