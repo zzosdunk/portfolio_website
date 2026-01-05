@@ -6,9 +6,9 @@ import InteractiveCV from "../../pages/ProjectsPages/InteractiveCV/InteractiveCV
 import OtherProjects from "../../pages/ProjectsPages/Others/OtherProjectsPage";
 
 const projectsPages = {
-    1: TankSquad,
+    1: TBA,
     2: CastleFlipper,
-    3: TBA,
+    3: TankSquad,
     4: ExtractionShooter,
     5: InteractiveCV,
     6: OtherProjects,
