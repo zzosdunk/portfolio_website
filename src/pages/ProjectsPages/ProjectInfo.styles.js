@@ -30,7 +30,7 @@ export const ImageStyled = styled("img")(() => ({
     height: "180px",
     transform: "rotate(15deg)", // Поворот изображения
     transition: "all 0.3s ease-in-out",
-    objectFit: "cover",
+    objectFit: "contain",
     cursor: "pointer",
     "&:nth-of-type(2n)": {
         transform: "rotate(-15deg)", // Чередование поворотов
