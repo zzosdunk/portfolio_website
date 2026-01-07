@@ -15,6 +15,7 @@ import LevelStorytelling from "../../pages/ArticlesPages/LevelStorytelling/Level
 import MentalMap from "../../pages/ArticlesPages/MentalMap/MentalMap";
 import Choises from "../../pages/ArticlesPages/Choises/Choises";
 import Pacing from "../../pages/ArticlesPages/Pacing/Pacing";
+import Puzzles from "../../pages/ArticlesPages/Puzzles/Puzzles";
 
 import firstBloodHeader from "../../assets/ArticlesAssets/FirstBlood/firstBloodHeader.png";
 import elevationsHeader from "../../assets/ArticlesAssets/Elevations/elevationsHeader.png";
@@ -33,6 +34,7 @@ import levelStoryHeader from "../../assets/ArticlesAssets/LevelStorytelling/leve
 import mentalMapHeader from "../../assets/ArticlesAssets/MentalMap/mental_map.png";
 import choisesHeader from "../../assets/ArticlesAssets/Choises/choises.png";
 import pacingHeader from "../../assets/ArticlesAssets/Pacing/pacing.png";
+import puzzlesHeader from "../../assets/ArticlesAssets/Puzzles/puzzles.png";
 
 import firstBloodPreview from "../../assets/ArticlesAssets/PREVIEWS/firstBloodPreview.png";
 import elevationsPreview from "../../assets/ArticlesAssets/PREVIEWS/elevationsPreview.png";
@@ -50,6 +52,7 @@ import levelStoryPreview from "../../assets/ArticlesAssets/PREVIEWS/levelStoryPr
 import mentalMapPreview from "../../assets/ArticlesAssets/PREVIEWS/mentalMapPreview.png";
 import choisesPreview from "../../assets/ArticlesAssets/PREVIEWS/choisesPreview.png";
 import pacingPreview from "../../assets/ArticlesAssets/PREVIEWS/pacingPreview.png";
+import puzzlesPreview from "../../assets/ArticlesAssets/PREVIEWS/puzzlesPreview.png";
 
 const ArticleTypes = {
     LEVEL_DESIGN: "Level Design",
@@ -194,6 +197,14 @@ const articles = [
         type: ArticleTypes.LEVEL_DESIGN,
         previewImg: pacingPreview,
     },
+    {
+        id: 18,
+        url: "Puzzles",
+        title: "Puzzles",
+        headerImg: puzzlesHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: puzzlesPreview,
+    },
 ];
 
 const articlesPages = {
@@ -214,6 +225,7 @@ const articlesPages = {
     15: MentalMap,
     16: Choises,
     17: Pacing,
+    18: Puzzles,
 };
 
 function getArticle(articleId) {
