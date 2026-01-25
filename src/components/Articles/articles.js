@@ -16,6 +16,7 @@ import MentalMap from "../../pages/ArticlesPages/MentalMap/MentalMap";
 import Choises from "../../pages/ArticlesPages/Choises/Choises";
 import Pacing from "../../pages/ArticlesPages/Pacing/Pacing";
 import Puzzles from "../../pages/ArticlesPages/Puzzles/Puzzles";
+import Stealth from "../../pages/ArticlesPages/Stealth/Stealth";
 
 import firstBloodHeader from "../../assets/ArticlesAssets/FirstBlood/firstBloodHeader.png";
 import elevationsHeader from "../../assets/ArticlesAssets/Elevations/elevationsHeader.png";
@@ -35,6 +36,7 @@ import mentalMapHeader from "../../assets/ArticlesAssets/MentalMap/mental_map.pn
 import choisesHeader from "../../assets/ArticlesAssets/Choises/choises.png";
 import pacingHeader from "../../assets/ArticlesAssets/Pacing/pacing.png";
 import puzzlesHeader from "../../assets/ArticlesAssets/Puzzles/puzzles.png";
+import stealthHeader from "../../assets/ArticlesAssets/Stealth/stealth.png";
 
 import firstBloodPreview from "../../assets/ArticlesAssets/PREVIEWS/firstBloodPreview.png";
 import elevationsPreview from "../../assets/ArticlesAssets/PREVIEWS/elevationsPreview.png";
@@ -53,6 +55,7 @@ import mentalMapPreview from "../../assets/ArticlesAssets/PREVIEWS/mentalMapPrev
 import choisesPreview from "../../assets/ArticlesAssets/PREVIEWS/choisesPreview.png";
 import pacingPreview from "../../assets/ArticlesAssets/PREVIEWS/pacingPreview.png";
 import puzzlesPreview from "../../assets/ArticlesAssets/PREVIEWS/puzzlesPreview.png";
+import stealthPreview from "../../assets/ArticlesAssets/PREVIEWS/stealthPreview.png";
 
 const ArticleTypes = {
     LEVEL_DESIGN: "Level Design",
@@ -202,8 +205,16 @@ const articles = [
         url: "Puzzles",
         title: "Puzzles",
         headerImg: puzzlesHeader,
-        type: ArticleTypes.LEVEL_DESIGN,
+        type: ArticleTypes.GAME_DESIGN,
         previewImg: puzzlesPreview,
+    },
+    {
+        id: 19,
+        url: "Stealth",
+        title: "Stealth",
+        headerImg: stealthHeader,
+        type: ArticleTypes.LEVEL_DESIGN,
+        previewImg: stealthPreview,
     },
 ];
 
@@ -226,6 +237,7 @@ const articlesPages = {
     16: Choises,
     17: Pacing,
     18: Puzzles,
+    19: Stealth,
 };
 
 function getArticle(articleId) {
