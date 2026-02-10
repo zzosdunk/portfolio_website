@@ -4,14 +4,16 @@ import TBA from "../../pages/ProjectsPages/TBA/TBAPage";
 import ExtractionShooter from "../../pages/ProjectsPages/ExtractionShooter/ExtractionShooterPage";
 import InteractiveCV from "../../pages/ProjectsPages/InteractiveCV/InteractiveCV";
 import OtherProjects from "../../pages/ProjectsPages/Others/OtherProjectsPage";
+import TLOUPage from "../../pages/ProjectsPages/TLOU/TLOUPage";
 
 const projectsPages = {
     1: TBA,
     2: CastleFlipper,
     3: TankSquad,
-    4: ExtractionShooter,
-    5: InteractiveCV,
-    6: OtherProjects,
+    4: TLOUPage,
+    5: ExtractionShooter,
+    6: InteractiveCV,
+    7: OtherProjects,
 };
 
 export default projectsPages;
