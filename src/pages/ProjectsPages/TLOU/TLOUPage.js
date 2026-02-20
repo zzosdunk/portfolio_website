@@ -1,5 +1,3 @@
-import { FormattedMessage } from "react-intl";
-
 import {
     PageContainer,
     TitleStyled,
@@ -17,6 +15,7 @@ import {
     Image,
     ImageBlock,
     ImageDescription,
+    StyledLink,
 } from "../../../components/Articles/Articles.styles";
 
 import Footer from "../../../containers/Footer/Footer";
@@ -66,11 +65,17 @@ function TLOUPage() {
 
                 <DescriptionContainer>
                     <Text>
-                        <FormattedMessage
-                            id="tbadescription1.text"
-                            defaultMessage="For the past two years, I have been working on the largest project of my career, which has not yet been announced. In this project, I held the position of Lead Level Designer, and my responsibilities and tasks significantly expanded. Here's what I've been working on:"
-                            description="TBA project"
-                        />
+                        Here, I will talk about the key aspects of the level and
+                        explain how I approached its design. You can find a full
+                        and detailed level breakdown in the{" "}
+                        <StyledLink
+                            href="https://docs.google.com/presentation/d/1lGO705Vwt0o5hFm6-pW-gwQ08ubIJsj0yYtzQxiKzAU/edit?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            presentation
+                        </StyledLink>{" "}
+                        , and here we’ll focus on its main highlights.
                     </Text>
                     <br />
                     <BlockHeader>Design Pillars</BlockHeader>
