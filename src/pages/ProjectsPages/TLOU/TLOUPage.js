@@ -37,6 +37,12 @@ import arena2 from "../../../assets/ProjectsAssets/TLOU2/arena1-1-3.png";
 import arena3 from "../../../assets/ProjectsAssets/TLOU2/arena1-2-1.png";
 import arena4 from "../../../assets/ProjectsAssets/TLOU2/arena1-3-1.png";
 
+import landmark1 from "../../../assets/ProjectsAssets/TLOU2/landmark1.jpg";
+import landmark2 from "../../../assets/ProjectsAssets/TLOU2/landmark2.jpg";
+import landmark3 from "../../../assets/ProjectsAssets/TLOU2/arena3_entrance.png";
+
+import easteregg2 from "../../../assets/ProjectsAssets/TLOU2/easteregg2.jpg";
+
 import pacing from "../../../assets/ProjectsAssets/TLOU2/pacing_website.png";
 
 function TLOUPage() {
@@ -44,6 +50,7 @@ function TLOUPage() {
     const referenceImages = [references1, references2, references3];
     const puzzleImages = [puzzle2, puzzle1];
     const arenaImages = [arena1, arena2, arena3, arena4];
+    const landmarkImages = [landmark1, landmark2, landmark3];
 
     return (
         <>
@@ -65,7 +72,24 @@ function TLOUPage() {
 
                 <DescriptionContainer>
                     <Text>
-                        Here, I will talk about the key aspects of the level and
+                        The most important thing I want to start with is that
+                        this level is publicly available to play. I recommend
+                        playing it first so you can experience all the puzzles
+                        and challenges I’ve prepared for yourself - because
+                        there will be spoilers ahead. You can play the level
+                        using the following{" "}
+                        <StyledLink
+                            href="https://zzosdunk.itch.io/tlou2-level-design-project"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            link
+                        </StyledLink>{" "}
+                        .
+                    </Text>{" "}
+                    <Text>
+                        {" "}
+                        Next, I will talk about the key aspects of the level and
                         explain how I approached its design. You can find a full
                         and detailed level breakdown in the{" "}
                         <StyledLink
@@ -79,7 +103,6 @@ function TLOUPage() {
                     </Text>
                     <br />
                     <BlockHeader>Design Pillars</BlockHeader>
-
                     <ListItemStyled>
                         <ListMarkerStyled />
                         <ListTextStyled>
@@ -93,7 +116,6 @@ function TLOUPage() {
                         themes of loss, fragility, and the remnants of human
                         stories
                     </Text>
-
                     <ListItemStyled>
                         <ListMarkerStyled />
                         <ListTextStyled>
@@ -114,7 +136,6 @@ function TLOUPage() {
                         Raw, intimate, and desperate, emphasizing physicality
                         and emotional weight in every confrontation
                     </Text>
-
                     <ListItemStyled>
                         <ListMarkerStyled />
                         <ListTextStyled>
@@ -147,7 +168,6 @@ function TLOUPage() {
                             />
                         ))}
                     </GalleryContainer>
-
                     <Text>
                         An important part of developing this level was
                         researching and gathering all the references. While
@@ -155,7 +175,6 @@ function TLOUPage() {
                         II, it was important for me to meet the following
                         standards:
                     </Text>
-
                     <ListItemStyled>
                         <ListMarkerStyled />
                         <ListTextStyled>
@@ -166,7 +185,6 @@ function TLOUPage() {
                             </Text>
                         </ListTextStyled>
                     </ListItemStyled>
-
                     <ListItemStyled>
                         <ListMarkerStyled />
                         <ListTextStyled>
@@ -178,7 +196,6 @@ function TLOUPage() {
                             </Text>
                         </ListTextStyled>
                     </ListItemStyled>
-
                     <BlockHeader>Pacing</BlockHeader>
                     <ImageBlock>
                         <Image
@@ -190,7 +207,6 @@ function TLOUPage() {
                             Pacing flow of the level
                         </ImageDescription>
                     </ImageBlock>
-
                     <BlockHeader>Puzzle Breakdown</BlockHeader>
                     <GalleryContainer>
                         {puzzleImages.map((src) => (
@@ -218,7 +234,6 @@ function TLOUPage() {
                         to climb up and continue through the level via the
                         passage they noticed earlier while approaching this area
                     </Text>
-
                     <BlockHeader>Arena Breakdown</BlockHeader>
                     <GalleryContainer>
                         {arenaImages.map((src) => (
@@ -259,6 +274,65 @@ function TLOUPage() {
                         sees bright light and a large, collapsed exit from the
                         building.
                     </Text>
+                    <BlockHeader>Navigation</BlockHeader>
+                    <GalleryContainer>
+                        {landmarkImages.map((src) => (
+                            <ImageStyled
+                                key={src}
+                                src={src}
+                                alt={`Navigation ${src}`}
+                            />
+                        ))}
+                    </GalleryContainer>
+                    <Text>
+                        From the very beginning of the level, I show the player
+                        the final destination they need to reach, giving them a
+                        clear directional landmark. Later, I hide this landmark
+                        from view so the player is not distracted by it and can
+                        stay focused on the gameplay.
+                    </Text>
+                    <Text>
+                        After a certain point in the level, I reveal the
+                        landmark to the player again, emphasizing their
+                        progress. Now that the landmark appears closer, it
+                        subconsciously gives the player a sense of satisfaction,
+                        reinforcing that they are approaching their goal.
+                    </Text>
+                    <BlockHeader>Easter Eggs</BlockHeader>
+                    <Text>
+                        The The Last of Us series has always impressed me with
+                        its attention to detail. It’s probably one of the few
+                        games where I wanted to spend a lot of time exploring
+                        the world and searching for notes to learn more about
+                        the events. In my level, I also wanted to include some
+                        Easter eggs. There are two of them, both relating to the
+                        beginning of the apocalypse.
+                    </Text>
+                    <ImageBlock>
+                        <Image
+                            component="img"
+                            image={tlouImg2}
+                            alt="Article Cover"
+                        />
+                        <ImageDescription>
+                            It was an ordinary Thursday, and outside your
+                            favorite café stood a sign featuring the dessert of
+                            the day along with a “Happy Thursday” greeting.
+                        </ImageDescription>
+                    </ImageBlock>
+                    <ImageBlock>
+                        <Image
+                            component="img"
+                            image={easteregg2}
+                            alt="Article Cover"
+                        />
+                        <ImageDescription>
+                            On September 26, 2013, the office staff had a number
+                            of important tasks they needed to complete by the
+                            end of the week. Unfortunately, they never managed
+                            to finish them.
+                        </ImageDescription>
+                    </ImageBlock>
                 </DescriptionContainer>
             </PageContainer>
             <Footer />
